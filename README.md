@@ -1,7 +1,7 @@
 # automated-log-analysis
 
-## Robot Framework 
-### Variables
+Tests taken from [robot framework official documentation](https://robotframework.org/?tab=0&example=Advanced%20Example#getting-started)
+## Variables
 
 This examples contains multiple tests with different variable types.
 ${Scalar} Variables
@@ -21,7 +21,7 @@ Accessing a single value by its key, requires in our case the prefix $ again.
     ${dict}[name] accesses the value behind the key "name".
     ${dict.name} is an alternative and sometime handy method to access elements of a dictionary.
 
-### Behaviour-Driven Testing (Gherkin)
+## Behaviour-Driven Testing (Gherkin)
 
 This example contains a test case written in a BDD-style with embedded arguments
 Test Object
@@ -38,7 +38,7 @@ The prefixes Given/When/Then/And are dropped when they are matched to the respec
 Arguments like "1 + 1" are passed as embedded arguments to improve the readability. Note how the embedded arguments like "${term}" or "${expected}" (in Calc_keywords.resource) are mentioned in the keyword name and later used as variables inside the keyword. Adding quotes around embedded arguments is optional - but a good practice to improve readability.
 The Keyword Set Test Variable is used to make a variables available everywhere within the test (as the variable scope is limited to the keyword by default).
  
-### Advanced Example 2
+## Advanced Example 2
 
 This example contains some more advanced features of Robot Framework.
 Test Object
