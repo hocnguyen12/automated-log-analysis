@@ -1,13 +1,11 @@
 from xml.etree import ElementTree as ET
 from pathlib import Path
 
-# Load the XML content from the uploaded file
-xml_path = Path("reports/output.xml")
-tree = ET.parse(xml_path)
-root = tree.getroot()
 
-# Define a recursive function to extract keyword calls and their arguments
 def extract_keywords(keyword_element, depth=0):
+    '''
+    Recursive function to extract keyword calls that FAIL and their arguments
+    '''
     steps = []
     for kw in keyword_element.findall("kw"):
         name = kw.attrib.get("name", "UNKNOWN")
@@ -24,22 +22,25 @@ def extract_keywords(keyword_element, depth=0):
         steps.extend(extract_keywords(kw, depth + 1))
     return steps
 
-# Extract failed test cases with full step details
-detailed_failed_tests = []
+def parse_xml(xml_path_string):
+    xml_path = Path(xml_path_string)
+    tree = ET.parse(xml_path)
+    root = tree.getroot()
 
-for suite in root.iter("suite"):
-    for test in suite.findall("test"):
-        status = test.find("status")
-        if status is not None and status.attrib.get("status") == "FAIL":
-            test_name = test.attrib.get("name")
-            error_message = status.text.strip() if status.text else "No message"
-            steps = extract_keywords(test)
-            detailed_failed_tests.append({
-                "name": test_name,
-                "error_message": error_message,
-                "steps": steps
-            })
-
+    detailed_failed_tests = []
+    for suite in root.iter("suite"):
+        for test in suite.findall("test"):
+            status = test.find("status")
+            if status is not None and status.attrib.get("status") == "FAIL":
+                test_name = test.attrib.get("name")
+                error_message = status.text.strip() if status.text else "No message"
+                steps = extract_keywords(test)
+                detailed_failed_tests.append({
+                    "name": test_name,
+                    "error_message": error_message,
+                    "steps": steps
+                })
+    return detailed_failed_tests
 
 def pretty_print_fails(fails):
     BOLD = '\033[1m'
@@ -58,6 +59,8 @@ def pretty_print_fails(fails):
                 print('\t' + "status : " + step["status"])
 
 
-print(detailed_failed_tests)
+fail_logs = parse_xml("reports/output.xml")
 
-pretty_print_fails(detailed_failed_tests)
+print(fail_logs)
+
+pretty_print_fails(fail_logs)
