@@ -13,9 +13,8 @@ def TF_IDFembedding(data):
 def sentence_embedding(data):
     from sentence_transformers import SentenceTransformer
     model = SentenceTransformer("all-MiniLM-L6-v2")
-    X = model.encode(documents)
+    X = model.encode(data)
     return X
-
 
 if __name__ == "__main__":
     fail_logs = parse_xml("reports/output.xml")

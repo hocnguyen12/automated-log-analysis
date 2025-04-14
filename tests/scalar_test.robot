@@ -41,10 +41,10 @@ Test with BuiltIn Variables of Robot Framework
 *** Keywords ***
 Get Hello World As Text
     Log   this keyword just returns the string "Hello World"
-    [Return]    Hello World
+    RETURN    Hello World
 
 Count the Length and Log To Console
     [Arguments]    ${text}
     ${length}=    Get Length    ${text}
     Log To Console    \nThe Text "${text}" has ${length} characters...
-    [Return]    ${length}
+    RETURN    ${length}
