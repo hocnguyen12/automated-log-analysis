@@ -1,63 +1,1967 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.10.12 on linux)" generated="2025-04-14T09:56:34.948652" rpa="false" schemaversion="5">
-<suite id="s1" name="Test" source="/home/nguyenvh/Sync/3a/stage_stet/projet_dho/automated-log-analysis/tests/test.robot">
-<kw name="Connect to Server" owner="keywords" type="SETUP">
+<robot generator="Robot 7.2.2 (Python 3.10.12 on linux)" generated="2025-04-14T10:53:06.294018" rpa="false" schemaversion="5">
+<suite id="s1" name="Advanced Test &amp; Bdd Test &amp; Dictionaries &amp; List &amp; Scalar Test &amp; Simple Test2">
+<suite id="s1-s1" name="Advanced Test" source="/home/nguyenvh/Sync/3a/stage_stet/projet_dho/automated-log-analysis/tests/advanced_test.robot">
+<kw name="Connect to Server" owner="advanced_test_keywords" type="SETUP">
 <kw name="Connect" owner="CustomLibrary">
-<msg time="2025-04-14T09:56:35.002035" level="FAIL">TypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'</msg>
+<msg time="2025-04-14T10:53:06.356674" level="FAIL">TypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'</msg>
 <arg>fe80::aede:48ff:fe00:1122</arg>
-<status status="FAIL" start="2025-04-14T09:56:35.001915" elapsed="0.000269">TypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'</status>
+<status status="FAIL" start="2025-04-14T10:53:06.356515" elapsed="0.000337">TypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'</status>
 </kw>
-<status status="FAIL" start="2025-04-14T09:56:35.001617" elapsed="0.000657">TypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'</status>
+<status status="FAIL" start="2025-04-14T10:53:06.356128" elapsed="0.000828">TypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'</status>
 </kw>
-<test id="s1-t1" name="Access All Users With Admin Rights" line="11">
+<test id="s1-s1-t1" name="Access All Users With Admin Rights" line="11">
 <doc>Tests if all users can be accessed with Admin User.</doc>
-<status status="FAIL" start="2025-04-14T09:56:35.002326" elapsed="0.000274">Parent suite setup failed:
+<status status="FAIL" start="2025-04-14T10:53:06.357014" elapsed="0.000319">Parent suite setup failed:
 TypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'</status>
 </test>
-<test id="s1-t2" name="Create User With Admin Rights" line="16">
+<test id="s1-s1-t2" name="Create User With Admin Rights" line="16">
 <doc>Tests if a new users can be created with Admin User.</doc>
-<status status="FAIL" start="2025-04-14T09:56:35.002750" elapsed="0.000204">Parent suite setup failed:
+<status status="FAIL" start="2025-04-14T10:53:06.357497" elapsed="0.000228">Parent suite setup failed:
 TypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'</status>
 </test>
-<test id="s1-t3" name="Update User with Admin Rights" line="29">
+<test id="s1-s1-t3" name="Update User with Admin Rights" line="29">
 <doc>Changes Password of an existing user.</doc>
-<status status="FAIL" start="2025-04-14T09:56:35.003108" elapsed="0.000184">Parent suite setup failed:
+<status status="FAIL" start="2025-04-14T10:53:06.357849" elapsed="0.000207">Parent suite setup failed:
 TypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'</status>
 </test>
-<test id="s1-t4" name="Update Own Password With User Rights" line="36">
+<test id="s1-s1-t4" name="Update Own Password With User Rights" line="36">
 <doc>Changes Password of an existing user.</doc>
-<status status="FAIL" start="2025-04-14T09:56:35.003431" elapsed="0.000261">Parent suite setup failed:
+<status status="FAIL" start="2025-04-14T10:53:06.358175" elapsed="0.000210">Parent suite setup failed:
 TypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'</status>
 </test>
-<test id="s1-t5" name="Access Own Details With User Rights" line="43">
+<test id="s1-s1-t5" name="Access Own Details With User Rights" line="43">
 <doc>Tests if a user can access own details</doc>
-<status status="FAIL" start="2025-04-14T09:56:35.003837" elapsed="0.000196">Parent suite setup failed:
+<status status="FAIL" start="2025-04-14T10:53:06.358522" elapsed="0.000201">Parent suite setup failed:
 TypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'</status>
 </test>
-<test id="s1-t6" name="Access Other Users Details With User Rights" line="51">
+<test id="s1-s1-t6" name="Access Other Users Details With User Rights" line="51">
 <doc>Tests does fail, due to insufficiant rights...</doc>
-<status status="FAIL" start="2025-04-14T09:56:35.004147" elapsed="0.000266">Parent suite setup failed:
+<status status="FAIL" start="2025-04-14T10:53:06.358838" elapsed="0.000208">Parent suite setup failed:
 TypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'</status>
 </test>
 <kw name="Disconnect" owner="CustomLibrary" type="TEARDOWN">
-<status status="PASS" start="2025-04-14T09:56:35.004741" elapsed="0.000079"/>
+<status status="PASS" start="2025-04-14T10:53:06.359610" elapsed="0.000108"/>
 </kw>
 <doc>A test suite for valid login.
 
 Keywords are imported from the resource file</doc>
-<status status="FAIL" start="2025-04-14T09:56:34.949298" elapsed="0.055543">Suite setup failed:
+<status status="FAIL" start="2025-04-14T10:53:06.309199" elapsed="0.050550">Suite setup failed:
 TypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'</status>
+</suite>
+<suite id="s1-s2" name="Bdd Test" source="/home/nguyenvh/Sync/3a/stage_stet/projet_dho/automated-log-analysis/tests/bdd_test.robot">
+<test id="s1-s2-t1" name="Test Calculator With BDD Syntax" line="5">
+<kw name="Given The Calculator Is Running" owner="bdd_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.363995" level="INFO">Opening Calculator</msg>
+<arg>Opening Calculator</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.363889" elapsed="0.000156"/>
+</kw>
+<kw name="Start Calculator" owner="Calculator">
+<msg time="2025-04-14T10:53:06.364207" level="INFO">Calculator Started</msg>
+<status status="PASS" start="2025-04-14T10:53:06.364131" elapsed="0.000112"/>
+</kw>
+<status status="PASS" start="2025-04-14T10:53:06.363667" elapsed="0.000614"/>
+</kw>
+<kw name="When The User Enters The Term &quot;1 + 1&quot;" owner="bdd_keywords" source_name="The User Enters The Term &quot;${term}&quot;">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.364733" level="INFO">Entering 1 + 1</msg>
+<arg>Entering ${term}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.364618" elapsed="0.000150"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.364977" level="INFO">${term} = 1 + 1</msg>
+<arg>${term}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.364847" elapsed="0.000159"/>
+</kw>
+<status status="PASS" start="2025-04-14T10:53:06.364426" elapsed="0.000620"/>
+</kw>
+<kw name="And The User Triggers The Calculation" owner="bdd_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.365676" level="INFO">Triggering Calculation</msg>
+<arg>Triggering Calculation</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.365397" elapsed="0.000316"/>
+</kw>
+<kw name="Calculate Term" owner="Calculator">
+<msg time="2025-04-14T10:53:06.366735" level="INFO">Calculating Term: 1 + 1</msg>
+<msg time="2025-04-14T10:53:06.366821" level="INFO">${result} = 2</msg>
+<var>${result}</var>
+<arg>${term}</arg>
+<doc>Interpret term as a mathematical expression
+and return the result</doc>
+<status status="PASS" start="2025-04-14T10:53:06.365785" elapsed="0.001056"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.367221" level="INFO">${result} = 2</msg>
+<arg>${result}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.367000" elapsed="0.000264"/>
+</kw>
+<status status="PASS" start="2025-04-14T10:53:06.365171" elapsed="0.002157"/>
+</kw>
+<kw name="Then The Result Should Be &quot;2&quot;" owner="bdd_keywords" source_name="The Result Should Be &quot;${expected}&quot;">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.367961" level="INFO">Checking Result</msg>
+<arg>Checking Result</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.367874" elapsed="0.000126"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.368217" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.368080" elapsed="0.000189"/>
+</kw>
+<status status="PASS" start="2025-04-14T10:53:06.367580" elapsed="0.000733"/>
+</kw>
+<status status="PASS" start="2025-04-14T10:53:06.363326" elapsed="0.005092"/>
+</test>
+<status status="PASS" start="2025-04-14T10:53:06.360265" elapsed="0.008344"/>
+</suite>
+<suite id="s1-s3" name="Dictionaries" source="/home/nguyenvh/Sync/3a/stage_stet/projet_dho/automated-log-analysis/tests/dictionaries.robot">
+<test id="s1-s3-t1" name="Test that accesses Dictionaries" line="15">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>/nLogs Spiderman</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.375331" elapsed="0.000143"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${SPIDERMAN}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.375588" elapsed="0.000129"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Login: ${SPIDERMAN}[login]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.375799" elapsed="0.000123"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Name: ${SPIDERMAN}[name]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.375999" elapsed="0.000361"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Right: ${SPIDERMAN.right}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.376493" elapsed="0.000504"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.377263" level="INFO">${var} = active</msg>
+<var>${var}</var>
+<arg>active</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.377125" elapsed="0.000174"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Active: ${SPIDERMAN}[${var}]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.377438" elapsed="0.000182"/>
+</kw>
+<status status="PASS" start="2025-04-14T10:53:06.375016" elapsed="0.002721"/>
+</test>
+<test id="s1-s3-t2" name="Test with Dictionaries as Arguments" line="24">
+<kw name="Log A Person">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>The User "${person.login}" belongs to ${person.name} and the password is "${person.password}"</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.378511" elapsed="0.000988"/>
+</kw>
+<arg>${SPIDERMAN}</arg>
+<status status="PASS" start="2025-04-14T10:53:06.378229" elapsed="0.001335"/>
+</kw>
+<kw name="Log A Person">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>The User "${person.login}" belongs to ${person.name} and the password is "${person.password}"</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.379938" elapsed="0.001011"/>
+</kw>
+<arg>${IRONMAN}</arg>
+<status status="PASS" start="2025-04-14T10:53:06.379706" elapsed="0.001307"/>
+</kw>
+<status status="PASS" start="2025-04-14T10:53:06.377895" elapsed="0.003229"/>
+</test>
+<test id="s1-s3-t3" name="Dictionaries for named arguments" line="28">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n Multiple arguments</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.381537" elapsed="0.000157"/>
+</kw>
+<kw name="Log Personal Details">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${name} | ${login} | ${password} | ${right} | ${active}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.382159" elapsed="0.000264"/>
+</kw>
+<arg>Bruce Banner</arg>
+<arg>hulk</arg>
+<arg>HULK...SMASH!!!</arg>
+<arg>user</arg>
+<arg>${True}</arg>
+<status status="PASS" start="2025-04-14T10:53:06.381838" elapsed="0.000696"/>
+</kw>
+<kw name="Log Personal Details">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${name} | ${login} | ${password} | ${right} | ${active}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.383136" elapsed="0.000255"/>
+</kw>
+<arg>password=123456</arg>
+<arg>active=${True}</arg>
+<arg>login=ant</arg>
+<arg>name=Scott Lang</arg>
+<arg>right=guest</arg>
+<status status="PASS" start="2025-04-14T10:53:06.382724" elapsed="0.000715"/>
+</kw>
+<kw name="Log Personal Details">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${name} | ${login} | ${password} | ${right} | ${active}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.383815" elapsed="0.000207"/>
+</kw>
+<arg>&amp;{IRONMAN}</arg>
+<status status="PASS" start="2025-04-14T10:53:06.383552" elapsed="0.000520"/>
+</kw>
+<status status="PASS" start="2025-04-14T10:53:06.381265" elapsed="0.002909"/>
+</test>
+<test id="s1-s3-t4" name="Test with FOR loops and Dictionaries" line="37">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n---- Logs the keys: ----</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.384552" elapsed="0.000098"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>key: ${key}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.384964" elapsed="0.000135"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>dict[key]: ${IRONMAN}[${key}]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.385173" elapsed="0.000136"/>
+</kw>
+<var name="${key}">login</var>
+<status status="PASS" start="2025-04-14T10:53:06.384892" elapsed="0.000442"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>key: ${key}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.385611" elapsed="0.000241"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>dict[key]: ${IRONMAN}[${key}]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.385955" elapsed="0.000185"/>
+</kw>
+<var name="${key}">password</var>
+<status status="PASS" start="2025-04-14T10:53:06.385415" elapsed="0.000761"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>key: ${key}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.386336" elapsed="0.000143"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>dict[key]: ${IRONMAN}[${key}]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.386554" elapsed="0.000148"/>
+</kw>
+<var name="${key}">name</var>
+<status status="PASS" start="2025-04-14T10:53:06.386267" elapsed="0.000465"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>key: ${key}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.386857" elapsed="0.000113"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>dict[key]: ${IRONMAN}[${key}]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.387040" elapsed="0.000143"/>
+</kw>
+<var name="${key}">right</var>
+<status status="PASS" start="2025-04-14T10:53:06.386804" elapsed="0.000413"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>key: ${key}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.387343" elapsed="0.000126"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>dict[key]: ${IRONMAN}[${key}]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.387543" elapsed="0.000138"/>
+</kw>
+<var name="${key}">active</var>
+<status status="PASS" start="2025-04-14T10:53:06.387288" elapsed="0.000427"/>
+</iter>
+<var>${key}</var>
+<value>@{IRONMAN}</value>
+<status status="PASS" start="2025-04-14T10:53:06.384716" elapsed="0.003021"/>
+</for>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>---- Logs Keys &amp; Values ----</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.387865" elapsed="0.000141"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${key} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.388401" elapsed="0.000205"/>
+</kw>
+<var name="${key}">login</var>
+<var name="${value}">spider</var>
+<status status="PASS" start="2025-04-14T10:53:06.388305" elapsed="0.000337"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${key} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.388818" elapsed="0.000151"/>
+</kw>
+<var name="${key}">password</var>
+<var name="${value}">123spiderman321</var>
+<status status="PASS" start="2025-04-14T10:53:06.388745" elapsed="0.000254"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${key} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.389151" elapsed="0.000138"/>
+</kw>
+<var name="${key}">name</var>
+<var name="${value}">Peter Parker</var>
+<status status="PASS" start="2025-04-14T10:53:06.389086" elapsed="0.000231"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${key} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.389601" elapsed="0.000155"/>
+</kw>
+<var name="${key}">right</var>
+<var name="${value}">user</var>
+<status status="PASS" start="2025-04-14T10:53:06.389442" elapsed="0.000346"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${key} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.389929" elapsed="0.000132"/>
+</kw>
+<var name="${key}">active</var>
+<var name="${value}">True</var>
+<status status="PASS" start="2025-04-14T10:53:06.389872" elapsed="0.000217"/>
+</iter>
+<var>${key}</var>
+<var>${value}</var>
+<value>&amp;{SPIDERMAN}</value>
+<status status="PASS" start="2025-04-14T10:53:06.388102" elapsed="0.002011"/>
+</for>
+<status status="PASS" start="2025-04-14T10:53:06.384312" elapsed="0.005911"/>
+</test>
+<status status="PASS" start="2025-04-14T10:53:06.368959" elapsed="0.021479"/>
+</suite>
+<suite id="s1-s4" name="List" source="/home/nguyenvh/Sync/3a/stage_stet/projet_dho/automated-log-analysis/tests/list.robot">
+<test id="s1-s4-t1" name="List Variables unpacked" line="10">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Lists the Alphabeth</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.392145" elapsed="0.000100"/>
+</kw>
+<kw name="Log Many" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.392444" level="INFO">a</msg>
+<msg time="2025-04-14T10:53:06.392468" level="INFO">b</msg>
+<msg time="2025-04-14T10:53:06.392485" level="INFO">c</msg>
+<msg time="2025-04-14T10:53:06.392500" level="INFO">d</msg>
+<msg time="2025-04-14T10:53:06.392514" level="INFO">e</msg>
+<msg time="2025-04-14T10:53:06.392529" level="INFO">f</msg>
+<msg time="2025-04-14T10:53:06.392543" level="INFO">g</msg>
+<msg time="2025-04-14T10:53:06.392558" level="INFO">h</msg>
+<msg time="2025-04-14T10:53:06.392571" level="INFO">i</msg>
+<msg time="2025-04-14T10:53:06.392585" level="INFO">j</msg>
+<msg time="2025-04-14T10:53:06.392615" level="INFO">k</msg>
+<msg time="2025-04-14T10:53:06.392714" level="INFO">l</msg>
+<msg time="2025-04-14T10:53:06.392790" level="INFO">m</msg>
+<msg time="2025-04-14T10:53:06.392860" level="INFO">n</msg>
+<msg time="2025-04-14T10:53:06.392878" level="INFO">o</msg>
+<msg time="2025-04-14T10:53:06.392895" level="INFO">p</msg>
+<msg time="2025-04-14T10:53:06.392912" level="INFO">q</msg>
+<msg time="2025-04-14T10:53:06.392929" level="INFO">r</msg>
+<msg time="2025-04-14T10:53:06.392950" level="INFO">s</msg>
+<msg time="2025-04-14T10:53:06.392970" level="INFO">t</msg>
+<msg time="2025-04-14T10:53:06.392987" level="INFO">u</msg>
+<msg time="2025-04-14T10:53:06.393005" level="INFO">v</msg>
+<msg time="2025-04-14T10:53:06.393026" level="INFO">w</msg>
+<msg time="2025-04-14T10:53:06.393046" level="INFO">x</msg>
+<msg time="2025-04-14T10:53:06.393064" level="INFO">y</msg>
+<msg time="2025-04-14T10:53:06.393084" level="INFO">z</msg>
+<arg>@{LETTERS}</arg>
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.392345" elapsed="0.000778"/>
+</kw>
+<kw name="Log Many" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.393418" level="INFO">a</msg>
+<msg time="2025-04-14T10:53:06.393465" level="INFO">b</msg>
+<msg time="2025-04-14T10:53:06.393509" level="INFO">c</msg>
+<msg time="2025-04-14T10:53:06.393548" level="INFO">d</msg>
+<msg time="2025-04-14T10:53:06.393582" level="INFO">e</msg>
+<msg time="2025-04-14T10:53:06.393608" level="INFO">f</msg>
+<msg time="2025-04-14T10:53:06.393633" level="INFO">g</msg>
+<msg time="2025-04-14T10:53:06.393673" level="INFO">h</msg>
+<msg time="2025-04-14T10:53:06.393697" level="INFO">i</msg>
+<msg time="2025-04-14T10:53:06.393721" level="INFO">j</msg>
+<msg time="2025-04-14T10:53:06.393746" level="INFO">k</msg>
+<msg time="2025-04-14T10:53:06.393770" level="INFO">l</msg>
+<msg time="2025-04-14T10:53:06.393793" level="INFO">m</msg>
+<msg time="2025-04-14T10:53:06.393817" level="INFO">n</msg>
+<msg time="2025-04-14T10:53:06.393839" level="INFO">o</msg>
+<msg time="2025-04-14T10:53:06.393864" level="INFO">p</msg>
+<msg time="2025-04-14T10:53:06.393887" level="INFO">q</msg>
+<msg time="2025-04-14T10:53:06.393909" level="INFO">r</msg>
+<msg time="2025-04-14T10:53:06.393932" level="INFO">s</msg>
+<msg time="2025-04-14T10:53:06.393955" level="INFO">t</msg>
+<msg time="2025-04-14T10:53:06.393978" level="INFO">u</msg>
+<msg time="2025-04-14T10:53:06.394002" level="INFO">v</msg>
+<msg time="2025-04-14T10:53:06.394034" level="INFO">w</msg>
+<msg time="2025-04-14T10:53:06.394058" level="INFO">x</msg>
+<msg time="2025-04-14T10:53:06.394081" level="INFO">y</msg>
+<msg time="2025-04-14T10:53:06.394112" level="INFO">z</msg>
+<arg>a</arg>
+<arg>b</arg>
+<arg>c</arg>
+<arg>d</arg>
+<arg>e</arg>
+<arg>f</arg>
+<arg>g</arg>
+<arg>h</arg>
+<arg>i</arg>
+<arg>j</arg>
+<arg>k</arg>
+<arg>l</arg>
+<arg>m</arg>
+<arg>n</arg>
+<arg>o</arg>
+<arg>p</arg>
+<arg>q</arg>
+<arg>r</arg>
+<arg>s</arg>
+<arg>t</arg>
+<arg>u</arg>
+<arg>v</arg>
+<arg>w</arg>
+<arg>x</arg>
+<arg>y</arg>
+<arg>z</arg>
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.393294" elapsed="0.000848"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.394542" level="INFO">['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']</msg>
+<arg>${LETTERS}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.394334" elapsed="0.000262"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.394913" level="FAIL">Keyword 'BuiltIn.Log' expected 1 to 6 arguments, got 26.</msg>
+<arg>@{LETTERS}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="FAIL" start="2025-04-14T10:53:06.394742" elapsed="0.000213">Keyword 'BuiltIn.Log' expected 1 to 6 arguments, got 26.</status>
+</kw>
+<status status="FAIL" start="2025-04-14T10:53:06.391912" elapsed="0.003231">Keyword 'BuiltIn.Log' expected 1 to 6 arguments, got 26.</status>
+</test>
+<test id="s1-s4-t2" name="Test with Keywords and a list" line="17">
+<kw name="Print All Entries Of A List To Console">
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.396097" elapsed="0.000157"/>
+</kw>
+<var name="${element}">a</var>
+<status status="PASS" start="2025-04-14T10:53:06.396025" elapsed="0.000265"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.396466" elapsed="0.000159"/>
+</kw>
+<var name="${element}">b</var>
+<status status="PASS" start="2025-04-14T10:53:06.396368" elapsed="0.000292"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.396811" elapsed="0.000189"/>
+</kw>
+<var name="${element}">c</var>
+<status status="PASS" start="2025-04-14T10:53:06.396732" elapsed="0.000319"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.397216" elapsed="0.000158"/>
+</kw>
+<var name="${element}">d</var>
+<status status="PASS" start="2025-04-14T10:53:06.397140" elapsed="0.000276"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.397563" elapsed="0.000125"/>
+</kw>
+<var name="${element}">e</var>
+<status status="PASS" start="2025-04-14T10:53:06.397492" elapsed="0.000225"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.397838" elapsed="0.000255"/>
+</kw>
+<var name="${element}">f</var>
+<status status="PASS" start="2025-04-14T10:53:06.397779" elapsed="0.000382"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.398289" elapsed="0.000150"/>
+</kw>
+<var name="${element}">g</var>
+<status status="PASS" start="2025-04-14T10:53:06.398229" elapsed="0.000244"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.398591" elapsed="0.000106"/>
+</kw>
+<var name="${element}">h</var>
+<status status="PASS" start="2025-04-14T10:53:06.398537" elapsed="0.000186"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.398830" elapsed="0.000097"/>
+</kw>
+<var name="${element}">i</var>
+<status status="PASS" start="2025-04-14T10:53:06.398783" elapsed="0.000169"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.399052" elapsed="0.000093"/>
+</kw>
+<var name="${element}">j</var>
+<status status="PASS" start="2025-04-14T10:53:06.399005" elapsed="0.000165"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.399266" elapsed="0.000094"/>
+</kw>
+<var name="${element}">k</var>
+<status status="PASS" start="2025-04-14T10:53:06.399220" elapsed="0.000178"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.399601" elapsed="0.000099"/>
+</kw>
+<var name="${element}">l</var>
+<status status="PASS" start="2025-04-14T10:53:06.399451" elapsed="0.000273"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.399830" elapsed="0.000099"/>
+</kw>
+<var name="${element}">m</var>
+<status status="PASS" start="2025-04-14T10:53:06.399778" elapsed="0.000177"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.400050" elapsed="0.000094"/>
+</kw>
+<var name="${element}">n</var>
+<status status="PASS" start="2025-04-14T10:53:06.400005" elapsed="0.000162"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.400263" elapsed="0.000092"/>
+</kw>
+<var name="${element}">o</var>
+<status status="PASS" start="2025-04-14T10:53:06.400217" elapsed="0.000168"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.400489" elapsed="0.000094"/>
+</kw>
+<var name="${element}">p</var>
+<status status="PASS" start="2025-04-14T10:53:06.400439" elapsed="0.000169"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.400709" elapsed="0.000093"/>
+</kw>
+<var name="${element}">q</var>
+<status status="PASS" start="2025-04-14T10:53:06.400660" elapsed="0.000166"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.400922" elapsed="0.000093"/>
+</kw>
+<var name="${element}">r</var>
+<status status="PASS" start="2025-04-14T10:53:06.400877" elapsed="0.000161"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.401132" elapsed="0.000091"/>
+</kw>
+<var name="${element}">s</var>
+<status status="PASS" start="2025-04-14T10:53:06.401088" elapsed="0.000159"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.401342" elapsed="0.000102"/>
+</kw>
+<var name="${element}">t</var>
+<status status="PASS" start="2025-04-14T10:53:06.401297" elapsed="0.000171"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.401568" elapsed="0.000096"/>
+</kw>
+<var name="${element}">u</var>
+<status status="PASS" start="2025-04-14T10:53:06.401520" elapsed="0.000168"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.401784" elapsed="0.000090"/>
+</kw>
+<var name="${element}">v</var>
+<status status="PASS" start="2025-04-14T10:53:06.401740" elapsed="0.000158"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.401992" elapsed="0.000092"/>
+</kw>
+<var name="${element}">w</var>
+<status status="PASS" start="2025-04-14T10:53:06.401949" elapsed="0.000159"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.402214" elapsed="0.000094"/>
+</kw>
+<var name="${element}">x</var>
+<status status="PASS" start="2025-04-14T10:53:06.402159" elapsed="0.000173"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.402438" elapsed="0.000094"/>
+</kw>
+<var name="${element}">y</var>
+<status status="PASS" start="2025-04-14T10:53:06.402391" elapsed="0.000164"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.402651" elapsed="0.000096"/>
+</kw>
+<var name="${element}">z</var>
+<status status="PASS" start="2025-04-14T10:53:06.402606" elapsed="0.000164"/>
+</iter>
+<var>${element}</var>
+<value>@{list}</value>
+<status status="PASS" start="2025-04-14T10:53:06.395919" elapsed="0.006870"/>
+</for>
+<arg>${LETTERS}</arg>
+<status status="PASS" start="2025-04-14T10:53:06.395702" elapsed="0.007135"/>
+</kw>
+<status status="PASS" start="2025-04-14T10:53:06.395340" elapsed="0.007600"/>
+</test>
+<test id="s1-s4-t3" name="Test with a Keyword that accepts multiple arguments" line="20">
+<kw name="Print All Arguments To Console">
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.403736" elapsed="0.000189"/>
+</kw>
+<var name="${arg}">a</var>
+<status status="PASS" start="2025-04-14T10:53:06.403667" elapsed="0.000312"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.404162" elapsed="0.000166"/>
+</kw>
+<var name="${arg}">b</var>
+<status status="PASS" start="2025-04-14T10:53:06.404073" elapsed="0.000301"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.404538" elapsed="0.000264"/>
+</kw>
+<var name="${arg}">c</var>
+<status status="PASS" start="2025-04-14T10:53:06.404458" elapsed="0.000383"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.405010" elapsed="0.000175"/>
+</kw>
+<var name="${arg}">d</var>
+<status status="PASS" start="2025-04-14T10:53:06.404926" elapsed="0.000356"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.405470" elapsed="0.000161"/>
+</kw>
+<var name="${arg}">e</var>
+<status status="PASS" start="2025-04-14T10:53:06.405387" elapsed="0.000283"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.405831" elapsed="0.000157"/>
+</kw>
+<var name="${arg}">f</var>
+<status status="PASS" start="2025-04-14T10:53:06.405754" elapsed="0.000271"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.406165" elapsed="0.000117"/>
+</kw>
+<var name="${arg}">g</var>
+<status status="PASS" start="2025-04-14T10:53:06.406089" elapsed="0.000219"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.406422" elapsed="0.000105"/>
+</kw>
+<var name="${arg}">h</var>
+<status status="PASS" start="2025-04-14T10:53:06.406365" elapsed="0.000188"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.406655" elapsed="0.000099"/>
+</kw>
+<var name="${arg}">i</var>
+<status status="PASS" start="2025-04-14T10:53:06.406607" elapsed="0.000171"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.406882" elapsed="0.000105"/>
+</kw>
+<var name="${arg}">j</var>
+<status status="PASS" start="2025-04-14T10:53:06.406832" elapsed="0.000180"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.407116" elapsed="0.000098"/>
+</kw>
+<var name="${arg}">k</var>
+<status status="PASS" start="2025-04-14T10:53:06.407066" elapsed="0.000172"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.407342" elapsed="0.000097"/>
+</kw>
+<var name="${arg}">l</var>
+<status status="PASS" start="2025-04-14T10:53:06.407291" elapsed="0.000171"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.407557" elapsed="0.000090"/>
+</kw>
+<var name="${arg}">m</var>
+<status status="PASS" start="2025-04-14T10:53:06.407512" elapsed="0.000157"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.407762" elapsed="0.000089"/>
+</kw>
+<var name="${arg}">n</var>
+<status status="PASS" start="2025-04-14T10:53:06.407718" elapsed="0.000156"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.407972" elapsed="0.000090"/>
+</kw>
+<var name="${arg}">o</var>
+<status status="PASS" start="2025-04-14T10:53:06.407923" elapsed="0.000163"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.408180" elapsed="0.000090"/>
+</kw>
+<var name="${arg}">p</var>
+<status status="PASS" start="2025-04-14T10:53:06.408137" elapsed="0.000156"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.408394" elapsed="0.000090"/>
+</kw>
+<var name="${arg}">q</var>
+<status status="PASS" start="2025-04-14T10:53:06.408344" elapsed="0.000163"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.408600" elapsed="0.000092"/>
+</kw>
+<var name="${arg}">r</var>
+<status status="PASS" start="2025-04-14T10:53:06.408557" elapsed="0.000158"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.408806" elapsed="0.000089"/>
+</kw>
+<var name="${arg}">s</var>
+<status status="PASS" start="2025-04-14T10:53:06.408763" elapsed="0.000154"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.409015" elapsed="0.000092"/>
+</kw>
+<var name="${arg}">t</var>
+<status status="PASS" start="2025-04-14T10:53:06.408965" elapsed="0.000166"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.409267" elapsed="0.000204"/>
+</kw>
+<var name="${arg}">u</var>
+<status status="PASS" start="2025-04-14T10:53:06.409195" elapsed="0.000308"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.409620" elapsed="0.000136"/>
+</kw>
+<var name="${arg}">v</var>
+<status status="PASS" start="2025-04-14T10:53:06.409564" elapsed="0.000223"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.409917" elapsed="0.000123"/>
+</kw>
+<var name="${arg}">w</var>
+<status status="PASS" start="2025-04-14T10:53:06.409854" elapsed="0.000218"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.410200" elapsed="0.000151"/>
+</kw>
+<var name="${arg}">x</var>
+<status status="PASS" start="2025-04-14T10:53:06.410134" elapsed="0.000264"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.410533" elapsed="0.000121"/>
+</kw>
+<var name="${arg}">y</var>
+<status status="PASS" start="2025-04-14T10:53:06.410468" elapsed="0.000216"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.410810" elapsed="0.000111"/>
+</kw>
+<var name="${arg}">z</var>
+<status status="PASS" start="2025-04-14T10:53:06.410756" elapsed="0.000193"/>
+</iter>
+<var>${arg}</var>
+<value>@{all_args}</value>
+<status status="PASS" start="2025-04-14T10:53:06.403568" elapsed="0.007409"/>
+</for>
+<arg>@{LETTERS}</arg>
+<status status="PASS" start="2025-04-14T10:53:06.403357" elapsed="0.007679"/>
+</kw>
+<kw name="Print All Arguments To Console">
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.411656" elapsed="0.000386"/>
+</kw>
+<var name="${arg}">arg1</var>
+<status status="PASS" start="2025-04-14T10:53:06.411577" elapsed="0.000524"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.412303" elapsed="0.000186"/>
+</kw>
+<var name="${arg}">arg2</var>
+<status status="PASS" start="2025-04-14T10:53:06.412204" elapsed="0.000322"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.412667" elapsed="0.000131"/>
+</kw>
+<var name="${arg}">arg3</var>
+<status status="PASS" start="2025-04-14T10:53:06.412594" elapsed="0.000275"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.413007" elapsed="0.000171"/>
+</kw>
+<var name="${arg}">arg4</var>
+<status status="PASS" start="2025-04-14T10:53:06.412937" elapsed="0.000283"/>
+</iter>
+<var>${arg}</var>
+<value>@{all_args}</value>
+<status status="PASS" start="2025-04-14T10:53:06.411470" elapsed="0.001775"/>
+</for>
+<arg>arg1</arg>
+<arg>arg2</arg>
+<arg>arg3</arg>
+<arg>arg4</arg>
+<status status="PASS" start="2025-04-14T10:53:06.411223" elapsed="0.002082"/>
+</kw>
+<kw name="Print All Arguments To Console">
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.414068" elapsed="0.000211"/>
+</kw>
+<var name="${arg}">['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']</var>
+<status status="PASS" start="2025-04-14T10:53:06.413967" elapsed="0.000364"/>
+</iter>
+<var>${arg}</var>
+<value>@{all_args}</value>
+<status status="PASS" start="2025-04-14T10:53:06.413825" elapsed="0.000535"/>
+</for>
+<arg>${LETTERS}</arg>
+<status status="PASS" start="2025-04-14T10:53:06.413522" elapsed="0.000903"/>
+</kw>
+<status status="PASS" start="2025-04-14T10:53:06.403071" elapsed="0.011486"/>
+</test>
+<test id="s1-s4-t4" name="Test with some Collections keywords" line="25">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.415080" level="INFO">${list} = ['1', '2', '3']</msg>
+<var>${list}</var>
+<arg>1</arg>
+<arg>2</arg>
+<arg>3</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.414961" elapsed="0.000142"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${list}</arg>
+<arg>4</arg>
+<arg>5</arg>
+<arg>6</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.415200" elapsed="0.000110"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.415531" level="INFO">${list2} = ['7', '8', '9']</msg>
+<var>${list2}</var>
+<arg>7</arg>
+<arg>8</arg>
+<arg>9</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.415432" elapsed="0.000119"/>
+</kw>
+<kw name="Combine Lists" owner="Collections">
+<msg time="2025-04-14T10:53:06.415792" level="INFO">${new_list} = ['1', '2', '3', '4', '5', '6', '7', '8', '9']</msg>
+<var>${new_list}</var>
+<arg>${list}</arg>
+<arg>${list2}</arg>
+<doc>Combines the given ``lists`` together and returns the result.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.415648" elapsed="0.000163"/>
+</kw>
+<kw name="Reverse List" owner="Collections">
+<msg time="2025-04-14T10:53:06.416003" level="INFO">${reversed} = None</msg>
+<var>${reversed}</var>
+<arg>${new_list}</arg>
+<doc>Reverses the given list in place.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.415895" elapsed="0.000127"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${reversed}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.416104" elapsed="0.000108"/>
+</kw>
+<status status="PASS" start="2025-04-14T10:53:06.414709" elapsed="0.001596"/>
+</test>
+<test id="s1-s4-t5" name="Test to access list entries" line="33">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>index 18 &amp; 6 =&gt; ${LETTERS}[18] ${LETTERS}[6]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.416833" elapsed="0.000263"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>index 5 to 10 =&gt; ${LETTERS}[5:10]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.417204" elapsed="0.000177"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>index start to 5 =&gt; ${LETTERS}[:5]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.417485" elapsed="0.000148"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>index 20 to end =&gt; ${LETTERS}[20:]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.417721" elapsed="0.000146"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Last 5 to end =&gt; ${LETTERS}[-5:]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.417955" elapsed="0.000135"/>
+</kw>
+<status status="PASS" start="2025-04-14T10:53:06.416445" elapsed="0.001742"/>
+</test>
+<status status="FAIL" start="2025-04-14T10:53:06.390785" elapsed="0.027620"/>
+</suite>
+<suite id="s1-s5" name="Scalar Test" source="/home/nguyenvh/Sync/3a/stage_stet/projet_dho/automated-log-analysis/tests/scalar_test.robot">
+<test id="s1-s5-t1" name="Test Case With Variables" line="7">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.420073" level="INFO">This is a global variable!</msg>
+<arg>${GLOBAL_VAR1}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.419956" elapsed="0.000154"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.420338" level="INFO">String concadination Is simple with "This is a global variable!" and "Equal sign is optional but sometimes helpful."</msg>
+<arg>String concadination Is simple with "${GLOBAL_VAR1}" and "${ANOTHER_GLOBAL}"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.420209" elapsed="0.000171"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.420548" level="INFO">Escaping with backslash. Then you can use names like ${GLOBAL_VAR1}</msg>
+<arg>Escaping with backslash. Then you can use names like \${GLOBAL_VAR1}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.420471" elapsed="0.000107"/>
+</kw>
+<status status="PASS" start="2025-04-14T10:53:06.419726" elapsed="0.000944"/>
+</test>
+<test id="s1-s5-t2" name="Test with Numbers" line="12">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.421643" level="INFO">1 is a string and 1 is an integer...</msg>
+<arg>1 is a string and ${1} is an integer...</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.421334" elapsed="0.000354"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.421950" level="INFO">${result} = 2</msg>
+<var>${result}</var>
+<arg>1 + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.421804" elapsed="0.000167"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>${2}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.422074" elapsed="0.000665"/>
+</kw>
+<kw name="Should Not Be Equal" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.423040" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result}</arg>
+<arg>2</arg>
+<doc>Fails if the given objects are equal.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.422891" elapsed="0.000211"/>
+</kw>
+<status status="PASS" start="2025-04-14T10:53:06.420860" elapsed="0.002393"/>
+</test>
+<test id="s1-s5-t3" name="Test Case with Return Values" line="18">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.423788" level="INFO">Return Values can be assigned to Variables</msg>
+<arg>Return Values can be assigned to Variables</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.423709" elapsed="0.000113"/>
+</kw>
+<kw name="Get Hello World As Text">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.424207" level="INFO">this keyword just returns the string "Hello World"</msg>
+<arg>this keyword just returns the string "Hello World"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.424141" elapsed="0.000096"/>
+</kw>
+<return>
+<value>Hello World</value>
+<status status="PASS" start="2025-04-14T10:53:06.424316" elapsed="0.000035"/>
+</return>
+<msg time="2025-04-14T10:53:06.424441" level="INFO">${the_returned_text} = Hello World</msg>
+<var>${the_returned_text}</var>
+<status status="PASS" start="2025-04-14T10:53:06.423969" elapsed="0.000490"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${the_returned_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.424552" elapsed="0.000116"/>
+</kw>
+<status status="PASS" start="2025-04-14T10:53:06.423451" elapsed="0.001309"/>
+</test>
+<test id="s1-s5-t4" name="Test With Arguments and Return Values" line="23">
+<kw name="Count the Length and Log To Console">
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.425411" level="INFO">Length is 32.</msg>
+<msg time="2025-04-14T10:53:06.425468" level="INFO">${length} = 32</msg>
+<var>${length}</var>
+<arg>${text}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.425316" elapsed="0.000169"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nThe Text "${text}" has ${length} characters...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.425556" elapsed="0.000142"/>
+</kw>
+<return>
+<value>${length}</value>
+<status status="PASS" start="2025-04-14T10:53:06.425733" elapsed="0.000026"/>
+</return>
+<msg time="2025-04-14T10:53:06.425847" level="INFO">${len} = 32</msg>
+<var>${len}</var>
+<arg>Hello Robot Framework Community!</arg>
+<status status="PASS" start="2025-04-14T10:53:06.425131" elapsed="0.000735"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${len}</arg>
+<arg>${32}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.426156" elapsed="0.000467"/>
+</kw>
+<status status="PASS" start="2025-04-14T10:53:06.424881" elapsed="0.001957"/>
+</test>
+<test id="s1-s5-t5" name="Test With Environment Variables" line="27">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.427474" level="INFO">Environment Variables are prefixed with % sign.</msg>
+<arg>Environment Variables are prefixed with % sign.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.427359" elapsed="0.000161"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>The /%{USER} is: %{USER}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.427671" elapsed="0.000232"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>The /%{HOME} is: %{HOME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.428045" elapsed="0.000170"/>
+</kw>
+<status status="PASS" start="2025-04-14T10:53:06.427054" elapsed="0.001302"/>
+</test>
+<test id="s1-s5-t6" name="Test with BuiltIn Variables of Robot Framework" line="32">
+<kw name="Log Variables" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.429390" level="INFO">${/} = /</msg>
+<msg time="2025-04-14T10:53:06.429445" level="INFO">${:} = :</msg>
+<msg time="2025-04-14T10:53:06.429466" level="INFO">${\n} = 
+</msg>
+<msg time="2025-04-14T10:53:06.429486" level="INFO">${ANOTHER_GLOBAL} = Equal sign is optional but sometimes helpful.</msg>
+<msg time="2025-04-14T10:53:06.429504" level="INFO">${DEBUG_FILE} = NONE</msg>
+<msg time="2025-04-14T10:53:06.429522" level="INFO">${EXECDIR} = /home/nguyenvh/Sync/3a/stage_stet/projet_dho/automated-log-analysis</msg>
+<msg time="2025-04-14T10:53:06.429543" level="INFO">${False} = False</msg>
+<msg time="2025-04-14T10:53:06.429560" level="INFO">${GLOBAL_VAR1} = This is a global variable!</msg>
+<msg time="2025-04-14T10:53:06.429577" level="INFO">${LOG_FILE} = /home/nguyenvh/Sync/3a/stage_stet/projet_dho/automated-log-analysis/reports/log.html</msg>
+<msg time="2025-04-14T10:53:06.429596" level="INFO">${LOG_LEVEL} = INFO</msg>
+<msg time="2025-04-14T10:53:06.429617" level="INFO">${None} = None</msg>
+<msg time="2025-04-14T10:53:06.429635" level="INFO">${null} = None</msg>
+<msg time="2025-04-14T10:53:06.429671" level="INFO">&amp;{OPTIONS} = { include=[] | exclude=[] | skip=[] | skip_on_failure=[] | console_width=78 }</msg>
+<msg time="2025-04-14T10:53:06.429701" level="INFO">${OUTPUT_DIR} = /home/nguyenvh/Sync/3a/stage_stet/projet_dho/automated-log-analysis/reports</msg>
+<msg time="2025-04-14T10:53:06.429726" level="INFO">${OUTPUT_FILE} = /home/nguyenvh/Sync/3a/stage_stet/projet_dho/automated-log-analysis/reports/output.xml</msg>
+<msg time="2025-04-14T10:53:06.429750" level="INFO">${PREV_TEST_MESSAGE} = </msg>
+<msg time="2025-04-14T10:53:06.429774" level="INFO">${PREV_TEST_NAME} = Test With Environment Variables</msg>
+<msg time="2025-04-14T10:53:06.429796" level="INFO">${PREV_TEST_STATUS} = PASS</msg>
+<msg time="2025-04-14T10:53:06.429819" level="INFO">${REPORT_FILE} = /home/nguyenvh/Sync/3a/stage_stet/projet_dho/automated-log-analysis/reports/report.html</msg>
+<msg time="2025-04-14T10:53:06.429841" level="INFO">${SPACE} =  </msg>
+<msg time="2025-04-14T10:53:06.429863" level="INFO">${SUITE_DOCUMENTATION} = </msg>
+<msg time="2025-04-14T10:53:06.429892" level="INFO">&amp;{SUITE_METADATA} = { }</msg>
+<msg time="2025-04-14T10:53:06.429916" level="INFO">${SUITE_NAME} = Advanced Test &amp; Bdd Test &amp; Dictionaries &amp; List &amp; Scalar Test &amp; Simple Test2.Scalar Test</msg>
+<msg time="2025-04-14T10:53:06.429940" level="INFO">${SUITE_SOURCE} = /home/nguyenvh/Sync/3a/stage_stet/projet_dho/automated-log-analysis/tests/scalar_test.robot</msg>
+<msg time="2025-04-14T10:53:06.429963" level="INFO">${TEMPDIR} = /tmp</msg>
+<msg time="2025-04-14T10:53:06.429984" level="INFO">${TEST_DOCUMENTATION} = </msg>
+<msg time="2025-04-14T10:53:06.430005" level="INFO">${TEST_NAME} = Test with BuiltIn Variables of Robot Framework</msg>
+<msg time="2025-04-14T10:53:06.430034" level="INFO">@{TEST_TAGS} = [ ]</msg>
+<msg time="2025-04-14T10:53:06.430058" level="INFO">${True} = True</msg>
+<doc>Logs all variables in the current scope with given log level.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.428833" elapsed="0.001275"/>
+</kw>
+<kw name="Get Variables" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.430718" level="INFO">${all_vars} = {'${/}': '/', '${:}': ':', '${\\n}': '\n', '${ANOTHER_GLOBAL}': 'Equal sign is optional but sometimes helpful.', '${DEBUG_FILE}': 'NONE', '${EXECDIR}': '/home/nguyenvh/Sync/3a/stage_stet/projet_dho/au...</msg>
+<var>${all_vars}</var>
+<doc>Returns a dictionary containing all variables in the current scope.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.430291" elapsed="0.000457"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.431281" level="INFO">${value} = /</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.431106" elapsed="0.000196"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.431380" elapsed="0.000147"/>
+</kw>
+<var name="${var}">${/}</var>
+<status status="PASS" start="2025-04-14T10:53:06.431021" elapsed="0.000534"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.431833" level="INFO">${value} = :</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.431683" elapsed="0.000170"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.431920" elapsed="0.000137"/>
+</kw>
+<var name="${var}">${:}</var>
+<status status="PASS" start="2025-04-14T10:53:06.431623" elapsed="0.000460"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.432415" level="INFO">${value} = 
+</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.432254" elapsed="0.000181"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.432500" elapsed="0.000133"/>
+</kw>
+<var name="${var}">${\n}</var>
+<status status="PASS" start="2025-04-14T10:53:06.432193" elapsed="0.000466"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.432913" level="INFO">${value} = Equal sign is optional but sometimes helpful.</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.432779" elapsed="0.000153"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.432993" elapsed="0.000130"/>
+</kw>
+<var name="${var}">${ANOTHER_GLOBAL}</var>
+<status status="PASS" start="2025-04-14T10:53:06.432723" elapsed="0.000426"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.433403" level="INFO">${value} = NONE</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.433265" elapsed="0.000156"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.433483" elapsed="0.000124"/>
+</kw>
+<var name="${var}">${DEBUG_FILE}</var>
+<status status="PASS" start="2025-04-14T10:53:06.433212" elapsed="0.000422"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.433869" level="INFO">${value} = /home/nguyenvh/Sync/3a/stage_stet/projet_dho/automated-log-analysis</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.433744" elapsed="0.000143"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.433947" elapsed="0.000122"/>
+</kw>
+<var name="${var}">${EXECDIR}</var>
+<status status="PASS" start="2025-04-14T10:53:06.433693" elapsed="0.000409"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.434335" level="INFO">${value} = False</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.434216" elapsed="0.000136"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.434417" elapsed="0.000118"/>
+</kw>
+<var name="${var}">${False}</var>
+<status status="PASS" start="2025-04-14T10:53:06.434161" elapsed="0.000397"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.434787" level="INFO">${value} = This is a global variable!</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.434663" elapsed="0.000145"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.434866" elapsed="0.000115"/>
+</kw>
+<var name="${var}">${GLOBAL_VAR1}</var>
+<status status="PASS" start="2025-04-14T10:53:06.434616" elapsed="0.000389"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.435235" level="INFO">${value} = /home/nguyenvh/Sync/3a/stage_stet/projet_dho/automated-log-analysis/reports/log.html</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.435109" elapsed="0.000144"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.435312" elapsed="0.000128"/>
+</kw>
+<var name="${var}">${LOG_FILE}</var>
+<status status="PASS" start="2025-04-14T10:53:06.435061" elapsed="0.000403"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.435701" level="INFO">${value} = INFO</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.435574" elapsed="0.000145"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.435776" elapsed="0.000118"/>
+</kw>
+<var name="${var}">${LOG_LEVEL}</var>
+<status status="PASS" start="2025-04-14T10:53:06.435524" elapsed="0.000394"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.436149" level="INFO">${value} = None</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.436029" elapsed="0.000138"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.436224" elapsed="0.000116"/>
+</kw>
+<var name="${var}">${None}</var>
+<status status="PASS" start="2025-04-14T10:53:06.435979" elapsed="0.000385"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.436608" level="INFO">${value} = None</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.436481" elapsed="0.000148"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.436694" elapsed="0.000126"/>
+</kw>
+<var name="${var}">${null}</var>
+<status status="PASS" start="2025-04-14T10:53:06.436425" elapsed="0.000423"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.437160" level="INFO">${value} = /home/nguyenvh/Sync/3a/stage_stet/projet_dho/automated-log-analysis/reports</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.436965" elapsed="0.000229"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.437308" elapsed="0.000226"/>
+</kw>
+<var name="${var}">${OUTPUT_DIR}</var>
+<status status="PASS" start="2025-04-14T10:53:06.436911" elapsed="0.000668"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.437913" level="INFO">${value} = /home/nguyenvh/Sync/3a/stage_stet/projet_dho/automated-log-analysis/reports/output.xml</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.437759" elapsed="0.000174"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.438017" elapsed="0.000186"/>
+</kw>
+<var name="${var}">${OUTPUT_FILE}</var>
+<status status="PASS" start="2025-04-14T10:53:06.437678" elapsed="0.000621"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.438721" level="INFO">${value} = </msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.438506" elapsed="0.000245"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.438852" elapsed="0.000199"/>
+</kw>
+<var name="${var}">${PREV_TEST_MESSAGE}</var>
+<status status="PASS" start="2025-04-14T10:53:06.438418" elapsed="0.000671"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.439443" level="INFO">${value} = Test With Environment Variables</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.439260" elapsed="0.000204"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.439541" elapsed="0.000139"/>
+</kw>
+<var name="${var}">${PREV_TEST_NAME}</var>
+<status status="PASS" start="2025-04-14T10:53:06.439183" elapsed="0.000523"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.440078" level="INFO">${value} = PASS</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.439830" elapsed="0.000268"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.440165" elapsed="0.000136"/>
+</kw>
+<var name="${var}">${PREV_TEST_STATUS}</var>
+<status status="PASS" start="2025-04-14T10:53:06.439773" elapsed="0.000561"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.440619" level="INFO">${value} = /home/nguyenvh/Sync/3a/stage_stet/projet_dho/automated-log-analysis/reports/report.html</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.440469" elapsed="0.000174"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.440729" elapsed="0.000144"/>
+</kw>
+<var name="${var}">${REPORT_FILE}</var>
+<status status="PASS" start="2025-04-14T10:53:06.440407" elapsed="0.000494"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.441154" level="INFO">${value} =  </msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.441025" elapsed="0.000148"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.441235" elapsed="0.000122"/>
+</kw>
+<var name="${var}">${SPACE}</var>
+<status status="PASS" start="2025-04-14T10:53:06.440969" elapsed="0.000421"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.441637" level="INFO">${value} = </msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.441505" elapsed="0.000149"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.441713" elapsed="0.000126"/>
+</kw>
+<var name="${var}">${SUITE_DOCUMENTATION}</var>
+<status status="PASS" start="2025-04-14T10:53:06.441451" elapsed="0.000413"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.442107" level="INFO">${value} = Advanced Test &amp; Bdd Test &amp; Dictionaries &amp; List &amp; Scalar Test &amp; Simple Test2.Scalar Test</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.441977" elapsed="0.000149"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.442189" elapsed="0.000130"/>
+</kw>
+<var name="${var}">${SUITE_NAME}</var>
+<status status="PASS" start="2025-04-14T10:53:06.441924" elapsed="0.000419"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.442590" level="INFO">${value} = /home/nguyenvh/Sync/3a/stage_stet/projet_dho/automated-log-analysis/tests/scalar_test.robot</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.442459" elapsed="0.000153"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.442810" elapsed="0.000231"/>
+</kw>
+<var name="${var}">${SUITE_SOURCE}</var>
+<status status="PASS" start="2025-04-14T10:53:06.442408" elapsed="0.000678"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.443514" level="INFO">${value} = /tmp</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.443283" elapsed="0.000257"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.443627" elapsed="0.000171"/>
+</kw>
+<var name="${var}">${TEMPDIR}</var>
+<status status="PASS" start="2025-04-14T10:53:06.443187" elapsed="0.000643"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.444241" level="INFO">${value} = </msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.444040" elapsed="0.000259"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.444462" elapsed="0.000223"/>
+</kw>
+<var name="${var}">${TEST_DOCUMENTATION}</var>
+<status status="PASS" start="2025-04-14T10:53:06.443932" elapsed="0.000792"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.445067" level="INFO">${value} = Test with BuiltIn Variables of Robot Framework</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.444882" elapsed="0.000209"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.445169" elapsed="0.000174"/>
+</kw>
+<var name="${var}">${TEST_NAME}</var>
+<status status="PASS" start="2025-04-14T10:53:06.444810" elapsed="0.000579"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.445718" level="INFO">${value} = True</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.445554" elapsed="0.000187"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.445816" elapsed="0.000209"/>
+</kw>
+<var name="${var}">${True}</var>
+<status status="PASS" start="2025-04-14T10:53:06.445478" elapsed="0.000582"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.446424" level="INFO">${value} = {'include': [], 'exclude': [], 'skip': [], 'skip_on_failure': [], 'console_width': 78}</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.446208" elapsed="0.000241"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.446536" elapsed="0.000179"/>
+</kw>
+<var name="${var}">&amp;{OPTIONS}</var>
+<status status="PASS" start="2025-04-14T10:53:06.446138" elapsed="0.000609"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.447083" level="INFO">${value} = {}</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.446894" elapsed="0.000212"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.447183" elapsed="0.000170"/>
+</kw>
+<var name="${var}">&amp;{SUITE_METADATA}</var>
+<status status="PASS" start="2025-04-14T10:53:06.446827" elapsed="0.000557"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.447654" level="INFO">${value} = []</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.447516" elapsed="0.000156"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.447735" elapsed="0.000135"/>
+</kw>
+<var name="${var}">@{TEST_TAGS}</var>
+<status status="PASS" start="2025-04-14T10:53:06.447462" elapsed="0.000435"/>
+</iter>
+<var>${var}</var>
+<value>@{all_vars}</value>
+<status status="PASS" start="2025-04-14T10:53:06.430840" elapsed="0.017079"/>
+</for>
+<status status="PASS" start="2025-04-14T10:53:06.428553" elapsed="0.019484"/>
+</test>
+<status status="PASS" start="2025-04-14T10:53:06.418759" elapsed="0.029508"/>
+</suite>
+<suite id="s1-s6" name="Simple Test2" source="/home/nguyenvh/Sync/3a/stage_stet/projet_dho/automated-log-analysis/tests/simple_test2.robot">
+<test id="s1-s6-t1" name="Simple Test Case" line="10">
+<kw name="Should Be Title Case" owner="String">
+<arg>Robot Framework</arg>
+<doc>Fails if given ``string`` is not title.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.457081" elapsed="0.000238"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>Text123</arg>
+<arg>Text123</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.457478" elapsed="0.000126"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>5 + 5 == 10</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.457713" elapsed="0.000117"/>
+</kw>
+<doc>Shows some assertion keywords</doc>
+<status status="PASS" start="2025-04-14T10:53:06.456591" elapsed="0.001340"/>
+</test>
+<test id="s1-s6-t2" name="Test with Keywords" line="16">
+<kw name="Store Text" owner="simple_example_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.458627" level="INFO">The text "Hail Our Robot" will be store in the variable ${stored_text}.</msg>
+<arg>The text "${text}" will be store in the variable \${stored_text}.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.458513" elapsed="0.000153"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.459235" level="INFO">${stored_text} = Hail Our Robot</msg>
+<arg>${stored_text}</arg>
+<arg>${text}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.458747" elapsed="0.000572"/>
+</kw>
+<arg>Hail Our Robot</arg>
+<status status="PASS" start="2025-04-14T10:53:06.458300" elapsed="0.001065"/>
+</kw>
+<kw name="Add Text To Stored Text" owner="simple_example_keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.460037" level="INFO">${full_text} = Hail Our Robot Overlords!</msg>
+<var>${full_text}</var>
+<arg>${stored_text} ${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.459857" elapsed="0.000207"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.460281" level="INFO">The resulting text is: Hail Our Robot Overlords!</msg>
+<arg>The resulting text is: ${full_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.460153" elapsed="0.000184"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.460699" level="INFO">${stored_text} = Hail Our Robot Overlords!</msg>
+<arg>${stored_text}</arg>
+<arg>${full_text}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.460491" elapsed="0.000247"/>
+</kw>
+<arg>Overlords!</arg>
+<status status="PASS" start="2025-04-14T10:53:06.459642" elapsed="0.001153"/>
+</kw>
+<kw name="Verify Stored Text Length" owner="simple_example_keywords">
+<kw name="Length Should Be" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.461279" level="INFO">Length is 25.</msg>
+<arg>${stored_text}</arg>
+<arg>${expected_length}</arg>
+<doc>Verifies that the length of the given item is correct.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.461140" elapsed="0.000178"/>
+</kw>
+<arg>25</arg>
+<status status="PASS" start="2025-04-14T10:53:06.460937" elapsed="0.000429"/>
+</kw>
+<kw name="Get Stored Text" owner="simple_example_keywords">
+<return>
+<value>${stored_text}</value>
+<status status="PASS" start="2025-04-14T10:53:06.461631" elapsed="0.000032"/>
+</return>
+<msg time="2025-04-14T10:53:06.461759" level="INFO">${current_text} = Hail Our Robot Overlords!</msg>
+<var>${current_text}</var>
+<status status="PASS" start="2025-04-14T10:53:06.461497" elapsed="0.000280"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${current_text}</arg>
+<arg>Hail Our Robot Overlords!</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.461869" elapsed="0.000128"/>
+</kw>
+<status status="PASS" start="2025-04-14T10:53:06.458061" elapsed="0.004033"/>
+</test>
+<test id="s1-s6-t3" name="Test for the year 2022" line="23">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-04-14T10:53:06.462593" level="INFO">${date} = 2025-04-14 10:53:06.462533</msg>
+<var>${date}</var>
+<arg>result_format=datetime</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.462445" elapsed="0.000167"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.462797" level="INFO">2025-04-14 10:53:06.462533</msg>
+<arg>${date}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.462706" elapsed="0.000120"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.463233" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<msg time="2025-04-14T10:53:06.463307" level="FAIL">2025 != 2022</msg>
+<arg>${date.year}</arg>
+<arg>2022</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="FAIL" start="2025-04-14T10:53:06.462908" elapsed="0.000454">2025 != 2022</status>
+</kw>
+<doc>Tests if it is still 2022...</doc>
+<status status="FAIL" start="2025-04-14T10:53:06.462219" elapsed="0.001327">2025 != 2022</status>
+</test>
+<test id="s1-s6-t4" name="Test Case that fails" line="29">
+<kw name="Check Correct Greeting" owner="simple_example_keywords">
+<if>
+<branch type="IF" condition="$greeting == 'Hail Our Robot Overlords!'">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nYou may proceed...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-14T10:53:06.478394" elapsed="0.000191"/>
+</kw>
+<status status="PASS" start="2025-04-14T10:53:06.464803" elapsed="0.013831"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fail" owner="BuiltIn">
+<arg>Sorry. But that was the wrong answer... Bye Bye...</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-04-14T10:53:06.478752" elapsed="0.000017"/>
+</kw>
+<status status="NOT RUN" start="2025-04-14T10:53:06.478661" elapsed="0.000134"/>
+</branch>
+<status status="PASS" start="2025-04-14T10:53:06.464784" elapsed="0.014027"/>
+</if>
+<arg>Hail Our Robot Overlords!</arg>
+<status status="PASS" start="2025-04-14T10:53:06.464614" elapsed="0.014241"/>
+</kw>
+<kw name="Check Correct Greeting" owner="simple_example_keywords">
+<if>
+<branch type="IF" condition="$greeting == 'Hail Our Robot Overlords!'">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nYou may proceed...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-04-14T10:53:06.479521" elapsed="0.000017"/>
+</kw>
+<status status="NOT RUN" start="2025-04-14T10:53:06.479250" elapsed="0.000318"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fail" owner="BuiltIn">
+<msg time="2025-04-14T10:53:06.479941" level="FAIL">Sorry. But that was the wrong answer... Bye Bye...</msg>
+<arg>Sorry. But that was the wrong answer... Bye Bye...</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="FAIL" start="2025-04-14T10:53:06.479652" elapsed="0.000357">Sorry. But that was the wrong answer... Bye Bye...</status>
+</kw>
+<status status="FAIL" start="2025-04-14T10:53:06.479586" elapsed="0.000475">Sorry. But that was the wrong answer... Bye Bye...</status>
+</branch>
+<status status="FAIL" start="2025-04-14T10:53:06.479234" elapsed="0.000847">Sorry. But that was the wrong answer... Bye Bye...</status>
+</if>
+<arg>Hello World!</arg>
+<status status="FAIL" start="2025-04-14T10:53:06.479052" elapsed="0.001096">Sorry. But that was the wrong answer... Bye Bye...</status>
+</kw>
+<status status="FAIL" start="2025-04-14T10:53:06.463719" elapsed="0.016590">Sorry. But that was the wrong answer... Bye Bye...</status>
+</test>
+<doc>This .robot file is a suite
+
+Keywords are imported from the resource file</doc>
+<status status="FAIL" start="2025-04-14T10:53:06.448649" elapsed="0.031923"/>
+</suite>
+<status status="FAIL" start="2025-04-14T10:53:06.294845" elapsed="0.186264"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="6" skip="0">All Tests</stat>
+<stat pass="17" fail="9" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Test" id="s1" pass="0" fail="6" skip="0">Test</stat>
+<stat name="Advanced Test &amp; Bdd Test &amp; Dictionaries &amp; List &amp; Scalar Test &amp; Simple Test2" id="s1" pass="17" fail="9" skip="0">Advanced Test &amp; Bdd Test &amp; Dictionaries &amp; List &amp; Scalar Test &amp; Simple Test2</stat>
+<stat name="Advanced Test" id="s1-s1" pass="0" fail="6" skip="0">Advanced Test &amp; Bdd Test &amp; Dictionaries &amp; List &amp; Scalar Test &amp; Simple Test2.Advanced Test</stat>
+<stat name="Bdd Test" id="s1-s2" pass="1" fail="0" skip="0">Advanced Test &amp; Bdd Test &amp; Dictionaries &amp; List &amp; Scalar Test &amp; Simple Test2.Bdd Test</stat>
+<stat name="Dictionaries" id="s1-s3" pass="4" fail="0" skip="0">Advanced Test &amp; Bdd Test &amp; Dictionaries &amp; List &amp; Scalar Test &amp; Simple Test2.Dictionaries</stat>
+<stat name="List" id="s1-s4" pass="4" fail="1" skip="0">Advanced Test &amp; Bdd Test &amp; Dictionaries &amp; List &amp; Scalar Test &amp; Simple Test2.List</stat>
+<stat name="Scalar Test" id="s1-s5" pass="6" fail="0" skip="0">Advanced Test &amp; Bdd Test &amp; Dictionaries &amp; List &amp; Scalar Test &amp; Simple Test2.Scalar Test</stat>
+<stat name="Simple Test2" id="s1-s6" pass="2" fail="2" skip="0">Advanced Test &amp; Bdd Test &amp; Dictionaries &amp; List &amp; Scalar Test &amp; Simple Test2.Simple Test2</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-04-14T10:53:06.291362" level="WARN">Error in file '/home/nguyenvh/Sync/3a/stage_stet/projet_dho/automated-log-analysis/tests/scalar_test.robot' on line 44: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2025-04-14T10:53:06.291516" level="WARN">Error in file '/home/nguyenvh/Sync/3a/stage_stet/projet_dho/automated-log-analysis/tests/scalar_test.robot' on line 50: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
 </errors>
 </robot>
