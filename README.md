@@ -79,17 +79,13 @@ keywords.resource contains examples of variables, Return-Values, IF/ELSE and FOR
 - Step 1: Parse Tests with Full Context
 
 Extract:
-
-    Test name
-
-    List of keyword calls (and arguments)
-
-    Failure message
-
-    Failure point (which keyword failed)
+    - Test name
+    - List of keyword calls (and arguments)
+    - Failure message
+    - Failure point (which keyword failed)
 
 Example data structure:
-
+```
 {
   "test_name": "Create User",
   "keywords": [
@@ -99,40 +95,30 @@ Example data structure:
   ],
   "error": "TypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'"
 }
+```
 
 I can help you write a parser that does this.
 - Step 2: Represent the Test for Machine Learning
 
 You have several options:
-
-    TF-IDF or sentence embeddings on the error + keyword steps as text
-
-    Structured embedding where each keyword is a token or vector
-
-    Use tree-based models or graph-based models (for keyword call hierarchy)
+    - TF-IDF or sentence embeddings on the error + keyword steps as text
+    - Structured embedding where each keyword is a token or vector
+    - Use tree-based models or graph-based models (for keyword call hierarchy)
 
 - Step 3: Cluster Similar Failures
 
 Using:
-
-    Clustering algorithms like KMeans, DBSCAN, etc.
-
-    Or build a nearest neighbor search to find similar failures when a new one happens
+    - Clustering algorithms like KMeans, DBSCAN, etc.
+    - Or build a nearest neighbor search to find similar failures when a new one happens
 
 - Step 4: Suggest Fixes
 
 Approaches:
-
-    Associate each cluster with a correction suggestion
-
-    Use past human-written fixes to train a retrieval model or fine-tune a language model
-
-    Rules or heuristics (e.g., if TestObject.__init__ is failing → "Check API key in constructor")
+    - Associate each cluster with a correction suggestion
+    - Use past human-written fixes to train a retrieval model or fine-tune a language model
+    - Rules or heuristics (e.g., if TestObject.__init__ is failing → "Check API key in constructor")
 
 - Tools & Libraries You’ll Want
-
-    xml.etree.ElementTree or lxml (to parse XML)
-
-    scikit-learn or sentence-transformers (for clustering and embeddings)
-
-    Optionally: faiss or annoy (for similarity search)
+    - xml.etree.ElementTree or lxml (to parse XML)
+    - scikit-learn or sentence-transformers (for clustering and embeddings)
+    - Optionally: faiss or annoy (for similarity search)
