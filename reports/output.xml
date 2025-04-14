@@ -1,56 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.10.12 on linux)" generated="2025-04-13T21:23:07.930166" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.10.12 on linux)" generated="2025-04-14T09:56:34.948652" rpa="false" schemaversion="5">
 <suite id="s1" name="Test" source="/home/nguyenvh/Sync/3a/stage_stet/projet_dho/automated-log-analysis/tests/test.robot">
 <kw name="Connect to Server" owner="keywords" type="SETUP">
-<kw name="Connect">
-<msg time="2025-04-13T21:23:07.949240" level="FAIL">No keyword with name 'Connect' found.</msg>
+<kw name="Connect" owner="CustomLibrary">
+<msg time="2025-04-14T09:56:35.002035" level="FAIL">TypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'</msg>
 <arg>fe80::aede:48ff:fe00:1122</arg>
-<status status="FAIL" start="2025-04-13T21:23:07.949213" elapsed="0.000067">No keyword with name 'Connect' found.</status>
+<status status="FAIL" start="2025-04-14T09:56:35.001915" elapsed="0.000269">TypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'</status>
 </kw>
-<status status="FAIL" start="2025-04-13T21:23:07.948376" elapsed="0.000991">No keyword with name 'Connect' found.</status>
+<status status="FAIL" start="2025-04-14T09:56:35.001617" elapsed="0.000657">TypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'</status>
 </kw>
 <test id="s1-t1" name="Access All Users With Admin Rights" line="11">
 <doc>Tests if all users can be accessed with Admin User.</doc>
-<status status="FAIL" start="2025-04-13T21:23:07.949418" elapsed="0.000283">Parent suite setup failed:
-No keyword with name 'Connect' found.</status>
+<status status="FAIL" start="2025-04-14T09:56:35.002326" elapsed="0.000274">Parent suite setup failed:
+TypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'</status>
 </test>
 <test id="s1-t2" name="Create User With Admin Rights" line="16">
 <doc>Tests if a new users can be created with Admin User.</doc>
-<status status="FAIL" start="2025-04-13T21:23:07.949838" elapsed="0.000219">Parent suite setup failed:
-No keyword with name 'Connect' found.</status>
+<status status="FAIL" start="2025-04-14T09:56:35.002750" elapsed="0.000204">Parent suite setup failed:
+TypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'</status>
 </test>
 <test id="s1-t3" name="Update User with Admin Rights" line="29">
 <doc>Changes Password of an existing user.</doc>
-<status status="FAIL" start="2025-04-13T21:23:07.950177" elapsed="0.000190">Parent suite setup failed:
-No keyword with name 'Connect' found.</status>
+<status status="FAIL" start="2025-04-14T09:56:35.003108" elapsed="0.000184">Parent suite setup failed:
+TypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'</status>
 </test>
 <test id="s1-t4" name="Update Own Password With User Rights" line="36">
 <doc>Changes Password of an existing user.</doc>
-<status status="FAIL" start="2025-04-13T21:23:07.950478" elapsed="0.000191">Parent suite setup failed:
-No keyword with name 'Connect' found.</status>
+<status status="FAIL" start="2025-04-14T09:56:35.003431" elapsed="0.000261">Parent suite setup failed:
+TypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'</status>
 </test>
 <test id="s1-t5" name="Access Own Details With User Rights" line="43">
 <doc>Tests if a user can access own details</doc>
-<status status="FAIL" start="2025-04-13T21:23:07.950775" elapsed="0.000176">Parent suite setup failed:
-No keyword with name 'Connect' found.</status>
+<status status="FAIL" start="2025-04-14T09:56:35.003837" elapsed="0.000196">Parent suite setup failed:
+TypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'</status>
 </test>
 <test id="s1-t6" name="Access Other Users Details With User Rights" line="51">
 <doc>Tests does fail, due to insufficiant rights...</doc>
-<status status="FAIL" start="2025-04-13T21:23:07.951054" elapsed="0.000235">Parent suite setup failed:
-No keyword with name 'Connect' found.</status>
+<status status="FAIL" start="2025-04-14T09:56:35.004147" elapsed="0.000266">Parent suite setup failed:
+TypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'</status>
 </test>
-<kw name="Disconnect" type="TEARDOWN">
-<msg time="2025-04-13T21:23:07.952039" level="FAIL">No keyword with name 'Disconnect' found.</msg>
-<status status="FAIL" start="2025-04-13T21:23:07.952017" elapsed="0.000047">No keyword with name 'Disconnect' found.</status>
+<kw name="Disconnect" owner="CustomLibrary" type="TEARDOWN">
+<status status="PASS" start="2025-04-14T09:56:35.004741" elapsed="0.000079"/>
 </kw>
 <doc>A test suite for valid login.
 
 Keywords are imported from the resource file</doc>
-<status status="FAIL" start="2025-04-13T21:23:07.930834" elapsed="0.021268">Suite setup failed:
-No keyword with name 'Connect' found.
-
-Also suite teardown failed:
-No keyword with name 'Disconnect' found.</status>
+<status status="FAIL" start="2025-04-14T09:56:34.949298" elapsed="0.055543">Suite setup failed:
+TypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'</status>
 </suite>
 <statistics>
 <total>
@@ -63,20 +59,5 @@ No keyword with name 'Disconnect' found.</status>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-04-13T21:23:07.946266" level="WARN">Error in file '/home/nguyenvh/Sync/3a/stage_stet/projet_dho/automated-log-analysis/resources/keywords/keywords.resource' on line 66: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
-<msg time="2025-04-13T21:23:07.947647" level="ERROR">Error in file '/home/nguyenvh/Sync/3a/stage_stet/projet_dho/automated-log-analysis/resources/keywords/keywords.resource' on line 4: Importing library '/home/nguyenvh/Sync/3a/stage_stet/projet_dho/automated-log-analysis/resources/pythonLibraries/CustomLibrary.py' failed: ModuleNotFoundError: No module named 'TestObject'
-Traceback (most recent call last):
-  File "/home/nguyenvh/Sync/3a/stage_stet/projet_dho/automated-log-analysis/resources/pythonLibraries/CustomLibrary.py", line 1, in &lt;module&gt;
-    from TestObject import TestObject
-PYTHONPATH:
-  /home/nguyenvh/Sync/3a/stage_stet/projet_dho/automated-log-analysis/resources/pythonLibraries
-  /home/nguyenvh/.local/bin
-  /usr/lib/python310.zip
-  /usr/lib/python3.10
-  /usr/lib/python3.10/lib-dynload
-  /home/nguyenvh/.local/lib/python3.10/site-packages
-  /usr/local/lib/python3.10/dist-packages
-  /usr/lib/python3/dist-packages
-  /usr/lib/python3.10/dist-packages</msg>
 </errors>
 </robot>

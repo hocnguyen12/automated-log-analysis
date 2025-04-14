@@ -1,4 +1,4 @@
-from TestObject import TestObject
+from testobject import TestObject
 from robot.api.logger import info, debug, trace, console
 
 class CustomLibrary:

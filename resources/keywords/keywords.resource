@@ -63,4 +63,4 @@ Get User Details By Name
     END
     ${user_details}=    Get User Details    ${user_id}
     Log    ${user_details}
-    [Return]    ${user_details}
+    RETURN   ${user_details}
