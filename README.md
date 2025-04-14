@@ -1,5 +1,9 @@
 # automated-log-analysis
 
+## TODO
+- [ ] Check that `stringify` adds all the information into the vector/string
+- [ ] Check if I can add more info about keywords steps in the parsed xml
+
 Tests taken from [robot framework official documentation](https://robotframework.org/?tab=0&example=Advanced%20Example#getting-started)
 ## Variables
 
