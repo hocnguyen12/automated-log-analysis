@@ -99,6 +99,7 @@ Example data structure:
 
 I can help you write a parser that does this.
 #### Step 2: Represent the Test for Machine Learning
+**FEATURE ENGINEERING**
 
 You have several options:
 - TF-IDF or sentence embeddings on the error + keyword steps as text

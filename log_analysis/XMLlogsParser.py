@@ -4,7 +4,7 @@ from pathlib import Path
 
 def extract_keywords(keyword_element, depth=0):
     '''
-    Recursive function to extract keyword calls that FAIL and their arguments
+    Recursive function to extract keyword calls and their arguments
     '''
     steps = []
     for kw in keyword_element.findall("kw"):
@@ -58,9 +58,16 @@ def pretty_print_fails(fails):
                 print(f"\targs : {step['args']}")
                 print('\t' + "status : " + step["status"])
 
+def stringify_test_case(test):
+    steps_str = " ".join(
+        f"{step['name']} {' '.join(step['args'])}" for step in test["steps"]
+    )
+    return f"{test['name']} {test['error_message']} {steps_str}"
 
-fail_logs = parse_xml("reports/output.xml")
 
-print(fail_logs)
+if __name__ == "__main__":
+    fail_logs = parse_xml("reports/output.xml")
 
-pretty_print_fails(fail_logs)
+    print(fail_logs)
+
+    pretty_print_fails(fail_logs)
