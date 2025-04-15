@@ -13,6 +13,7 @@ Fast and simple baseline	      |  KMeans
 '''
 from XMLlogsParser import extract_keywords, parse_xml, pretty_print_fails, stringify_test_case
 from FeatureEmbedding import TF_IDFembedding, sentence_embedding
+import pandas as pd
 
 def KMeansClustering(X, n_clusters):
     from sklearn.cluster import KMeans
@@ -51,7 +52,11 @@ def AggloClustering(X):
 
 def SpectrClustering(X):
     from sklearn.cluster import SpectralClustering
-    spectral = SpectralClustering(n_clusters=3, affinity='nearest_neighbors')
+
+    n_samples = X.shape[0]
+    n_neighbors = min(n_samples - 1, 5)  # or any smaller number
+
+    spectral = SpectralClustering(n_clusters=3, affinity='nearest_neighbors', n_neighbors=n_neighbors)
     labels = spectral.fit_predict(X)
     return labels
 
@@ -63,7 +68,10 @@ def AffinityPropClustering(X):
 
 if __name__ == "__main__":
     fail_logs = parse_xml("reports/output.xml")
+    pretty_print_fails(fail_logs)
+
     documents = [stringify_test_case(t) for t in fail_logs]
+    print(documents)
 
     # Embedding
     X = TF_IDFembedding(documents)
@@ -82,3 +90,25 @@ if __name__ == "__main__":
 
     # Spectral
     spec_labels = SpectrClustering(X)
+
+    labels = kmeans_labels
+    # Visualising Results
+    results = pd.DataFrame({
+        "name": [t["name"] for t in fail_logs],
+        "error": [t["error_message"] for t in fail_logs],
+        "cluster": labels
+    })
+
+    df = pd.DataFrame({
+        "name": [t["name"] for t in fail_logs],
+        "error": [t["error_message"] for t in fail_logs],
+        "kmeans": kmeans_labels,
+        "dbscan": db_labels,
+        "hdbscan": hdb_labels,
+        "agglo": agg_labels,
+        "spectral": spec_labels
+    })
+
+    #print(results.sort_values(by="cluster"))
+
+    print(df)
