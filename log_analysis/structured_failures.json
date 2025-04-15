@@ -1,0 +1,156 @@
+[
+  {
+    "test_name": "Access All Users With Admin Rights",
+    "error": "Parent suite setup failed:\nTypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'",
+    "steps": []
+  },
+  {
+    "test_name": "Create User With Admin Rights",
+    "error": "Parent suite setup failed:\nTypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'",
+    "steps": []
+  },
+  {
+    "test_name": "Update User with Admin Rights",
+    "error": "Parent suite setup failed:\nTypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'",
+    "steps": []
+  },
+  {
+    "test_name": "Update Own Password With User Rights",
+    "error": "Parent suite setup failed:\nTypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'",
+    "steps": []
+  },
+  {
+    "test_name": "Access Own Details With User Rights",
+    "error": "Parent suite setup failed:\nTypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'",
+    "steps": []
+  },
+  {
+    "test_name": "Access Other Users Details With User Rights",
+    "error": "Parent suite setup failed:\nTypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'",
+    "steps": []
+  },
+  {
+    "test_name": "List Variables unpacked",
+    "error": "Keyword 'BuiltIn.Log' expected 1 to 6 arguments, got 26.",
+    "steps": [
+      {
+        "keyword": "Log To Console",
+        "args": [
+          "Lists the Alphabeth"
+        ],
+        "status": "PASS",
+        "depth": 0
+      },
+      {
+        "keyword": "Log Many",
+        "args": [
+          "@{LETTERS}"
+        ],
+        "status": "PASS",
+        "depth": 0
+      },
+      {
+        "keyword": "Log Many",
+        "args": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g",
+          "h",
+          "i",
+          "j",
+          "k",
+          "l",
+          "m",
+          "n",
+          "o",
+          "p",
+          "q",
+          "r",
+          "s",
+          "t",
+          "u",
+          "v",
+          "w",
+          "x",
+          "y",
+          "z"
+        ],
+        "status": "PASS",
+        "depth": 0
+      },
+      {
+        "keyword": "Log",
+        "args": [
+          "${LETTERS}"
+        ],
+        "status": "PASS",
+        "depth": 0
+      },
+      {
+        "keyword": "Log",
+        "args": [
+          "@{LETTERS}"
+        ],
+        "status": "FAIL",
+        "depth": 0
+      }
+    ]
+  },
+  {
+    "test_name": "Test for the year 2022",
+    "error": "2025 != 2022",
+    "steps": [
+      {
+        "keyword": "Get Current Date",
+        "args": [
+          "result_format=datetime"
+        ],
+        "status": "PASS",
+        "depth": 0
+      },
+      {
+        "keyword": "Log",
+        "args": [
+          "${date}"
+        ],
+        "status": "PASS",
+        "depth": 0
+      },
+      {
+        "keyword": "Should Be Equal As Strings",
+        "args": [
+          "${date.year}",
+          "2022"
+        ],
+        "status": "FAIL",
+        "depth": 0
+      }
+    ]
+  },
+  {
+    "test_name": "Test Case that fails",
+    "error": "Sorry. But that was the wrong answer... Bye Bye...",
+    "steps": [
+      {
+        "keyword": "Check Correct Greeting",
+        "args": [
+          "Hail Our Robot Overlords!"
+        ],
+        "status": "PASS",
+        "depth": 0
+      },
+      {
+        "keyword": "Check Correct Greeting",
+        "args": [
+          "Hello World!"
+        ],
+        "status": "FAIL",
+        "depth": 0
+      }
+    ]
+  }
+]

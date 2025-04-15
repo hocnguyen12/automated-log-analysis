@@ -66,7 +66,6 @@ def stringify_test_case(test):
         parts.append(f"Step: {keyword}, Args: {args}")
     return ". ".join(parts)
 
-
 if __name__ == "__main__":
     fail_logs = parse_xml("reports/output.xml")
 
