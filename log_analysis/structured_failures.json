@@ -2,36 +2,43 @@
   {
     "test_name": "Access All Users With Admin Rights",
     "error": "Parent suite setup failed:\nTypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'",
+    "doc": "Tests if all users can be accessed with Admin User.",
     "steps": []
   },
   {
     "test_name": "Create User With Admin Rights",
     "error": "Parent suite setup failed:\nTypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'",
+    "doc": "Tests if a new users can be created with Admin User.",
     "steps": []
   },
   {
     "test_name": "Update User with Admin Rights",
     "error": "Parent suite setup failed:\nTypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'",
+    "doc": "Changes Password of an existing user.",
     "steps": []
   },
   {
     "test_name": "Update Own Password With User Rights",
     "error": "Parent suite setup failed:\nTypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'",
+    "doc": "Changes Password of an existing user.",
     "steps": []
   },
   {
     "test_name": "Access Own Details With User Rights",
     "error": "Parent suite setup failed:\nTypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'",
+    "doc": "Tests if a user can access own details",
     "steps": []
   },
   {
     "test_name": "Access Other Users Details With User Rights",
     "error": "Parent suite setup failed:\nTypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'",
+    "doc": "Tests does fail, due to insufficiant rights...",
     "steps": []
   },
   {
     "test_name": "List Variables unpacked",
     "error": "Keyword 'BuiltIn.Log' expected 1 to 6 arguments, got 26.",
+    "doc": "",
     "steps": [
       {
         "keyword": "Log To Console",
@@ -39,7 +46,9 @@
           "Lists the Alphabeth"
         ],
         "status": "PASS",
-        "depth": 0
+        "depth": 0,
+        "doc": "Logs the given message to the console.",
+        "message": []
       },
       {
         "keyword": "Log Many",
@@ -47,7 +56,36 @@
           "@{LETTERS}"
         ],
         "status": "PASS",
-        "depth": 0
+        "depth": 0,
+        "doc": "Logs the given messages as separate entries using the INFO level.",
+        "message": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g",
+          "h",
+          "i",
+          "j",
+          "k",
+          "l",
+          "m",
+          "n",
+          "o",
+          "p",
+          "q",
+          "r",
+          "s",
+          "t",
+          "u",
+          "v",
+          "w",
+          "x",
+          "y",
+          "z"
+        ]
       },
       {
         "keyword": "Log Many",
@@ -80,7 +118,36 @@
           "z"
         ],
         "status": "PASS",
-        "depth": 0
+        "depth": 0,
+        "doc": "Logs the given messages as separate entries using the INFO level.",
+        "message": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g",
+          "h",
+          "i",
+          "j",
+          "k",
+          "l",
+          "m",
+          "n",
+          "o",
+          "p",
+          "q",
+          "r",
+          "s",
+          "t",
+          "u",
+          "v",
+          "w",
+          "x",
+          "y",
+          "z"
+        ]
       },
       {
         "keyword": "Log",
@@ -88,7 +155,11 @@
           "${LETTERS}"
         ],
         "status": "PASS",
-        "depth": 0
+        "depth": 0,
+        "doc": "Logs the given message with the given level.",
+        "message": [
+          "['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']"
+        ]
       },
       {
         "keyword": "Log",
@@ -96,13 +167,16 @@
           "@{LETTERS}"
         ],
         "status": "FAIL",
-        "depth": 0
+        "depth": 0,
+        "doc": "Logs the given message with the given level.",
+        "message": []
       }
     ]
   },
   {
     "test_name": "Test for the year 2022",
     "error": "2025 != 2022",
+    "doc": "Tests if it is still 2022...",
     "steps": [
       {
         "keyword": "Get Current Date",
@@ -110,7 +184,11 @@
           "result_format=datetime"
         ],
         "status": "PASS",
-        "depth": 0
+        "depth": 0,
+        "doc": "Returns current local or UTC time with an optional increment.",
+        "message": [
+          "${date} = 2025-04-15 11:54:56.518332"
+        ]
       },
       {
         "keyword": "Log",
@@ -118,7 +196,11 @@
           "${date}"
         ],
         "status": "PASS",
-        "depth": 0
+        "depth": 0,
+        "doc": "Logs the given message with the given level.",
+        "message": [
+          "2025-04-15 11:54:56.518332"
+        ]
       },
       {
         "keyword": "Should Be Equal As Strings",
@@ -127,13 +209,18 @@
           "2022"
         ],
         "status": "FAIL",
-        "depth": 0
+        "depth": 0,
+        "doc": "Fails if objects are unequal after converting them to strings.",
+        "message": [
+          "Argument types are:\n<class 'int'>\n<class 'str'>"
+        ]
       }
     ]
   },
   {
     "test_name": "Test Case that fails",
     "error": "Sorry. But that was the wrong answer... Bye Bye...",
+    "doc": "",
     "steps": [
       {
         "keyword": "Check Correct Greeting",
@@ -141,7 +228,9 @@
           "Hail Our Robot Overlords!"
         ],
         "status": "PASS",
-        "depth": 0
+        "depth": 0,
+        "doc": "",
+        "message": []
       },
       {
         "keyword": "Check Correct Greeting",
@@ -149,7 +238,9 @@
           "Hello World!"
         ],
         "status": "FAIL",
-        "depth": 0
+        "depth": 0,
+        "doc": "",
+        "message": []
       }
     ]
   }

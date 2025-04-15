@@ -1,26 +1,6 @@
 from xml.etree import ElementTree as ET
 from pathlib import Path
 
-def extract_keywords_old(keyword_element, depth=0):
-    '''
-    Recursive function to extract keyword calls and their arguments
-    '''
-    steps = []
-    for kw in keyword_element.findall("kw"):
-        name = kw.attrib.get("name", "UNKNOWN")
-        args = [arg.text for arg in kw.findall("arg") if arg.text]
-        status = kw.find("status").attrib.get("status") if kw.find("status") is not None else "UNKNOWN"
-        step = {
-            "name": name,
-            "args": args,
-            "status": status,
-            "depth": depth
-        }
-        steps.append(step)
-        # Recursively extract nested keywords
-        steps.extend(extract_keywords(kw, depth + 1))
-    return steps
-
 def extract_keywords(keyword_element, depth=0):
     '''
     Recursive function to extract keyword calls and their arguments, status, doc, and messages.
@@ -38,7 +18,7 @@ def extract_keywords(keyword_element, depth=0):
         msgs = [
             msg.text.strip()
             for msg in kw.findall("msg")
-            if msg is not None and msg.text and msg.attrib.get("level") == "INFO"
+            if msg is not None and msg.text and (msg.attrib.get("level") == "INFO" or msg.attrib.get("level") == "WARN")
         ]
 
         step = {
@@ -140,3 +120,6 @@ if __name__ == "__main__":
     print(fail_logs)
 
     pretty_print_fails(fail_logs)
+
+    documents = [stringify_test_case(t) for t in fail_logs]
+    print(f"\nstringified test cases :\n {documents}")

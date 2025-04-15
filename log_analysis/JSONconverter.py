@@ -38,12 +38,11 @@ def convert_to_json_structured(test):
                 "status": step["status"],
                 "depth": step["depth"],
                 "doc": step["doc"],
-                "messages": step["messages"]
+                "message": step["message"]
             }
             for step in test["steps"]
         ]
     }
-
 
 if __name__ == "__main__":
     fail_logs = parse_xml("reports/output.xml")
