@@ -30,12 +30,15 @@ def convert_to_json_structured(test):
     return {
         "test_name": test["name"],
         "error": test["error_message"],
+        "doc": test["doc"],
         "steps": [
             {
                 "keyword": step["name"],
                 "args": step["args"],
                 "status": step["status"],
-                "depth": step["depth"]
+                "depth": step["depth"],
+                "doc": step["doc"],
+                "messages": step["messages"]
             }
             for step in test["steps"]
         ]
