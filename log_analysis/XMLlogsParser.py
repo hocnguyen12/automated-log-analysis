@@ -59,10 +59,12 @@ def pretty_print_fails(fails):
                 print('\t' + "status : " + step["status"])
 
 def stringify_test_case(test):
-    steps_str = " ".join(
-        f"{step['name']} {' '.join(step['args'])}" for step in test["steps"]
-    )
-    return f"{test['name']} {test['error_message']} {steps_str}"
+    parts = [f"Test name: {test['name']}", f"Error: {test['error_message']}"]
+    for step in test["steps"]:
+        keyword = step["name"]
+        args = ", ".join(step["args"])
+        parts.append(f"Step: {keyword}, Args: {args}")
+    return ". ".join(parts)
 
 
 if __name__ == "__main__":

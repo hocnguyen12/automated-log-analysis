@@ -127,3 +127,61 @@ Approaches:
 - xml.etree.ElementTree or lxml (to parse XML)
 - scikit-learn or sentence-transformers (for clustering and embeddings)
 - Optionally: faiss or annoy (for similarity search)
+
+## Questions
+
+Thank you it works now, I have more questions :
+
+def extract_keywords(keyword_element, depth=0):
+    '''
+    Recursive function to extract keyword calls and their arguments
+    '''
+    steps = []
+    for kw in keyword_element.findall("kw"):
+        name = kw.attrib.get("name", "UNKNOWN")
+        args = [arg.text for arg in kw.findall("arg") if arg.text]
+        status = kw.find("status").attrib.get("status") if kw.find("status") is not None else "UNKNOWN"
+        step = {
+            "name": name,
+            "args": args,
+            "status": status,
+            "depth": depth
+        }
+        steps.append(step)
+        # Recursively extract nested keywords
+        steps.extend(extract_keywords(kw, depth + 1))
+    return steps
+
+def parse_xml(xml_path_string):
+    xml_path = Path(xml_path_string)
+    tree = ET.parse(xml_path)
+    root = tree.getroot()
+
+    detailed_failed_tests = []
+    for suite in root.iter("suite"):
+        for test in suite.findall("test"):
+            status = test.find("status")
+            if status is not None and status.attrib.get("status") == "FAIL":
+                test_name = test.attrib.get("name")
+                error_message = status.text.strip() if status.text else "No message"
+                steps = extract_keywords(test)
+                detailed_failed_tests.append({
+                    "name": test_name,
+                    "error_message": error_message,
+                    "steps": steps
+                })
+    return detailed_failed_tests
+
+def stringify_test_case(test):
+    steps_str = " ".join(
+        f"{step['name']} {' '.join(step['args'])}" for step in test["steps"]
+    )
+    return f"{test['name']} {test['error_message']} {steps_str}"
+
+These are the function that parse the xml file for fails ant that stringify the content for the clustering algorithms
+
+but the stringify functions juste puts in a single string the name of the test, the name of the keywords called, the arguments etc. and the ouput looks like this : 
+
+'Test for the year 2022 2025 != 2022 Get Current Date result_format=datetime Log ${date} Should Be Equal As Strings ${date.year} 2022', 'Test Case that fails Sorry. But that was the wrong answer... Bye Bye... Check Correct Greeting Hail Our Robot Overlords! Check Correct Greeting Hello World!'
+
+but how does the algorithms know which part of the string is the name, a keyword name or an argument ? especially with sentence transformers, should I add in the string keywords like "test name : ", "keyword name : ", "args : " etc ? to make it more comprehensible ?
