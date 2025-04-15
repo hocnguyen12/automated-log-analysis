@@ -22,6 +22,8 @@ from XMLlogsParser import parse_xml
 
 def convert_to_json_structured(test):
     '''
+    input : output.xml content parsed with XMLlogsParser.parse_xml
+
     You can then feed this into a:
         - Transformer-based encoder
         - Token classifier
@@ -49,7 +51,7 @@ if __name__ == "__main__":
 
     json_data = [convert_to_json_structured(t) for t in fail_logs]
 
-    print(json_data)
+    print(f"JSON data : {json_data}")
 
     with open("log_analysis/structured_failures.json", "w", encoding="utf-8") as f:
         json.dump(json_data, f, indent=2, ensure_ascii=False)

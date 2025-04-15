@@ -130,6 +130,7 @@ Approaches:
 
 ## Questions
 
+- ADDING LABELS TO EMBEDDED STRINGS
 Thank you it works now, I have more questions :
 
 def extract_keywords(keyword_element, depth=0):
@@ -185,3 +186,11 @@ but the stringify functions juste puts in a single string the name of the test, 
 'Test for the year 2022 2025 != 2022 Get Current Date result_format=datetime Log ${date} Should Be Equal As Strings ${date.year} 2022', 'Test Case that fails Sorry. But that was the wrong answer... Bye Bye... Check Correct Greeting Hail Our Robot Overlords! Check Correct Greeting Hello World!'
 
 but how does the algorithms know which part of the string is the name, a keyword name or an argument ? especially with sentence transformers, should I add in the string keywords like "test name : ", "keyword name : ", "args : " etc ? to make it more comprehensible ?
+
+
+- WHAT ARE THE STEPS FOR ADVENCED/DEEP ML AND SUGGESTIONS OF FIX
+I need a little it more clarity about the means I can use to get to the log analyzer that I aim for.
+
+So i have parsed the output.xml file, embedded it into vectors and used clustering algorithms to find similarities and patterns in the logs of failed tests. 
+
+How can I use more advanced techniques to leverage the parsed xml or json content to provide insight about the fails but MOST IMPORTANTLY : provide a smart correction to the fail, which means to smartly give suggestions to modify code or perform other actions to understand where the fail comes from and suggest it. Maybe to do so, providing the entire codebase to the model is needed. If the robot framework tests are testing an interface, maybe also providing the website's DOM would help the model to suggest smart changes to fix the bug

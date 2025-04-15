@@ -60,32 +60,6 @@ def parse_xml(xml_path_string):
     return detailed_failed_tests
 
 def pretty_print_fails(fails):
-    '''
-    {'name': 'Test for the year 2022', 
-    'error_message': '2025 != 2022', 
-    'doc': 'Tests if it is still 2022...', 
-    'steps': [
-        {'name': 'Get Current Date', 
-        'args': ['result_format=datetime'], 
-        'status': 'PASS', 
-        'depth': 0, 
-        'doc': 'Returns current local or UTC time with an optional increment.', 
-        'messages': ['${date} = 2025-04-14 10:57:37.508516']}, 
-
-        {'name': 'Log', 
-        'args': ['${date}'], 
-        'status': 'PASS', 
-        'depth': 0, 
-        'doc': 'Logs the given message with the given level.', 
-        'messages': ['2025-04-14 10:57:37.508516']}, 
-
-        {'name': 'Should Be Equal As Strings', 
-        'args': ['${date.year}', '2022'], 
-        'status': 'FAIL', 
-        'depth': 0, 
-        'doc': 'Fails if objects are unequal after converting them to strings.', 
-    'messages': ["Argument types are:\n<class 'int'>\n<class 'str'>", '2025 != 2022']}]}
-    '''
     BOLD = '\033[1m'
     END = '\033[0m'
     for fail in fails:
@@ -107,19 +81,32 @@ def pretty_print_fails(fails):
                 print("\n")
 
 def stringify_test_case(test):
-    parts = [f"Test name: {test['name']}", f"Error: {test['error_message']}"]
+    parts = [f"Test name: {test['name']}", f"Error: {test['error_message']}", f"Doc: {test['doc']}"]
     for step in test["steps"]:
         keyword = step["name"]
         args = ", ".join(step["args"])
+        status = ", ".join(step["status"])
         parts.append(f"Step: {keyword}, Args: {args}")
+
+        doc = step["doc"]
+        message = step["message"]
+        if doc:
+            parts.append(f"Doc : {doc}")
+        if message:
+            parts.append(f"Message : {message}")
     return ". ".join(parts)
+
+
 
 if __name__ == "__main__":
     fail_logs = parse_xml("reports/output.xml")
 
-    print(fail_logs)
+    print(f"Parsed xml : \n{fail_logs}")
 
+    print("\nParsed xml pretty print : \n")
     pretty_print_fails(fail_logs)
 
     documents = [stringify_test_case(t) for t in fail_logs]
-    print(f"\nstringified test cases :\n {documents}")
+    print("\nStringified test cases : ")
+    for doc in documents:
+        print(f"String : {doc}\n")
