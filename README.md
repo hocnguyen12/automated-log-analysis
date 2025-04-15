@@ -48,10 +48,9 @@ This example contains some more advanced features of Robot Framework.
 Test Object
 
 We are testing here a backend api for user management. Users must authenticate before interaction. Depending on the authorizations, different actions can be carried out:
-
-    Administrators can create users, alter user data and fetch details about existing users.
-    Normal users can just fetch their own information and only alter their own details.
-    Guest users can login but not modify anything.
+    - Administrators can create users, alter user data and fetch details about existing users.
+    - Normal users can just fetch their own information and only alter their own details.
+    - Guest users can login but not modify anything.
 
 Test Suite
 
@@ -75,9 +74,9 @@ keywords.resource contains examples of variables, Return-Values, IF/ELSE and FOR
 - Analyze similarities across failed tests (based on both what was tested and how).
 
 - Use AI to suggest fixes, based on:
-    Common patterns
-    Prior fixes
-    Context of failure
+    - Common patterns
+    - Prior fixes
+    - Context of failure
 
 ### Detailed Steps
 #### Step 1: Parse Tests with Full Context
@@ -187,10 +186,194 @@ but the stringify functions juste puts in a single string the name of the test, 
 
 but how does the algorithms know which part of the string is the name, a keyword name or an argument ? especially with sentence transformers, should I add in the string keywords like "test name : ", "keyword name : ", "args : " etc ? to make it more comprehensible ?
 
-
 - WHAT ARE THE STEPS FOR ADVENCED/DEEP ML AND SUGGESTIONS OF FIX
 I need a little it more clarity about the means I can use to get to the log analyzer that I aim for.
 
 So i have parsed the output.xml file, embedded it into vectors and used clustering algorithms to find similarities and patterns in the logs of failed tests. 
 
 How can I use more advanced techniques to leverage the parsed xml or json content to provide insight about the fails but MOST IMPORTANTLY : provide a smart correction to the fail, which means to smartly give suggestions to modify code or perform other actions to understand where the fail comes from and suggest it. Maybe to do so, providing the entire codebase to the model is needed. If the robot framework tests are testing an interface, maybe also providing the website's DOM would help the model to suggest smart changes to fix the bug
+
+```
+Your Final Goal
+
+    A system that analyzes failed Robot Framework tests, understands the failure, and suggests corrections — ideally actionable ones like:
+
+    “Missing api_key in constructor — pass api_key in TestObject(ip, api_key)”
+
+    “Button selector #submit not found — check DOM or ID in the page”
+
+🧭 Track 1: Rule-Based / Heuristic System (fastest to implement)
+
+Use:
+
+    Pattern detection in error messages
+
+    Step patterns (e.g., what failed keyword came after what setup)
+
+    Code/keyword structure in your custom libraries
+
+Examples:
+
+if "TypeError" in error and "api_key" in error:
+    suggestion = "Check if you forgot to pass 'api_key' in your CustomLibrary or connect()"
+
+Benefits:
+
+    Fully offline
+
+    Explainable and testable
+
+    Starts producing value quickly
+
+🧠 Track 2: Code-Aware ML Models
+
+You train a classifier or model that:
+
+    Takes as input: test steps + error message + keyword arguments
+
+    Outputs: a probable category of failure (e.g., "missing argument", "bad selector", "backend error")
+
+Then each category is mapped to suggested fix logic.
+
+You can use:
+
+    scikit-learn or XGBoost for structured features
+
+    Small local LLMs like CodeGen, StarCoder, Phi, or TinyLlama if you go deep
+
+What you'd need:
+
+    A training dataset of input = {error + steps}, label = fix_type
+
+    Features from code, steps, and maybe logs
+
+    A curated list of fix types
+
+🤖 Track 3: Use a Small Local Language Model (LLM) for Code Reasoning
+
+You give the model:
+
+    Test failure (output.xml)
+
+    JSON structure of steps
+
+    Snippets of the code being tested (e.g. keywords, libraries, frontend or backend)
+
+    Optionally, HTML or page structure (DOM)
+
+The model can:
+
+    Infer what’s wrong
+
+    Suggest natural language explanations
+
+    Suggest code diffs or code inserts to fix
+
+Offline LLM tools (local):
+
+    llama.cpp with models like Phi-2, CodeLlama-Instruct
+
+    Ollama to run models locally
+
+    LM Studio for chatting with local models
+
+🧩 Example Multi-Modal Fix Suggestion Architecture
+
+                    ┌────────────────────────────┐
+                    │ Robot output.xml parser    │
+                    └────────────┬───────────────┘
+                                 ↓
+                ┌──────────── Structured JSON ────────────┐
+                │ test_name, steps, args, error, doc, msg │
+                └────────────┬────────────────────────────┘
+                             ↓
+       ┌──────────── Embed or tokenize steps/error ─────────────┐
+       ↓                                                        ↓
+ Rule-based corrections                                Cluster → Fix mapping
+ (e.g. api_key missing → inject arg)        or         (cluster X → fix Y)
+
+       ↓                                                        ↓
+        ┌────────────────────────────────────────────────────┐
+        │ Suggest fix: code snippet / doc / test to re-run   │
+        └────────────────────────────────────────────────────┘
+
+🧠 Optional Inputs for Deeper Fixing
+
+If your tests target a website or app:
+
+    DOM snapshots or HTML dump of the tested page
+
+    Screenshot (visual analysis — harder, but feasible)
+
+    API specs or schema of the backend being tested
+
+If your tests rely on custom Python keywords:
+
+    Parse your CustomLibrary.py
+
+    Include docstrings, argument signatures
+
+    Link failure to actual code line (if traceback is available)
+
+🔧 Next Steps for You (based on your goal)
+✅ Short-Term:
+
+    Add rules for common errors you found (e.g., TypeError, SelectorNotFound, etc.)
+
+    Map each cluster to a suggested fix template
+
+    Try embedding CustomLibrary.py function headers into the same vector space as failures
+
+🧪 Mid-Term:
+
+    Create a dataset of (failure + fix) examples
+
+    Train a classifier to predict fix types
+
+    Try prompting a small LLM like phi2 or codellama locally with test_json + code snippet → fix
+
+🧠 Long-Term:
+
+    Build a feedback loop: when a fix works, reinforce it
+
+    Track regressions and compare output.xml over time
+
+    Build a local assistant UI for reviewing suggestions
+```
+
+- SAME QUESTION
+As you can see, the output.xml file gives every steps of every keywords, if there is a FOR loop written in robot framework, we will see every iterations in the xml file, can this be used in a more advanced model to give fix suggestions ? 
+
+Can it be used in my clustering algorithms to enhance classification or is it too much detail and maybe it will confuse the clustering algorithm ?
+
+
+I especially want to go to the next step and start working on suggesting fix, I dont want to implement a rule based algorithm because it would take too long considering the size of the logs I want to analyze in the future.
+
+Therefore, I would like to start working on solutions like code-aware ML models (that would know the codebase, so the robot framework tests, keywords and variables and the website DOM that we are testing) or even a small local LLM that would also know about these same inputs. 
+
+What are detailed steps that would help me go in this direction ?
+
+## Using a small local LLM
+### Ollama
+`https://ollama.com/`
+
+- Install : 
+```bash
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
+```bash
+pip install ollama
+```
+
+- Test model in terminal : 
+```bash
+ollama run phi
+# or for code-specific model
+ollama run codellama:7b-instruct
+```
+
+- test model with python api (automatic prompt building) :
+```bash
+python3 log_analysis/ollamaLM.py
+```

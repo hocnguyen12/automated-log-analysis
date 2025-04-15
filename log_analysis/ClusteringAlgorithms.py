@@ -14,9 +14,15 @@ Fast and simple baseline	      |  KMeans
 from XMLlogsParser import extract_keywords, parse_xml, pretty_print_fails, stringify_test_case
 from FeatureEmbedding import TF_IDFembedding, sentence_embedding
 import pandas as pd
+import scipy.sparse
+from sklearn.cluster import KMeans
+from sklearn.cluster import DBSCAN
+import hdbscan 
+from sklearn.cluster import AgglomerativeClustering
+from sklearn.cluster import SpectralClustering
+from sklearn.cluster import AffinityPropagation
 
 def KMeansClustering(X, n_clusters):
-    from sklearn.cluster import KMeans
     kmeans = KMeans(n_clusters=n_clusters, random_state=42)
     labels = kmeans.fit_predict(X)
     return labels
@@ -27,7 +33,6 @@ def DBSCANclustering(X):
     min_samples: min points to form a cluster
     label == -1 means noise (outlier) 
     '''
-    from sklearn.cluster import DBSCAN
     db = DBSCAN(eps=0.5, min_samples=2)  # tune these params
     labels = db.fit_predict(X)
     return labels
@@ -36,7 +41,6 @@ def HDBSCANclustering(X):
     '''
     Automatically finds clusters, deals well with noisy or small data.
     '''
-    import hdbscan 
     clusterer = hdbscan.HDBSCAN(min_cluster_size=2)
     labels = clusterer.fit_predict(X)
     return labels
@@ -45,14 +49,14 @@ def AggloClustering(X):
     '''
     You can use scipy to draw a dendrogram too
     '''
-    from sklearn.cluster import AgglomerativeClustering
+    if scipy.sparse.issparse(X):
+        X = X.toarray()
+
     agg = AgglomerativeClustering(n_clusters=3)
-    labels = agg.fit_predict(X.toarray())  # needs dense input
+    labels = agg.fit_predict(X)  # needs dense input
     return labels
 
 def SpectrClustering(X):
-    from sklearn.cluster import SpectralClustering
-
     n_samples = X.shape[0]
     n_neighbors = min(n_samples - 1, 5)  # or any smaller number
 
@@ -61,9 +65,11 @@ def SpectrClustering(X):
     return labels
 
 def AffinityPropClustering(X):
-    from sklearn.cluster import AffinityPropagation
+    if scipy.sparse.issparse(X):
+        X = X.toarray()
+        
     aff = AffinityPropagation(damping=0.8)
-    labels = aff.fit_predict(X.toarray())
+    labels = aff.fit_predict(X)
     return labels
 
 if __name__ == "__main__":
@@ -74,7 +80,8 @@ if __name__ == "__main__":
     print(documents)
 
     # Embedding
-    X = TF_IDFembedding(documents)
+    #X = TF_IDFembedding(documents)
+    X = sentence_embedding(documents)
 
     # KMEANS
     kmeans_labels = KMeansClustering(X, n_clusters=3)
@@ -108,7 +115,5 @@ if __name__ == "__main__":
         "agglo": agg_labels,
         "spectral": spec_labels
     })
-
     #print(results.sort_values(by="cluster"))
-
     print(df)
