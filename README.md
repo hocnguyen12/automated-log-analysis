@@ -353,6 +353,28 @@ Therefore, I would like to start working on solutions like code-aware ML models 
 
 What are detailed steps that would help me go in this direction ?
 
+### Project Landmark
+```
+So now before starting fine tuning codellama or t5, I just want to make some things a bit clearer :
+
+- Starting from the output.xml file, I now have homemade python libraries that parse the xml file to retrieve the fails and relevant informations like error massage, doc, keywords called, etc.
+
+- I also have a way to stringify those fails and embed them for clustering algorithms, I have a python script that runs several clustering algorithms, kmeans, dbscan, hdbscan, spectral, etc to compare the way fails are clustered and fine tune the parameters for a more relevant clustering
+
+- On the other hand I have the notebook we made, which takes the SAME fails, extracted from the xml with the same function, converted into json and then classify them, This means that for any new fail, a fix will be suggested by looking at previous fails that had similarities and suggesting the same fix.
+
+unlike for simple clustering, this part needs a special effort, to label the fails by hand or with rules, so that for each fail that the model trains on, it knows exactly what is the fix for this fail, and it will suggest the same fix to similar fails
+
+On top of this, thanks to FAISS, I can find the n (for now n=3) most similar fails and display them to the user so that he can look if the suggested fix is relevant and look at what worked for these previous fails
+
+My questions :
+
+- With the second method (classification), can the model learn with each new fail it encounter if we tell the model if the suggested fail was succesful or not ?
+
+- Now the clustering only allows to visualize how fails are similar to each other, but can we leverage the clusters to maybe feed a more advanced algorithm that will suggest a similar fix to fails of the same cluster ?
+
+Just to remember, the goal of the project is to have a system that analyses fail logs from automated tests, that testers can use everyday to fix bugs faster, if the system can add the new fails it encounters to its knowledge base, with the fix that actually worked (with input from the user after he corrected the bug), that would be better
+```
 ## Using a small local LLM
 ### Ollama
 `https://ollama.com/`
