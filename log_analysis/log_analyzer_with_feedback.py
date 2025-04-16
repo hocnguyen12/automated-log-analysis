@@ -16,7 +16,7 @@ from datetime import datetime
 
 # --- Config Paths ---
 original_data_path = Path("structured_failures.json")
-feedback_data_path = Path("feedback_log.jsonl")
+feedback_data_path = Path("feedback_log.json")
 model_path = Path("model/latest_classifier.pkl")
 vectorizer_path = Path("model/latest_vectorizer.pkl")
 faiss_index_path = Path("model/latest_faiss.index")
