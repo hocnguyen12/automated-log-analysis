@@ -81,13 +81,22 @@ for item in base_data:
 # For tests that have positive feedback OR correction/actual fix informed by the user
 # -> add the test to training data
 for fb in feedback_entries:
-    if fb.get("feedback") == "correct" or fb.get("actual_category"):
-        merged.append({
-            "log_text": fb["log_text"],
-            "fix_category": fb.get("actual_category", fb["predicted_category"])
-        })
+    if fb.get("feedback") == "correct":
+        fix_category = fb.get("predicted_category", "unknown") # If the feedback is correct, use the predicted category 
+    elif fb.get("feedback") == "wrong":
+        fix_category = fb.get("actual_category", "unknown")  # If the feedback is wrong, use the actual category from the user
+    else:
+        fix_category = "unknown"
 
-print("Training Data : ")
+    merged.append({
+        "log_text": fb["log_text"],
+        "fix_category": fix_category
+    })
+
+# Filter out "unknown", "null" and "" fix categories before training
+merged = [entry for entry in merged if entry["fix_category"] not in ["unknown", "null", ""]]
+
+print(BOLD + "Training Data : " + END)
 for entry in merged:
     print(json.dumps(entry, indent=1))
 
@@ -108,7 +117,7 @@ else:
     clf = RandomForestClassifier()
     clf.fit(X_train, y_train)
     y_pred = clf.predict(X_test)
-    print("\nClassification Report:\n", classification_report(y_test, y_pred))
+    print(BOLD + "\nClassification Report:\n" + END, classification_report(y_test, y_pred))
     joblib.dump(clf, model_path)
     joblib.dump(vectorizer, vectorizer_path)
 
@@ -139,13 +148,13 @@ log_text = build_log_text(new_data)
 print(BOLD + "Predicting fix for new fail..." + END)
 new_vec = vectorizer.transform([log_text])
 pred = clf.predict(new_vec)
-print(BOLD + "\n Suggested Fix Category:" + END, pred[0])
+print(BOLD + "\n[PREDICTION] Suggested Fix Category:" + END, pred[0])
 
 print(BOLD +"Looking for similar fails..." + END)
 query_embedding = model.encode([log_text], normalize_embeddings=True)
 D, I = faiss_index.search(np.array(query_embedding), k=3)
 
-print(BOLD + "\n Top 3 similar failures:" + END)
+print(BOLD + "\nTop 3 similar failures:" + END)
 for rank, idx in enumerate(I[0]):
     print(f"\n#{rank+1} (Score: {D[0][rank]:.2f})")
     print("Log:", texts[idx][:300].replace("\n", " ") + "...")
@@ -155,8 +164,9 @@ feedback = input(BOLD + "\nWas the suggested fix correct? (y/n): " + END)
 
 actual = None
 if feedback.lower() == "n":  # If the feedback is 'no', ask for the correct fix category
-    print("AASJFAISJAIJFSLADJF")
     actual = input("What is the correct fix category? (type and press Enter): ")
+    if actual is None:
+        actual = "unknown"
 
 # Output user feedback
 if feedback.lower() == "y":
@@ -169,7 +179,7 @@ entry = {
     "log_text": log_text,
     "predicted_category": pred[0],
     "feedback": "correct" if feedback.lower() == "y" else "wrong",
-    "actual_category": actual if actual else None
+    "actual_category": pred[0] if feedback.lower() == "y" else actual
 }
 
 print(BOLD + "Saving feedback for future predictions..." + END)
