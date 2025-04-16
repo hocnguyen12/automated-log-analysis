@@ -16,6 +16,11 @@ def sentence_embedding(data):
     X = model.encode(data)
     return X
 
+
+
+
+
+
 if __name__ == "__main__":
     fail_logs = parse_xml("reports/output.xml")
     #pretty_print_fails(fail_logs)

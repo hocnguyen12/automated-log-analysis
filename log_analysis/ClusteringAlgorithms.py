@@ -72,40 +72,29 @@ def AffinityPropClustering(X):
     labels = aff.fit_predict(X)
     return labels
 
+
+
+
 if __name__ == "__main__":
     fail_logs = parse_xml("reports/output.xml")
-    pretty_print_fails(fail_logs)
-
     documents = [stringify_test_case(t) for t in fail_logs]
-    print(documents)
 
     # Embedding
     #X = TF_IDFembedding(documents)
     X = sentence_embedding(documents)
 
-    # KMEANS
-    kmeans_labels = KMeansClustering(X, n_clusters=3)
+    kmeans_labels = KMeansClustering(X, n_clusters=3) # KMEANS
+    db_labels = DBSCANclustering(X) # DBSCAN
+    hdb_labels = HDBSCANclustering(X) # HDBSCAN
+    agg_labels = AggloClustering(X) # Agglomerative
+    spec_labels = SpectrClustering(X) # Spectral
 
-    # DBSCAN
-    db_labels = DBSCANclustering(X)
-
-    # HDBSCAN
-    hdb_labels = HDBSCANclustering(X)
-
-    # Agglomerative
-    agg_labels = AggloClustering(X)
-
-    # Spectral
-    spec_labels = SpectrClustering(X)
-
-    labels = kmeans_labels
-    # Visualising Results
+    # Clustering Visualisation
     results = pd.DataFrame({
         "name": [t["name"] for t in fail_logs],
         "error": [t["error_message"] for t in fail_logs],
-        "cluster": labels
+        "cluster": kmeans_labels
     })
-
     df = pd.DataFrame({
         "name": [t["name"] for t in fail_logs],
         "error": [t["error_message"] for t in fail_logs],

@@ -58,7 +58,7 @@ def extract_keywords(keyword_element, depth=0):
             "status": status,
             "depth": depth,
             "doc": doc_text,
-            "message": msgs
+            "messages": msgs
         }
         steps.append(step)
         # Recursively extract nested keywords
@@ -86,7 +86,7 @@ def pretty_print_fails(fails):
                 print(f"\tstatus : {step['status']}")
                 print(f"\tdepth : {step['depth']}")
                 print(f"\tdoc : {step['doc']}")
-                print(f"\tmessage : {step['message']}")
+                print(f"\tmessage : {step['messages']}")
                 print("\n")
 
 def stringify_test_case(test):

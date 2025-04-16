@@ -48,7 +48,7 @@
         "status": "PASS",
         "depth": 0,
         "doc": "Logs the given message to the console.",
-        "message": []
+        "messages": []
       },
       {
         "keyword": "Log Many",
@@ -58,7 +58,7 @@
         "status": "PASS",
         "depth": 0,
         "doc": "Logs the given messages as separate entries using the INFO level.",
-        "message": [
+        "messages": [
           "a",
           "b",
           "c",
@@ -120,7 +120,7 @@
         "status": "PASS",
         "depth": 0,
         "doc": "Logs the given messages as separate entries using the INFO level.",
-        "message": [
+        "messages": [
           "a",
           "b",
           "c",
@@ -157,7 +157,7 @@
         "status": "PASS",
         "depth": 0,
         "doc": "Logs the given message with the given level.",
-        "message": [
+        "messages": [
           "['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']"
         ]
       },
@@ -169,7 +169,7 @@
         "status": "FAIL",
         "depth": 0,
         "doc": "Logs the given message with the given level.",
-        "message": []
+        "messages": []
       }
     ]
   },
@@ -186,7 +186,7 @@
         "status": "PASS",
         "depth": 0,
         "doc": "Returns current local or UTC time with an optional increment.",
-        "message": [
+        "messages": [
           "${date} = 2025-04-15 11:54:56.518332"
         ]
       },
@@ -198,7 +198,7 @@
         "status": "PASS",
         "depth": 0,
         "doc": "Logs the given message with the given level.",
-        "message": [
+        "messages": [
           "2025-04-15 11:54:56.518332"
         ]
       },
@@ -211,7 +211,7 @@
         "status": "FAIL",
         "depth": 0,
         "doc": "Fails if objects are unequal after converting them to strings.",
-        "message": [
+        "messages": [
           "Argument types are:\n<class 'int'>\n<class 'str'>"
         ]
       }
@@ -230,7 +230,7 @@
         "status": "PASS",
         "depth": 0,
         "doc": "",
-        "message": []
+        "messages": []
       },
       {
         "keyword": "Check Correct Greeting",
@@ -240,7 +240,7 @@
         "status": "FAIL",
         "depth": 0,
         "doc": "",
-        "message": []
+        "messages": []
       }
     ]
   }

@@ -40,7 +40,7 @@ def convert_to_json_structured(test):
                 "status": step["status"],
                 "depth": step["depth"],
                 "doc": step["doc"],
-                "message": step["message"]
+                "messages": step["messages"]
             }
             for step in test["steps"]
         ]
