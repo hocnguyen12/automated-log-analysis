@@ -9,10 +9,15 @@ from sklearn.ensemble import RandomForestClassifier
 from sentence_transformers import SentenceTransformer
 import numpy as np
 import faiss
+import tempfile
+
+from XMLlogsParser import parse_xml
+from JSONconverter import save_converted_xml_to_json
 
 # --- Paths ---
 original_data_path = "structured_failures.json"
-feedback_data_path = "feedback_log.jsonl"
+new_data_path = "analyzed_failures.json"
+feedback_data_path = "feedback_log.json"
 model_path = "model/latest_classifier.pkl"
 vectorizer_path = "model/latest_vectorizer.pkl"
 faiss_index_path = "model/latest_faiss.index"
@@ -35,77 +40,74 @@ else:
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
 # --- Streamlit UI ---
-st.title('Automated Test Failure Analyzer with Feedback Loop')
+st.title('Robot Framework Automated Tests Fail Analysis')
 
 # Step 1: File Upload for new test log (output.xml)
-uploaded_file = st.file_uploader("Upload the new Robot Framework test output (output.xml)", type=["xml"])
+uploaded_file = st.file_uploader("Upload the new Robot Framework test execution (output.xml)", type=["xml"])
 
 if uploaded_file is not None:
+    # Save the uploaded file to a temporary file on disk
+    with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
+        tmp_file.write(uploaded_file.read())
+        tmp_file_path = tmp_file.name
+
+    st.write(f"File saved to: {tmp_file_path}")
+
     # Parse the uploaded XML file (implement your XML parsing here)
-    new_data = parse_xml(uploaded_file)
-    
-    st.write("New Test Fail Log:")
-    st.json(new_data)  # Display the log (or a snippet of it)
+    new_data = save_converted_xml_to_json(tmp_file_path, new_data_path)
 
-    # Step 2: Perform Prediction
-    log_text = build_log_text(new_data)  # Build log text (you can reuse your existing function here)
-    new_vec = vectorizer.transform([log_text]) if vectorizer else None
-    
-    if clf and new_vec is not None:
-        pred = clf.predict(new_vec)
-        st.write(f"Predicted Fix Category: {pred[0]}")  # Show prediction
-
-    # Step 3: FAISS - Retrieve similar past failures
-    query_embedding = model.encode([log_text], normalize_embeddings=True)
-    D, I = faiss_index.search(np.array(query_embedding), k=3)
-
-    st.write("Top 3 Similar Past Failures:")
-    for rank, idx in enumerate(I[0]):
-        st.write(f"#{rank+1} (Score: {D[0][rank]:.2f})")
-        st.write(f"Log: {texts[idx][:300]}...")
-        st.write(f"Fix Category: {labels[idx]}")
-
-    # Step 4: User Feedback (Was the suggested fix correct?)
-    feedback = st.radio("Was the suggested fix correct?", options=["Yes", "No"])
-    actual_category = None
-    if feedback == "No":
-        actual_category = st.text_input("What is the correct fix category?", "")
-    
-    if st.button("Submit Feedback"):
-        # Save feedback
-        entry = {
-            "timestamp": datetime.now().isoformat(),
-            "log_text": log_text,
-            "predicted_category": pred[0] if feedback == "Yes" else None,
-            "feedback": feedback,
-            "actual_category": actual_category if feedback == "No" else None
-        }
-
-        with open(feedback_data_path, "a") as f:
-            f.write(json.dumps(entry) + "\n")
+    # Display the new fails
+    for idx, fail in enumerate(new_data):
+        st.subheader(f"Fail {idx+1}")
+        st.write(f"Test Name: {fail['name']}")
+        st.write(f"Error: {fail['error_message']}")
+        st.write(f"Doc: {fail.get('doc', 'No description available.')}")
+        if 'steps' in fail:
+            for step in fail['steps']:
+                st.write(f"Step: {step['keyword']}")
+                st.write(f"Args: {' '.join(step['args'])}")
+                st.write(f"Status: {step['status']}")
+                st.write(f"Doc: {step.get('doc', 'No description available.')}")
+                st.write(f"Messages: {' | '.join(step.get('messages', []))}")
         
-        st.write("Feedback submitted. Thank you!")
-        
-        # Optionally retrain the model after feedback
-        retrain = st.checkbox("Retrain model after feedback?")
-        if retrain:
-            # Append new data, retrain the model, and update the FAISS index
-            retrain_model_and_faiss(merged_data)
-            st.write("Model and FAISS index have been updated.")
+        # Step 3: Add a "Predict Fix" button for each fail
+        if st.button(f"Predict Fix for Fail {idx+1}", key=f"predict_{idx+1}"):
+            # Prediction
+            log_text = build_log_text(fail)
+            new_vec = vectorizer.transform([log_text]) if vectorizer else None
+            if clf and new_vec is not None:
+                pred = clf.predict(new_vec)
+                st.write(f"Predicted Fix Category: {pred[0]}")
+
+            # Step 4: User Feedback (Was the suggested fix correct?)
+            feedback = st.radio(f"Was the suggested fix correct for fail {idx+1}?", options=["Yes", "No"], key=f"feedback_{idx+1}")
+            actual_category = None
+            if feedback == "No":
+                actual_category = st.text_input(f"Correct fix category for fail {idx+1}:", key=f"actual_category_{idx+1}")
+            
+            # Button for feedback submission
+            if st.button(f"Submit Feedback for Fail {idx+1}", key=f"submit_{idx+1}"):
+                # Save feedback
+                entry = {
+                    "timestamp": datetime.now().isoformat(),
+                    "log_text": log_text,
+                    "predicted_category": pred[0] if feedback == "Yes" else None,
+                    "feedback": feedback,
+                    "actual_category": actual_category if feedback == "No" else None
+                }
+                with open(feedback_data_path, "a") as f:
+                    f.write(json.dumps(entry) + "\n")
+                
+                st.write("Feedback submitted. Thank you!")
+
+                # Optionally retrain the model after feedback
+                retrain = st.checkbox("Retrain model after feedback?")
+                if retrain:
+                    # Append new data, retrain the model, and update the FAISS index
+                    retrain_model_and_faiss(new_data)
+                    st.write("Model and FAISS index have been updated.")
 
 # --- Define helper functions ---
-
-# Function to parse XML data
-def parse_xml(uploaded_file):
-    # Implement your XML parsing logic here, returning a structured data format
-    # For simplicity, we just return a placeholder here.
-    return {
-        "test_name": "Test Case Example",
-        "error": "TypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'",
-        "steps": [
-            {"keyword": "Connect", "args": ["http://localhost"], "status": "FAIL", "doc": "Connects to backend", "messages": ["Connection failed"]}
-        ]
-    }
 
 # Function to build log text from structured data
 def build_log_text(item):
@@ -145,3 +147,4 @@ def retrain_model_and_faiss(merged_data):
     faiss_index.add(np.array(embeddings))
     
     faiss.write_index(faiss_index, faiss_index_path)
+    print("Model and FAISS index have been updated.")

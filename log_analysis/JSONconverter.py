@@ -35,7 +35,7 @@ def convert_to_json_structured(test):
         "doc": test["doc"],
         "steps": [
             {
-                "keyword": step["name"],
+                "keyword": step["keyword"],
                 "args": step["args"],
                 "status": step["status"],
                 "depth": step["depth"],
@@ -45,6 +45,17 @@ def convert_to_json_structured(test):
             for step in test["steps"]
         ]
     }
+
+def save_converted_xml_to_json(xml_file, json_file_name):
+    fail_logs = parse_xml(xml_file)
+
+    json_data = [convert_to_json_structured(t) for t in fail_logs]
+
+    with open(json_file_name, "w", encoding="utf-8") as f:
+        json.dump(json_data, f, indent=2, ensure_ascii=False)
+    return fail_logs
+
+
 
 if __name__ == "__main__":
     fail_logs = parse_xml("reports/output.xml")

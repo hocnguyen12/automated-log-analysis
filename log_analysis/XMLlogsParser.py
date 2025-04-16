@@ -53,7 +53,7 @@ def extract_keywords(keyword_element, depth=0):
         ]
 
         step = {
-            "name": name,
+            "keyword": name,
             "args": args,
             "status": status,
             "depth": depth,
