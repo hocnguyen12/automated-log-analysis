@@ -181,8 +181,7 @@ def merge_xml_training_data(xml_list, json_file_name):
 
     json_data = [convert_to_json_structured(t) for t in training_data]
 
-    st.write(training_data)
-
+    #st.write(training_data)
 
     with open(json_file_name, "w", encoding="utf-8") as f:
         json.dump(json_data, f, indent=2, ensure_ascii=False)
