@@ -171,28 +171,11 @@ def similarity_section():
             st.write(f"Log Snippet: {fail['log']}")
             st.write(f"Fix Category: {fail['fix_category']}")
         
-def feedback_section(fail):
-    feedback = st.radio("Was the suggested fix correct?", options=["Yes", "No"])
-    actual_category = None
-    if feedback == "No":
-        actual_category = st.text_input("What is the correct fix category?")
-
-    if st.button(f"Submit Feedback for Fail {fail['test_name']}"):
-        entry = {
-            "timestamp": datetime.now().isoformat(),
-            "log_text": st.session_state.log_text,
-            "predicted_category": st.session_state.predicted_fix if feedback == "Yes" else None,
-            "feedback": feedback,
-            "actual_category": actual_category if feedback == "No" else None
-        }
-        with open(feedback_data_path, "a") as f:
-            f.write(json.dumps(entry) + "\n")
-        
-        st.write("Feedback submitted. Thank you!")
-
 
 ########################################### STREAMLIT UI ###############################################
 tab_train, tab_predict = st.tabs(["Train model", "Analyse fails"])
+
+col_yes, col_no = st.columns(2)
 
 with tab_train:
     uploaded_files_train = st.file_uploader("**Upload past test execution as training data (optionally multiple output.xml files)**", type=["xml"],  accept_multiple_files=True)
@@ -220,9 +203,6 @@ if "predict_button" not in st.session_state:
 
 if "similarity_button" not in st.session_state:
     st.session_state["similarity_button"] = False
-
-if "button3" not in st.session_state:
-    st.session_state["button3"] = False
 
 with tab_predict:
     uploaded_file_predict = st.file_uploader("**Upload the new Robot Framework test execution (output.xml)**", type=["xml"])
@@ -275,27 +255,49 @@ with tab_predict:
                             st.write(f"**Correction**: {fail['fix_category']}")
 
                     # Feedback Buttons (Correct / Incorrect)
-                    feedback = None
-                    actual_category = None
-                    if st.button(f"Correct Fix for Fail {fail['test_name']}", key=f"correct_{idx+1}"):
-                        feedback = "correct"
-                    elif st.button(f"Incorrect Fix for Fail {fail['test_name']}", key=f"incorrect_{idx+1}"):
-                        feedback = "wrong"
-                        actual_category = st.text_input(f"Correct fix category for fail {idx+1}:", key=f"actual_category_{idx+1}")
+                    if st.session_state["predict_button"] and st.session_state["similarity_button"]:
+                        with col_yes:
+                            feedback_yes = st.button("Yes", key="yes")
 
-                    if feedback:
-                        # Save feedback when button is pressed
-                        entry = {
-                            "timestamp": datetime.now().isoformat(),
-                            "log_text": st.session_state.log_text,
-                            "predicted_category": st.session_state.predicted_fix if feedback == "correct" else None,
-                            "feedback": feedback,
-                            "actual_category": actual_category if feedback == "wrong" else None
-                        }
-                        with open(feedback_data_path, "a") as f:
-                            f.write(json.dumps(entry) + "\n")
-                        
-                        st.write("Feedback submitted. Thank you!")
-                
+                        with col_no:
+                            feedback_no = st.button("No", key="no")
+
+                        if feedback_yes:
+                            # If the feedback is 'Yes', save it as correct and proceed
+                            feedback = "correct"
+                            actual_category = None
+                            st.write("Thank you, the correction was right.")
+                            # Save the feedback
+                            entry = {
+                                "timestamp": datetime.now().isoformat(),
+                                "log_text": st.session_state.log_text,
+                                "predicted_category": st.session_state.predicted_fix,
+                                "feedback": feedback,
+                                "actual_category": st.session_state.predicted_fix
+                            }
+                            with open(feedback_data_path, "a") as f:
+                                f.write(json.dumps(entry) + "\n")
+                            st.write("Feedback saved. Thank you!")
+
+                        elif feedback_no:
+                            # If the feedback is 'No', ask for the correct fix category
+                            feedback = "wrong"
+                            actual_category = st.text_input("What is the right fix category?", key="actual_category_input")
+                            
+                            if actual_category:
+                                # Save the feedback with the corrected fix category
+                                entry = {
+                                    "timestamp": datetime.now().isoformat(),
+                                    "log_text": st.session_state.log_text,
+                                    "predicted_category": st.session_state.predicted_fix,
+                                    "feedback": feedback,
+                                    "actual_category": actual_category  # Save the user-provided actual fix
+                                }
+                                with open(feedback_data_path, "a") as f:
+                                    f.write(json.dumps(entry) + "\n")
+                                st.write(f"User said the fix was incorrect. The correct fix category is: {actual_category}")
+                                st.write("Feedback saved. Thank you!")
+                            else:
+                                st.write("Please provide a correct fix category before submitting.")
         else :
             st.write("First train a model and FAISS index")
