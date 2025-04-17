@@ -30,8 +30,8 @@ def convert_to_json_structured(test):
         - Sequence-to-sequence model (to suggest corrections)
     '''
     return {
-        "test_name": test["name"],
-        "error": test["error_message"],
+        "test_name": test["test_name"],
+        "error_message": test["error_message"],
         "doc": test["doc"],
         "steps": [
             {
@@ -47,6 +47,11 @@ def convert_to_json_structured(test):
     }
 
 def save_converted_xml_to_json(xml_file, json_file_name):
+    '''
+    This function saves the fails to a json file to feed and train the model
+    input : path to 'output.xml' file, path to json file that will contain the fails
+    output : parsed fail logs
+    '''
     fail_logs = parse_xml(xml_file)
 
     json_data = [convert_to_json_structured(t) for t in fail_logs]

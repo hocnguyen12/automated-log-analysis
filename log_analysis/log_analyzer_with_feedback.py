@@ -37,7 +37,7 @@ if feedback_data_path.exists():
 def auto_label_fix_category(data):
     for item in data:
         if "fix_category" not in item or not item["fix_category"]:
-            error = item["error"].lower()
+            error = item["error_message"].lower()
             if "missing" in error and "argument" in error:
                 item["fix_category"] = "missing_argument"
             elif "not found" in error or "selector" in error:
@@ -60,7 +60,7 @@ merged = []
 def build_log_text(item):
     msg = f"Test name: {item['test_name']}\n"
     msg += f"Doc: {item.get('doc', '')}\n"
-    msg += f"Error: {item['error']}\n"
+    msg += f"Error: {item['error_message']}\n"
     for step in item.get("steps", []):
         msg += f"Step: {step['keyword']}\n"
         msg += f"Args: {' '.join(step['args'])}\n"
@@ -130,7 +130,7 @@ faiss.write_index(faiss_index, str(faiss_index_path))
 
 new_data = {
     "test_name": "Connect without API key",
-    "error": "TypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'",
+    "error_message": "TypeError: TestObject.__init__() missing 1 required positional argument: 'api_key'",
     "doc": "Attempts to connect to the server without providing API key.",
     "steps": [
         {

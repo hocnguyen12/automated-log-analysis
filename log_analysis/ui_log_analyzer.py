@@ -13,11 +13,12 @@ import tempfile
 
 from XMLlogsParser import parse_xml
 from JSONconverter import save_converted_xml_to_json
+from Utils import build_log_text
 
 # --- Paths ---
-original_data_path = "structured_failures.json"
-new_data_path = "analyzed_failures.json"
-feedback_data_path = "feedback_log.json"
+original_data_path = "dataset/train_fails.json"
+new_data_path = "dataset/new_fails.json"
+feedback_data_path = "dataset/feedback_fails.json"
 model_path = "model/latest_classifier.pkl"
 vectorizer_path = "model/latest_vectorizer.pkl"
 faiss_index_path = "model/latest_faiss.index"
@@ -51,7 +52,7 @@ if uploaded_file is not None:
         tmp_file.write(uploaded_file.read())
         tmp_file_path = tmp_file.name
 
-    st.write(f"File saved to: {tmp_file_path}")
+    #st.write(f"File saved to: {tmp_file_path}")
 
     # Parse the uploaded XML file (implement your XML parsing here)
     new_data = save_converted_xml_to_json(tmp_file_path, new_data_path)
@@ -59,7 +60,7 @@ if uploaded_file is not None:
     # Display the new fails
     for idx, fail in enumerate(new_data):
         st.subheader(f"Fail {idx+1}")
-        st.write(f"Test Name: {fail['name']}")
+        st.write(f"Test Name: {fail['test_name']}")
         st.write(f"Error: {fail['error_message']}")
         st.write(f"Doc: {fail.get('doc', 'No description available.')}")
         if 'steps' in fail:

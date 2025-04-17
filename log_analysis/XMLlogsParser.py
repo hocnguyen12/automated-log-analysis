@@ -25,7 +25,7 @@ def parse_xml(xml_path_string):
 
                 steps = extract_keywords(test)
                 detailed_failed_tests.append({
-                    "name": test_name,
+                    "test_name": test_name,
                     "error_message": error_message,
                     "doc": doc_text,
                     "steps": steps

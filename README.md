@@ -399,3 +399,8 @@ ollama run codellama:7b-instruct
 ```bash
 python3 log_analysis/ollamaLM.py
 ```
+
+## Building a small ui
+```bash
+pip install streamlit
+```
