@@ -10,12 +10,11 @@ from sentence_transformers import SentenceTransformer
 import numpy as np
 import faiss
 import tempfile
+from pathlib import Path
 
-from XMLlogsParser import parse_xml
-from JSONconverter import save_converted_xml_to_json
-from Utils import build_log_text, merge_xml_training_data
+from Utils import parse_xml, build_log_text, auto_label_fix_category, merge_xml_training_data, save_converted_xml_to_json, BOLD, END
 
-# --- Paths ---
+############################################# PATHS ####################################################
 original_data_path = "dataset/train_fails.json"
 new_data_path = "dataset/new_fails.json"
 feedback_data_path = "dataset/feedback_fails.json"
@@ -40,27 +39,127 @@ else:
 # Load sentence transformer model
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
-# --- Streamlit UI ---
+########################################## HELPER FUNCTIONS ##################################################
+# Function to retrain the model and update the FAISS index
+def retrain_model_and_faiss(merged_data):
+    # Update the model and FAISS index with the new feedback data
+    texts = [r["log_text"] for r in merged_data]
+    labels = [r["fix_category"] for r in merged_data]
+    
+    vectorizer = TfidfVectorizer(max_features=500, stop_words="english")
+    X = vectorizer.fit_transform(texts)
+    X_train, X_test, y_train, y_test = train_test_split(X, labels, test_size=0.2, random_state=42)
+    
+    clf = RandomForestClassifier()
+    clf.fit(X_train, y_train)
+    
+    # Save the updated model and vectorizer
+    joblib.dump(clf, model_path)
+    joblib.dump(vectorizer, vectorizer_path)
+    
+    # Rebuild FAISS index
+    model = SentenceTransformer("all-MiniLM-L6-v2")
+    embeddings = model.encode(texts, show_progress_bar=False, normalize_embeddings=True)
+    faiss_index = faiss.IndexFlatIP(embeddings.shape[1])
+    faiss_index.add(np.array(embeddings))
+    
+    faiss.write_index(faiss_index, faiss_index_path)
+    print("Model and FAISS index have been updated.")
+
+def train_model():
+    st.write("Loading data from Robot Framework test report...")
+    with open(original_data_path, "r") as f:
+        base_data = json.load(f)
+
+    st.write("Loading data from User Feedback...")
+    feedback_entries = []
+    if Path(feedback_data_path).exists():
+        with open(feedback_data_path, "r") as f:
+            feedback_entries = [json.loads(line) for line in f if line.strip()]
+
+    st.write("Labeling data (fail -> fix)...")
+    base_data = auto_label_fix_category(base_data)
+
+    merged = []
+
+    st.write("preparing training data (x=fail, y=fix_category)...")
+    for item in base_data:
+        merged.append({
+            "log_text": build_log_text(item),
+            "fix_category": item["fix_category"]
+        })
+
+    # For tests that have positive feedback OR correction/actual fix informed by the user
+    # -> add the test to training data
+    for fb in feedback_entries:
+        if fb.get("feedback") == "correct":
+            fix_category = fb.get("predicted_category", "unknown") # If the feedback is correct, use the predicted category 
+        elif fb.get("feedback") == "wrong":
+            fix_category = fb.get("actual_category", "unknown")  # If the feedback is wrong, use the actual category from the user
+        else:
+            fix_category = "unknown"
+
+        merged.append({
+            "log_text": fb["log_text"],
+            "fix_category": fix_category
+        })
+
+    # Filter out "unknown", "null" and "" fix categories before training
+    merged = [entry for entry in merged if entry["fix_category"] not in ["unknown", "null", ""]]
+
+    st.write("Training Data : ")
+    for entry in merged:
+        print(json.dumps(entry, indent=1))
+
+    texts = [r["log_text"] for r in merged]
+    labels = [r["fix_category"] for r in merged]
+
+    load = False
+
+    st.write("No existing model found, training model...")
+    vectorizer = TfidfVectorizer(max_features=500, stop_words="english")
+    X = vectorizer.fit_transform(texts)
+    X_train, X_test, y_train, y_test = train_test_split(X, labels, test_size=0.2, random_state=42)
+    clf = RandomForestClassifier()
+    clf.fit(X_train, y_train)
+    y_pred = clf.predict(X_test)
+    st.write(BOLD + "\nClassification Report:\n" + END, classification_report(y_test, y_pred))
+    joblib.dump(clf, model_path)
+    joblib.dump(vectorizer, vectorizer_path)
+
+    st.write(BOLD + "Building FAISS index (similarity retrieval)..." + END)
+    model = SentenceTransformer("all-MiniLM-L6-v2")
+    embeddings = model.encode(texts, show_progress_bar=False, normalize_embeddings=True)
+    faiss_index = faiss.IndexFlatIP(embeddings.shape[1])
+    faiss_index.add(np.array(embeddings))
+    faiss.write_index(faiss_index, str(faiss_index_path))
+
+
+########################################### STREAMLIT UI ###############################################
 st.title('Robot Framework Automated Tests Fail Analysis')
 
 ##### TRAINING #####
-uploaded_files_train = st.file_uploader("Upload past test execution as training data (optionally multiple output.xml files)", type=["xml"])
-if uploaded_files_train is not None:
+uploaded_files_train = st.file_uploader("Upload past test execution as training data (optionally multiple output.xml files)", type=["xml"],  accept_multiple_files=True)
+if uploaded_files_train:
+    st.write(f"UPLOADED FILES : {uploaded_files_train}")
     list_files = []
     for uploaded_file in uploaded_files_train:
+        st.write(f"PROCESSING FILE : {uploaded_file}")
         # Save the uploaded file to a temporary file on disk
-        with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
-            tmp_file.write(uploaded_file.read())
+        with tempfile.NamedTemporaryFile(delete=False) as tmp_file:  # 'wb' for binary mode
+            tmp_file.write(uploaded_file.read())  # Write the bytes data to the temp file
             tmp_file_path = tmp_file.name
         list_files.append(tmp_file_path)
 
+    st.write(f"FILE LIST : {list_files}")
     merge_xml_training_data(list_files, original_data_path)
     if st.button(f"Train model", key=f"train_model"):
         train_model()
 
 ##### PREDICTION #####
 uploaded_file_predict = st.file_uploader("Upload the new Robot Framework test execution (output.xml)", type=["xml"])
-if uploaded_file_predict is not None:
+if uploaded_file_predict:
+    st.write(uploaded_file_predict)
     # Save the uploaded file to a temporary file on disk
     with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
         tmp_file.write(uploaded_file_predict.read())
@@ -121,99 +220,3 @@ if uploaded_file_predict is not None:
                     # Append new data, retrain the model, and update the FAISS index
                     retrain_model_and_faiss(new_data)
                     st.write("Model and FAISS index have been updated.")
-
-# --- Define helper functions ---
-
-# Function to retrain the model and update the FAISS index
-def retrain_model_and_faiss(merged_data):
-    # Update the model and FAISS index with the new feedback data
-    texts = [r["log_text"] for r in merged_data]
-    labels = [r["fix_category"] for r in merged_data]
-    
-    vectorizer = TfidfVectorizer(max_features=500, stop_words="english")
-    X = vectorizer.fit_transform(texts)
-    X_train, X_test, y_train, y_test = train_test_split(X, labels, test_size=0.2, random_state=42)
-    
-    clf = RandomForestClassifier()
-    clf.fit(X_train, y_train)
-    
-    # Save the updated model and vectorizer
-    joblib.dump(clf, model_path)
-    joblib.dump(vectorizer, vectorizer_path)
-    
-    # Rebuild FAISS index
-    model = SentenceTransformer("all-MiniLM-L6-v2")
-    embeddings = model.encode(texts, show_progress_bar=False, normalize_embeddings=True)
-    faiss_index = faiss.IndexFlatIP(embeddings.shape[1])
-    faiss_index.add(np.array(embeddings))
-    
-    faiss.write_index(faiss_index, faiss_index_path)
-    print("Model and FAISS index have been updated.")
-
-def train_model():
-    print(BOLD + "Loading data from Robot Framework test report..." + END)
-    with open(original_data_path, "r") as f:
-        base_data = json.load(f)
-
-    print(BOLD + "Loading data from User Feedback..." + END)
-    feedback_entries = []
-    if feedback_data_path.exists():
-        with open(feedback_data_path, "r") as f:
-            feedback_entries = [json.loads(line) for line in f if line.strip()]
-
-    print(BOLD + "Labeling data (fail -> fix)..." + END)
-    base_data = auto_label_fix_category(base_data)
-
-    merged = []
-
-    print(BOLD + "preparing training data (x=fail, y=fix_category)..." + END)
-    for item in base_data:
-        merged.append({
-            "log_text": build_log_text(item),
-            "fix_category": item["fix_category"]
-        })
-
-    # For tests that have positive feedback OR correction/actual fix informed by the user
-    # -> add the test to training data
-    for fb in feedback_entries:
-        if fb.get("feedback") == "correct":
-            fix_category = fb.get("predicted_category", "unknown") # If the feedback is correct, use the predicted category 
-        elif fb.get("feedback") == "wrong":
-            fix_category = fb.get("actual_category", "unknown")  # If the feedback is wrong, use the actual category from the user
-        else:
-            fix_category = "unknown"
-
-        merged.append({
-            "log_text": fb["log_text"],
-            "fix_category": fix_category
-        })
-
-    # Filter out "unknown", "null" and "" fix categories before training
-    merged = [entry for entry in merged if entry["fix_category"] not in ["unknown", "null", ""]]
-
-    print(BOLD + "Training Data : " + END)
-    for entry in merged:
-        print(json.dumps(entry, indent=1))
-
-    texts = [r["log_text"] for r in merged]
-    labels = [r["fix_category"] for r in merged]
-
-    load = False
-
-    print(BOLD + "No existing model found, training model..." + END)
-    vectorizer = TfidfVectorizer(max_features=500, stop_words="english")
-    X = vectorizer.fit_transform(texts)
-    X_train, X_test, y_train, y_test = train_test_split(X, labels, test_size=0.2, random_state=42)
-    clf = RandomForestClassifier()
-    clf.fit(X_train, y_train)
-    y_pred = clf.predict(X_test)
-    print(BOLD + "\nClassification Report:\n" + END, classification_report(y_test, y_pred))
-    joblib.dump(clf, model_path)
-    joblib.dump(vectorizer, vectorizer_path)
-
-    print(BOLD + "Building FAISS index (similarity retrieval)..." + END)
-    model = SentenceTransformer("all-MiniLM-L6-v2")
-    embeddings = model.encode(texts, show_progress_bar=False, normalize_embeddings=True)
-    faiss_index = faiss.IndexFlatIP(embeddings.shape[1])
-    faiss_index.add(np.array(embeddings))
-    faiss.write_index(faiss_index, str(faiss_index_path))

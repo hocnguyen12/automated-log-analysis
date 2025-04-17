@@ -1,7 +1,11 @@
 import itertools
 from xml.etree import ElementTree as ET
 from pathlib import Path
+import json
+import streamlit as st
 
+BOLD = '\033[1m'
+END = '\033[0m'
 ############################# PARSE OUTPUT.XML FILE ###################################
 def parse_xml(xml_path_string):
     '''
@@ -27,7 +31,7 @@ def parse_xml(xml_path_string):
 
                 steps = extract_keywords(test)
                 detailed_failed_tests.append({
-                    "name": test_name,
+                    "test_name": test_name,
                     "error_message": error_message,
                     "doc": doc_text,
                     "steps": steps
@@ -75,7 +79,7 @@ def pretty_print_fails(fails):
     END = '\033[0m'
     for fail in fails:
         print("\n")
-        print(BOLD + "Test : " + fail["name"] + END)
+        print(BOLD + "Test : " + fail["test_name"] + END)
         print("Error message : " + fail["error_message"])
         print("Doc : " + fail["doc"])
         print("Steps : ")
@@ -83,7 +87,7 @@ def pretty_print_fails(fails):
             print("\tEMPTY")
         else :
             for step in fail["steps"]:
-                print('\t' + BOLD + "name : " +  step["name"] + END)
+                print('\t' + BOLD + "name : " +  step["keyword"] + END)
                 print(f"\targs : {step['args']}")
                 print(f"\tstatus : {step['status']}")
                 print(f"\tdepth : {step['depth']}")
@@ -97,7 +101,7 @@ def stringify_test_case(test):
     output : string containing all the information about the fail
     '''
     parts = [
-        f"Test name: {test['name']}",
+        f"Test name: {test['test_name']}",
         f"Error: {test['error_message']}"
     ]
 
@@ -106,7 +110,7 @@ def stringify_test_case(test):
         parts.append(f"Doc: {test_doc}")
 
     for step in test["steps"]:
-        keyword = step["name"]
+        keyword = step["keyword"]
         args = ", ".join(step["args"])
         status = step["status"]
         doc = step.get("doc", "")
@@ -133,8 +137,8 @@ def convert_to_json_structured(test):
         - Sequence-to-sequence model (to suggest corrections)
     '''
     return {
-        "test_name": test["name"],
-        "error": test["error_message"],
+        "test_name": test["test_name"],
+        "error_message": test["error_message"],
         "doc": test["doc"],
         "steps": [
             {
@@ -172,8 +176,13 @@ def merge_xml_training_data(xml_list, json_file_name):
     '''
     training_data = []
     for xml in xml_list:
-        training_data.extend(xml)
+        fail_logs = parse_xml(xml)
+        training_data.extend(fail_logs)
+
     json_data = [convert_to_json_structured(t) for t in training_data]
+
+    st.write(training_data)
+
 
     with open(json_file_name, "w", encoding="utf-8") as f:
         json.dump(json_data, f, indent=2, ensure_ascii=False)

@@ -55,6 +55,8 @@ def save_converted_xml_to_json(xml_file, json_file_name):
     '''
     fail_logs = parse_xml(xml_file)
 
+    print([t for t in fail_logs])
+
     json_data = [convert_to_json_structured(t) for t in fail_logs]
 
     with open(json_file_name, "w", encoding="utf-8") as f:
