@@ -1,3 +1,7 @@
+import itertools
+from xml.etree import ElementTree as ET
+from pathlib import Path
+
 ############################# PARSE OUTPUT.XML FILE ###################################
 def parse_xml(xml_path_string):
     '''
@@ -159,6 +163,22 @@ def save_converted_xml_to_json(xml_file, json_file_name):
         json.dump(json_data, f, indent=2, ensure_ascii=False)
     return fail_logs
 
+def merge_xml_training_data(xml_list, json_file_name):
+    '''
+    This function does the same treatment as 'save_converted_xml_to_json' but it takes as an input 
+    a list of parsed xml contents instead of just one
+    The goal is when we have multiple 'output.xml' we want to use as training for the model, 
+    we can have a single '.json' that contains all the fails as a dataset
+    '''
+    training_data = []
+    for xml in xml_list:
+        training_data.extend(xml)
+    json_data = [convert_to_json_structured(t) for t in training_data]
+
+    with open(json_file_name, "w", encoding="utf-8") as f:
+        json.dump(json_data, f, indent=2, ensure_ascii=False)
+    return training_data
+
 ############################# PROCESS DATA BEFORE FEEDING MODEL ###################################
 def build_log_text(item):
     msg = f"Test name: {item['test_name']}\n"
@@ -177,7 +197,7 @@ def build_log_text(item):
 def auto_label_fix_category(data):
     for item in data:
         if "fix_category" not in item or not item["fix_category"]:
-            error = item["error"].lower()
+            error = item["error_message"].lower()
             if "missing" in error and "argument" in error:
                 item["fix_category"] = "missing_argument"
             elif "not found" in error or "selector" in error:

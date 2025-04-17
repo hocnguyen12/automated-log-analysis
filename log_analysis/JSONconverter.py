@@ -19,6 +19,7 @@ Build an API	                            |    Your analyzer could return the str
 '''
 import json
 from XMLlogsParser import parse_xml
+import itertools
 
 def convert_to_json_structured(test):
     '''
@@ -59,6 +60,22 @@ def save_converted_xml_to_json(xml_file, json_file_name):
     with open(json_file_name, "w", encoding="utf-8") as f:
         json.dump(json_data, f, indent=2, ensure_ascii=False)
     return fail_logs
+
+def merge_xml_training_data(xml_list, json_file_name):
+    '''
+    This function does the same treatment as 'save_converted_xml_to_json' but it takes as an input 
+    a list of parsed xml contents instead of just one
+    The goal is when we have multiple 'output.xml' we want to use as training for the model, 
+    we can have a single '.json' that contains all the fails as a dataset
+    '''
+    training_data = []
+    for xml in xml_list:
+        training_data.extend(xml)
+    json_data = [convert_to_json_structured(t) for t in training_data]
+
+    with open(json_file_name, "w", encoding="utf-8") as f:
+        json.dump(json_data, f, indent=2, ensure_ascii=False)
+    return training_data
 
 
 
