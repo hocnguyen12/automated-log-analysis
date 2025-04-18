@@ -13,10 +13,11 @@ import numpy as np
 import faiss
 import tempfile
 from pathlib import Path
+import streamlit_nested_layout
 
 from Utils import parse_xml, build_log_text, auto_label_fix_category, merge_xml_training_data, save_converted_xml_to_json, BOLD, END
 
-status_placeholder = st.empty()
+st.title('Robot Framework Automated Tests Fail Analysis')
 
 ############################################# PATHS ####################################################
 original_data_path = "dataset/train_fails.json"
@@ -86,10 +87,6 @@ def merge_train_data(print=False):
             "log_text": fb["log_text"],
             "fix_category": fix_category
         })
-    #st.write("Training Data : ")
-    #for entry in merged:
-    #    print(json.dumps(entry, indent=1))
-
     # Filter out "unknown", "null" and "" fix categories before training
     merged = [entry for entry in merged if entry["fix_category"] not in ["unknown", "null", ""]]
     return merged
@@ -125,7 +122,7 @@ def train_model(texts, labels):
 
     st.write("**Model saved to `log_analysis/model`**")
 
-def show_similar_fails(log_text, faiss_index, model):
+def get_similar_fails(log_text, faiss_index, model):
     query_embedding = model.encode([log_text], normalize_embeddings=True)
     D, I = faiss_index.search(np.array(query_embedding), k=3)
 
@@ -144,17 +141,21 @@ def show_similar_fails(log_text, faiss_index, model):
     return similar_fails
 
 def dislay_fail_in_expander(fail):
-    st.write(f"Test Case: {fail['test_name']}")
-    st.write(f"Error: {fail['error_message']}")
-    st.write(f"Doc: {fail.get('doc', 'No description available.')}")
-    
+    st.write(
+        f"""
+        ### Test Case: {fail['test_name']}
+        Error: `{fail['error_message']}`
+
+        Doc: {fail.get('doc', 'No description available')}
+        """
+    )
     if 'steps' in fail:
         for step in fail['steps']:
-            st.write(f"**Step: {step['keyword']}**")
-            st.write(f"- **Args**: {' '.join(step['args'])}")
-            st.write(f"- **Status**: {step['status']}")
-            st.write(f"- **Doc**: {step.get('doc', 'No description available.')}")
-            st.write(f"- **Messages**: {' | '.join(step.get('messages', []))}")
+            with st.expander(f"**Step:** {step['keyword']}"):
+                st.write(f"- **Args**: `{' '.join(step['args'])}`")
+                st.write(f"- **Status**: `{step['status']}`")
+                st.write(f"- **Doc**: {step.get('doc', 'No description available.')}")
+                st.write(f"- **Messages**: `{' | '.join(step.get('messages', []))}`")
 
 ##############################################  SECTIONS ##################################################
 def prediction_section(fail, idx, clf, vectorizer):
@@ -170,76 +171,80 @@ def prediction_section(fail, idx, clf, vectorizer):
             st.session_state[f"predicted_fix_{idx+1}"]= pred[0]
             st.session_state[f"log_text_{idx+1}"] = log_text 
     else :
+        if st.button(f"Predict fail correction", key=f"predict_{idx+1}"):
+            pass
         state = f"predicted_fix_{idx+1}"
         st.write(f"**[Suggested Correction]: {st.session_state[state]}**")
 
-def similarity_section(idx):
+def similarity_section(idx, recall=True):
     if f"log_text_{idx+1}" in st.session_state and f"predicted_fix_{idx+1}" in st.session_state:
-        if st.session_state[f"similar_fails_showing_{idx+1}"]:
-            if st.button(f"Show Most Similar Fails", key=f"similarity_{idx+1}"):
-                #st.session_state[f"similarity_button_{idx+1}"] = not st.session_state[f"similarity_button_{idx+1}"]
-                # Retrieve similar failures using FAISS
-                similar_fails = show_similar_fails(st.session_state[f"log_text_{idx+1}"], faiss_index, model)
-                st.write("**Top 3 similar failures:**")
-                for fail in similar_fails:
-                    st.write(f"- **Rank: {fail['rank']}** [Similarity Score = {fail['similarity_score']}]")
+        if st.button("Show Most Similar Fails", key=f"similarity_button_{idx+1}"):
+            similar_fails = get_similar_fails(st.session_state[f"log_text_{idx+1}"], faiss_index, model)
+            st.write("**Top 3 Similar Fails:**")
+            for fail in similar_fails:
+                with st.expander(f"- **Rank: {fail['rank']}** [Similarity Score = {fail['similarity_score']}]"):
+                    st.write(f"Log: `{fail['log']}`")
+                    st.write(f"**Correction**: {fail['fix_category']}")
+            # When page is rerun, similar fails will still be showed
+            st.session_state[f"show_similar_fails_{idx+1}"] = True
+        elif f"show_similar_fails_{idx+1}" in st.session_state and st.session_state[f"show_similar_fails_{idx+1}"]:
+            similar_fails = get_similar_fails(st.session_state[f"log_text_{idx+1}"], faiss_index, model)
+            st.write("**Top 3 Similar Fails:**")
+            for fail in similar_fails:
+                with st.expander(f"- **Rank: {fail['rank']}** [Similarity Score = {fail['similarity_score']}]"):
                     st.write(f"Log Snippet: `{fail['log']}`")
                     st.write(f"**Correction**: {fail['fix_category']}")
-                st.session_state[f"similar_fails_showing_{idx+1}"] = True
-        else :
-            if st.button(f"Hide Most Similar Fails", key=f"hide_similarity_{idx+1}"):
-                st.session_state[f"similar_fails_showing_{idx+1}"] = False
+
 
 def feedback_section(fail, idx):
-    #if st.session_state[f"predict_button_{idx+1}"] and st.session_state[f"similarity_button_{idx+1}"]:
+    if f"feedback_{idx+1}" not in st.session_state:
+        st.session_state[f"feedback_{idx+1}"] = False
+
     if f"predicted_fix_{idx+1}" in st.session_state:
-        with col_yes:
-            feedback_yes = st.button("Yes", key="yes")
+        if st.button("Give Feedback", key=f"feedback_button_{idx+1}"):
+            st.session_state[f"feedback_{idx+1}"] = not st.session_state[f"feedback_{idx+1}"]
 
-        with col_no:
-            feedback_no = st.button("No", key="no")
+            st.write("Is the suggested correction right ?")
 
-        if feedback_yes:
-            # If the feedback is 'Yes', save it as correct and proceed
-            feedback = "correct"
-            actual_category = None
-            st.write("Thank you, the correction was right.")
-            # Save the feedback
-            entry = {
-                "timestamp": datetime.now().isoformat(),
-                "log_text": st.session_state.log_text,
-                "predicted_category": st.session_state.predicted_fix,
-                "feedback": feedback,
-                "actual_category": st.session_state.predicted_fix
-            }
-            with open(feedback_data_path, "a") as f:
-                f.write(json.dumps(entry) + "\n")
-            st.write("Feedback saved. Thank you!")
-
-        elif feedback_no:
-            # If the feedback is 'No', ask for the correct fix category
-            feedback = "wrong"
-            actual_category = st.text_input("What is the right fix category?", key="actual_category_input")
-            
-            if actual_category:
-                # Save the feedback with the corrected fix category
+        if st.session_state[f"feedback_{idx+1}"]:
+            if st.button("Yes", key=f"yes_button_{idx+1}"):
                 entry = {
                     "timestamp": datetime.now().isoformat(),
-                    "log_text": st.session_state.log_text,
-                    "predicted_category": st.session_state.predicted_fix,
-                    "feedback": feedback,
-                    "actual_category": actual_category  # Save the user-provided actual fix
+                    "log_text": st.session_state[f"log_text_{idx+1}"],
+                    "predicted_category": st.session_state[f"predicted_fix_{idx+1}"],
+                    "feedback": "correct",
+                    "actual_category": st.session_state[f"predicted_fix_{idx+1}"]
                 }
                 with open(feedback_data_path, "a") as f:
                     f.write(json.dumps(entry) + "\n")
-                st.write(f"User said the fix was incorrect. The correct fix category is: {actual_category}")
                 st.write("Feedback saved. Thank you!")
-            else:
-                st.write("Please provide a correct fix category before submitting.")
+                st.session_state[f"feedback_{idx+1}"] = False
+
+        if st.session_state[f"feedback_{idx+1}"]:
+            if st.button("No", key=f"no_button_{idx+1}"):
+                # If the feedback is 'No', ask for the correct fix category
+                actual_category = st.text_input("What is the right fix category?", key=f"actual_category_input_{idx+1}")
+                
+                if actual_category:
+                    st.session_state[f"actual_category_input_{idx+1}"] = actual_category
+
+            if f"actual_category_input_{idx+1}" in st.session_state and st.session_state[f"actual_category_input_{idx+1}"]:
+
+                st.write("You entered: ", st.session_state[f"actual_category_input_{idx+1}"])
+                # Save the feedback with the corrected fix category
+                entry = {
+                    "timestamp": datetime.now().isoformat(),
+                    "log_text": st.session_state[f"log_text_{idx+1}"],
+                    "predicted_category": st.session_state[f"predicted_fix_{idx+1}"],
+                    "feedback": "wrong",
+                    "actual_category": st.session_state[f"actual_category_input_{idx+1}"]  # Save the user-provided actual fix
+                }
+                with open(feedback_data_path, "a") as f:
+                    f.write(json.dumps(entry) + "\n")
+                st.write("Feedback saved. Thank you!")
+                st.session_state[f"feedback_{idx+1}"] = False
 
 ########################################### STREAMLIT UI ###############################################
-st.title('Robot Framework Automated Tests Fail Analysis')
-
 tab_predict, tab_train = st.tabs(["Analyse fails", "Train model"])
 
 col_yes, col_no = st.columns(2)
@@ -278,14 +283,6 @@ with tab_predict:
             # Display the new fails
             for idx, fail in enumerate(new_data):
                 with st.expander(f"Fail {idx+1} - {fail['test_name']}"):
-                    # BUTTONS SETUP
-                    #if f"predict_button_{idx+1}" not in st.session_state:
-                    #    st.session_state[f"predict_button_{idx+1}"] = False
-
-                    #if f"similarity_button_{idx+1}" not in st.session_state:
-                    #    st.session_state[f"similarity_button_{idx+1}"] = False
-                    st.session_state[f"similar_fails_showing_{idx+1}"] = False
-
                     dislay_fail_in_expander(fail) # Display Fail
 
                     prediction_section(fail, idx, clf, vectorizer) # Predict Button
@@ -294,4 +291,4 @@ with tab_predict:
 
                     feedback_section(fail, idx) # Feedback Buttons (Correct / Incorrect)
         else :
-            st.write("First train a model and FAISS index")
+            st.write("**First train a model and FAISS index**")
