@@ -215,8 +215,9 @@ def feedback_section(fail, idx):
                     "feedback": "correct",
                     "actual_category": st.session_state[f"predicted_fix_{idx+1}"]
                 }
-                with open(feedback_data_path, "a") as f:
-                    f.write(json.dumps(entry) + "\n")
+                #with open(feedback_data_path, "a") as f:
+                    #f.write(json.dumps(entry) + "\n")
+                write_feedback(entry)
                 st.write("Feedback saved. Thank you!")
                 st.session_state[f"feedback_{idx+1}"] = False
 
@@ -239,10 +240,33 @@ def feedback_section(fail, idx):
                     "feedback": "wrong",
                     "actual_category": st.session_state[f"actual_category_input_{idx+1}"]  # Save the user-provided actual fix
                 }
-                with open(feedback_data_path, "a") as f:
-                    f.write(json.dumps(entry) + "\n")
+                #with open(feedback_data_path, "a") as f:
+                    #f.write(json.dumps(entry) + "\n")
+                write_feedback(entry)
                 st.write("Feedback saved. Thank you!")
                 st.session_state[f"feedback_{idx+1}"] = False
+
+def write_feedback(entry):
+    # Check if the file exists
+    file_exists = os.path.exists(feedback_data_path)
+
+    with open(feedback_data_path, "a") as f:
+        if not file_exists:
+            # File does not exist, start the JSON array with [
+            f.write("[\n")
+        else:
+            # If the file already exists, add a comma to separate entries
+            f.seek(0, os.SEEK_END)  # Move the pointer to the end of the file
+            f.seek(f.tell() - 1, os.SEEK_SET)  # Move the pointer back one character (to remove the closing `]` if any)
+            if f.read() != "]":
+                f.write(",\n")  # Add a comma between objects if not at the end
+        
+        # Write the new feedback entry
+        f.write(json.dumps(entry))
+
+        # Ensure the file ends with a closing bracket for the JSON array
+        if not file_exists:
+            f.write("\n]")  # End the array with ]
 
 ########################################### STREAMLIT UI ###############################################
 tab_predict, tab_train = st.tabs(["Analyse fails", "Train model"])

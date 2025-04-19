@@ -219,3 +219,75 @@ def auto_label_fix_category(data):
             else:
                 item["fix_category"] = "other"
     return data
+
+def auto_label_fix_category_test(data):
+    for item in data:
+        print(item)
+        if "fix_category" not in item or not item["fix_category"]:
+            error = item["error_message"].lower()
+            if "missing" in error and "argument" in error:
+                item["fix_category"] = "missing_argument"
+            elif "not found" in error or "selector" in error:
+                item["fix_category"] = "invalid_selector"
+            elif "assert" in error or "should be equal" in error:
+                item["fix_category"] = "assertion_failed"
+            elif "timeout" in error:
+                item["fix_category"] = "timeout"
+            elif "connection" in error:
+                item["fix_category"] = "connection_error"
+            else:
+                item["fix_category"] = "other"
+    return data
+
+##################################### LABEL TEST ####################################
+if __name__ == '__main__':
+    original_data_path = Path("tests/structured_failures_test.json")
+
+    #create list of output.xml files
+    list_files = []
+    merge_xml_training_data(list_files, original_data_path)
+
+    with open(original_data_path, "r") as f:
+        base_data = json.load(f)
+
+    base_data = auto_label_fix_category_test(base_data)
+
+    merged = []
+
+    for item in base_data:
+        merged.append({
+            "log_text": build_log_text(item),
+            "fix_category": item["fix_category"]
+        })
+
+    
+    # OPTIONAL
+    '''
+    feedback_entries = []
+    if feedback_data_path.exists():
+        with open(feedback_data_path, "r") as f:
+            feedback_entries = [json.loads(line) for line in f if line.strip()]
+
+    for fb in feedback_entries:
+        if fb.get("feedback") == "correct":
+            fix_category = fb.get("predicted_category", "unknown") # If the feedback is correct, use the predicted category 
+        elif fb.get("feedback") == "wrong":
+            fix_category = fb.get("actual_category", "unknown")  # If the feedback is wrong, use the actual category from the user
+        else:
+            fix_category = "unknown"
+
+        merged.append({
+            "log_text": fb["log_text"],
+            "fix_category": fix_category
+        })
+    '''
+    # END OPTIONAL
+
+    # Filter out "unknown", "null" and "" fix categories before training
+    merged = [entry for entry in merged if entry["fix_category"] not in ["unknown", "null", ""]]
+
+    for entry in merged:
+        print(json.dumps(entry, indent=1))
+
+    texts = [r["log_text"] for r in merged]
+    labels = [r["fix_category"] for r in merged]
