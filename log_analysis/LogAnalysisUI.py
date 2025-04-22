@@ -207,7 +207,7 @@ def dislay_fail_in_expander(fail):
     )
     if 'steps' in fail:
         for step in fail['steps']:
-            with st.expander(f"**Step:** {step['keyword']}"):
+            with st.expander(f"**Keyword:** {step['keyword']}"):
                 st.write(f"- **Args**: `{' '.join(step['args'])}`")
                 st.write(f"- **Status**: `{step['status']}`")
                 st.write(f"- **Doc**: {step.get('doc', 'No description available.')}")
@@ -349,7 +349,7 @@ with tab_predict:
         else :
             st.write("**First train a model and FAISS index**")
 
-
+##### CLUSTERING VISUALIZATION #####
 with tab_clustering:
     uploaded_file_cluster = st.file_uploader("**Upload Robot Framework test execution (output.xml)**", type=["xml"])
     if uploaded_file_cluster:     
@@ -387,9 +387,17 @@ with tab_clustering:
             "cluster_label": cluster_labels
         })
 
-        # Display the results
-        st.write("Clustering Results:")
-        st.dataframe(results_df)
+        # REGULAR DISPLAY
+        #st.write("Clustering Results:")
+        #st.dataframe(results_df)
+
+        st.write(f"Clustering Results using {algorithm}:")
+    
+        unique_clusters = sorted(results_df["cluster_label"].unique())
+        for cluster in unique_clusters:
+            cluster_df = results_df[results_df["cluster_label"] == cluster]
+            with st.expander(f"Cluster {cluster}"):
+                st.dataframe(cluster_df)
 
         # Optionally, you can also plot the results if the data is 2D or you want to reduce dimensions
         try:

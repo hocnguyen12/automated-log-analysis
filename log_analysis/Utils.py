@@ -205,7 +205,7 @@ from sklearn.cluster import SpectralClustering
 from sklearn.cluster import AffinityPropagation
 
 def KMeansClustering(X, n_clusters):
-    kmeans = KMeans(n_clusters=n_clusters, random_state=42)
+    kmeans = KMeans(n_clusters=n_clusters, random_state=42, n_init=10)
     labels = kmeans.fit_predict(X)
     return labels
 
