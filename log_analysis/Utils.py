@@ -187,6 +187,73 @@ def merge_xml_training_data(xml_list, json_file_name):
         json.dump(json_data, f, indent=2, ensure_ascii=False)
     return training_data
 
+################################### EMBEDDINGS ###################################################
+
+def sentence_embedding(data):
+    from sentence_transformers import SentenceTransformer
+    model = SentenceTransformer("all-MiniLM-L6-v2")
+    X = model.encode(data)
+    return X
+
+################################### CLUSTERING ALGORITHMS #########################################
+import scipy.sparse
+from sklearn.cluster import KMeans
+from sklearn.cluster import DBSCAN
+import hdbscan 
+from sklearn.cluster import AgglomerativeClustering
+from sklearn.cluster import SpectralClustering
+from sklearn.cluster import AffinityPropagation
+
+def KMeansClustering(X, n_clusters):
+    kmeans = KMeans(n_clusters=n_clusters, random_state=42)
+    labels = kmeans.fit_predict(X)
+    return labels
+
+def DBSCANclustering(X):
+    '''
+    eps: max distance for two points to be considered neighbors
+    min_samples: min points to form a cluster
+    label == -1 means noise (outlier) 
+    '''
+    db = DBSCAN(eps=0.5, min_samples=2)  # tune these params
+    labels = db.fit_predict(X)
+    return labels
+
+def HDBSCANclustering(X):
+    '''
+    Automatically finds clusters, deals well with noisy or small data.
+    '''
+    clusterer = hdbscan.HDBSCAN(min_cluster_size=2)
+    labels = clusterer.fit_predict(X)
+    return labels
+
+def AggloClustering(X):
+    '''
+    You can use scipy to draw a dendrogram too
+    '''
+    if scipy.sparse.issparse(X):
+        X = X.toarray()
+
+    agg = AgglomerativeClustering(n_clusters=3)
+    labels = agg.fit_predict(X)  # needs dense input
+    return labels
+
+def SpectrClustering(X):
+    n_samples = X.shape[0]
+    n_neighbors = min(n_samples - 1, 5)  # or any smaller number
+
+    spectral = SpectralClustering(n_clusters=3, affinity='nearest_neighbors', n_neighbors=n_neighbors)
+    labels = spectral.fit_predict(X)
+    return labels
+
+def AffinityPropClustering(X):
+    if scipy.sparse.issparse(X):
+        X = X.toarray()
+        
+    aff = AffinityPropagation(damping=0.8)
+    labels = aff.fit_predict(X)
+    return labels
+
 ############################# PROCESS DATA BEFORE FEEDING MODEL ###################################
 def build_log_text(item):
     msg = f"Test name: {item['test_name']}\n"

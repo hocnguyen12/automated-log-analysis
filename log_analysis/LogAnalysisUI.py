@@ -14,8 +14,10 @@ import faiss
 import tempfile
 from pathlib import Path
 import streamlit_nested_layout
+import matplotlib.pyplot as plt
 
-from Utils import parse_xml, build_log_text, auto_label_fix_category, merge_xml_training_data, save_converted_xml_to_json, BOLD, END
+from Utils import parse_xml, build_log_text, auto_label_fix_category, merge_xml_training_data, save_converted_xml_to_json, BOLD, END, stringify_test_case, sentence_embedding
+from Utils import KMeansClustering, DBSCANclustering, HDBSCANclustering, AggloClustering, SpectrClustering, AffinityPropClustering
 
 st.title('Robot Framework Automated Tests Fail Analysis')
 
@@ -121,6 +123,60 @@ def train_model(texts, labels):
     faiss.write_index(faiss_index, str(faiss_index_path))
 
     st.write("**Model saved to `log_analysis/model`**")
+
+
+def train_model_new(texts, labels):
+    st.write("`Loading existing model if available...`")
+    
+    # Load existing model and vectorizer
+    if os.path.exists(model_path) and os.path.exists(vectorizer_path):
+        clf = joblib.load(model_path)
+        vectorizer = joblib.load(vectorizer_path)
+        st.write("`Existing model loaded, retraining...`")
+    else:
+        # If no model exists, create a new one
+        clf = RandomForestClassifier()
+        vectorizer = TfidfVectorizer(max_features=500, stop_words="english")
+        st.write("`No existing model found, training new model...`")
+    
+    # Transform the new texts using the vectorizer
+    X_new = vectorizer.fit_transform(texts)
+    
+    # If model exists, combine old and new data for retraining
+    if clf:
+        # Assuming you are training the model again with old data
+        if hasattr(clf, "fit"):  # Check if the classifier has the fit method
+            # You could consider loading old data and combining it with the new data here
+            X_old, y_old = load_existing_training_data()  # You should implement this function to load old data
+            X_combined = np.vstack((X_old, X_new.toarray()))  # Combine old and new data
+            y_combined = np.concatenate((y_old, labels))  # Combine old and new labels
+            clf.fit(X_combined, y_combined)  # Retrain on the combined data
+        else:
+            # If the model doesn't support incremental training, this method would be invalid
+            st.write("`Model does not support incremental training, re-training from scratch.`")
+            clf.fit(X_new, labels)
+    
+    # Evaluate the retrained model
+    y_pred = clf.predict(X_new)
+    st.write("**Classification Report:**")
+    report = classification_report(labels, y_pred, output_dict=True)
+    report_df = pd.DataFrame(report).transpose()
+    st.write(report_df)
+    
+    # Save the retrained model and vectorizer
+    joblib.dump(clf, model_path)
+    joblib.dump(vectorizer, vectorizer_path)
+    
+    # Build FAISS index for new data
+    st.write("`Building or updating FAISS index (similarity retrieval)...`")
+    model = SentenceTransformer("all-MiniLM-L6-v2")
+    embeddings = model.encode(texts, show_progress_bar=False, normalize_embeddings=True)
+    faiss_index = faiss.IndexFlatIP(embeddings.shape[1])
+    faiss_index.add(np.array(embeddings))
+    faiss.write_index(faiss_index, str(faiss_index_path))
+    
+    st.write("**Model and FAISS index saved to `log_analysis/model`**")
+
 
 def get_similar_fails(log_text, faiss_index, model):
     query_embedding = model.encode([log_text], normalize_embeddings=True)
@@ -246,32 +302,8 @@ def feedback_section(fail, idx):
                 st.write("Feedback saved. Thank you!")
                 st.session_state[f"feedback_{idx+1}"] = False
 
-def write_feedback(entry):
-    # Check if the file exists
-    file_exists = os.path.exists(feedback_data_path)
-
-    with open(feedback_data_path, "a") as f:
-        if not file_exists:
-            # File does not exist, start the JSON array with [
-            f.write("[\n")
-        else:
-            # If the file already exists, add a comma to separate entries
-            f.seek(0, os.SEEK_END)  # Move the pointer to the end of the file
-            f.seek(f.tell() - 1, os.SEEK_SET)  # Move the pointer back one character (to remove the closing `]` if any)
-            if f.read() != "]":
-                f.write(",\n")  # Add a comma between objects if not at the end
-        
-        # Write the new feedback entry
-        f.write(json.dumps(entry))
-
-        # Ensure the file ends with a closing bracket for the JSON array
-        if not file_exists:
-            f.write("\n]")  # End the array with ]
-
 ########################################### STREAMLIT UI ###############################################
-tab_predict, tab_train = st.tabs(["Analyse fails", "Train model"])
-
-col_yes, col_no = st.columns(2)
+tab_predict, tab_train, tab_clustering = st.tabs(["Analyse fails", "Train model", "Clustering"])
 
 with tab_train:
     uploaded_files_train = st.file_uploader("**Upload past test execution as training data (optionally multiple output.xml files)**", type=["xml"],  accept_multiple_files=True)
@@ -316,3 +348,62 @@ with tab_predict:
                     feedback_section(fail, idx) # Feedback Buttons (Correct / Incorrect)
         else :
             st.write("**First train a model and FAISS index**")
+
+
+with tab_clustering:
+    uploaded_file_cluster = st.file_uploader("**Upload Robot Framework test execution (output.xml)**", type=["xml"])
+    if uploaded_file_cluster:     
+        with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
+            tmp_file.write(uploaded_file_cluster.read())
+            tmp_file_path = tmp_file.name
+
+        fail_logs = parse_xml(tmp_file_path)
+        documents = [stringify_test_case(t) for t in fail_logs]
+        # Embedding
+        X = sentence_embedding(documents)
+
+        # User selects the clustering algorithm
+        algorithm = st.selectbox("Choose Clustering Algorithm", ["KMeans", "DBSCAN", "HDBSCAN", "Agglomerative", "Spectral", "Affinity Propagation"])
+
+        # Apply the selected clustering algorithm
+        if algorithm == "KMeans":
+            n_clusters = st.slider("Select Number of Clusters", min_value=2, max_value=10, value=3)
+            cluster_labels = KMeansClustering(X, n_clusters)
+        elif algorithm == "DBSCAN":
+            cluster_labels = DBSCANclustering(X)
+        elif algorithm == "HDBSCAN":
+            cluster_labels = HDBSCANclustering(X)
+        elif algorithm == "Agglomerative":
+            cluster_labels = AggloClustering(X)
+        elif algorithm == "Spectral":
+            cluster_labels = SpectrClustering(X)
+        elif algorithm == "Affinity Propagation":
+            cluster_labels = AffinityPropClustering(X)
+
+        # Create a DataFrame with results
+        results_df = pd.DataFrame({
+            "name": [t["test_name"] for t in fail_logs],
+            "error": [t["error_message"] for t in fail_logs],
+            "cluster_label": cluster_labels
+        })
+
+        # Display the results
+        st.write("Clustering Results:")
+        st.dataframe(results_df)
+
+        # Optionally, you can also plot the results if the data is 2D or you want to reduce dimensions
+        try:
+            from sklearn.decomposition import PCA
+            pca = PCA(n_components=2)
+            reduced_data = pca.fit_transform(X)
+
+            st.write("Cluster Visualization (PCA reduced):")
+            #scatter = st.pyplot()
+            
+            fig, ax = plt.subplots()
+            ax.scatter(reduced_data[:, 0], reduced_data[:, 1], c=cluster_labels, cmap='viridis')
+            ax.set_title(f"Clustering: {algorithm}")
+            st.pyplot(fig)
+
+        except Exception as e:
+            st.write(f"Error visualizing clusters: {e}")
