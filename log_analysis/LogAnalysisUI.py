@@ -215,9 +215,9 @@ def feedback_section(fail, idx):
                     "feedback": "correct",
                     "actual_category": st.session_state[f"predicted_fix_{idx+1}"]
                 }
-                #with open(feedback_data_path, "a") as f:
-                    #f.write(json.dumps(entry) + "\n")
-                write_feedback(entry)
+                with open(feedback_data_path, "a") as f:
+                    f.write(json.dumps(entry) + "\n")
+                #write_feedback(entry)
                 st.write("Feedback saved. Thank you!")
                 st.session_state[f"feedback_{idx+1}"] = False
 
@@ -240,9 +240,9 @@ def feedback_section(fail, idx):
                     "feedback": "wrong",
                     "actual_category": st.session_state[f"actual_category_input_{idx+1}"]  # Save the user-provided actual fix
                 }
-                #with open(feedback_data_path, "a") as f:
-                    #f.write(json.dumps(entry) + "\n")
-                write_feedback(entry)
+                with open(feedback_data_path, "a") as f:
+                    f.write(json.dumps(entry) + "\n")
+                #write_feedback(entry)
                 st.write("Feedback saved. Thank you!")
                 st.session_state[f"feedback_{idx+1}"] = False
 
