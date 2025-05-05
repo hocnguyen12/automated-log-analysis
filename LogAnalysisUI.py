@@ -132,60 +132,6 @@ def train_model(texts, labels):
 
     st.write("**Model saved to `log_analysis/model`**")
 
-
-def train_model_new(texts, labels):
-    st.write("`Loading existing model if available...`")
-    
-    # Load existing model and vectorizer
-    if os.path.exists(model_path) and os.path.exists(vectorizer_path):
-        clf = joblib.load(model_path)
-        vectorizer = joblib.load(vectorizer_path)
-        st.write("`Existing model loaded, retraining...`")
-    else:
-        # If no model exists, create a new one
-        clf = RandomForestClassifier()
-        vectorizer = TfidfVectorizer(max_features=500, stop_words="english")
-        st.write("`No existing model found, training new model...`")
-    
-    # Transform the new texts using the vectorizer
-    X_new = vectorizer.fit_transform(texts)
-    
-    # If model exists, combine old and new data for retraining
-    if clf:
-        # Assuming you are training the model again with old data
-        if hasattr(clf, "fit"):  # Check if the classifier has the fit method
-            # You could consider loading old data and combining it with the new data here
-            X_old, y_old = load_existing_training_data()  # You should implement this function to load old data
-            X_combined = np.vstack((X_old, X_new.toarray()))  # Combine old and new data
-            y_combined = np.concatenate((y_old, labels))  # Combine old and new labels
-            clf.fit(X_combined, y_combined)  # Retrain on the combined data
-        else:
-            # If the model doesn't support incremental training, this method would be invalid
-            st.write("`Model does not support incremental training, re-training from scratch.`")
-            clf.fit(X_new, labels)
-    
-    # Evaluate the retrained model
-    y_pred = clf.predict(X_new)
-    st.write("**Classification Report:**")
-    report = classification_report(labels, y_pred, output_dict=True)
-    report_df = pd.DataFrame(report).transpose()
-    st.write(report_df)
-    
-    # Save the retrained model and vectorizer
-    joblib.dump(clf, model_path)
-    joblib.dump(vectorizer, vectorizer_path)
-    
-    # Build FAISS index for new data
-    st.write("`Building or updating FAISS index (similarity retrieval)...`")
-    model = SentenceTransformer("all-MiniLM-L6-v2")
-    embeddings = model.encode(texts, show_progress_bar=False, normalize_embeddings=True)
-    faiss_index = faiss.IndexFlatIP(embeddings.shape[1])
-    faiss_index.add(np.array(embeddings))
-    faiss.write_index(faiss_index, str(faiss_index_path))
-    
-    st.write("**Model and FAISS index saved to `log_analysis/model`**")
-
-
 def get_similar_fails(log_text, faiss_index, model):
     query_embedding = model.encode([log_text], normalize_embeddings=True)
     D, I = faiss_index.search(np.array(query_embedding), k=3)
@@ -311,6 +257,51 @@ def feedback_section(fail, idx):
                 st.write("Feedback saved. Thank you!")
                 st.session_state[f"feedback_{idx+1}"] = False
 
+def edit_unknown_fix_categories(json_path: str):
+    st.header("Edit 'unknown' Fix Categories")
+
+    FIX_CATEGORY_OPTIONS = [
+        "server_not_running",
+        "invalid_selector",
+        "timeout_error",
+        "authentication_error"
+    ]
+
+    try:
+        with open(json_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception as e:
+        st.error(f"Error loading JSON file: {e}")
+        return
+
+    if isinstance(data, dict):
+        data = [data]
+
+    updated = False
+
+    for i, test in enumerate(data):
+        if test.get("fix_category", "unknown") == "unknown":
+            with st.expander(f"Test: {test.get('test_name', 'Unnamed')}"):
+                st.write("**Error Message:**", test.get("error_message", ""))
+                selected_value = st.selectbox(
+                    label="Select Fix Category",
+                    options=["unknown"] + FIX_CATEGORY_OPTIONS,
+                    index=0,
+                    key=f"fix_category_select_{i}"
+                )
+                if selected_value != "unknown":
+                    test["fix_category"] = selected_value
+                    updated = True
+
+    if updated:
+        try:
+            with open(json_path, "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=2)
+            st.success("Fix categories updated successfully!")
+        except Exception as e:
+            st.error(f"Error writing JSON file: {e}")
+
+
 ########################################### STREAMLIT UI ###############################################
 tab_predict, tab_train, tab_clustering = st.tabs(["Analyse fails", "Train model", "Clustering"])
 
@@ -333,6 +324,8 @@ with tab_train:
             merged = merge_train_data(print=True)
             texts, labels = get_texts_and_labels(merged)
             train_model(texts, labels)
+
+        edit_unknown_fix_categories(original_data_path)
 
 ##### PREDICTION #####
 with tab_predict:

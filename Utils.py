@@ -270,36 +270,14 @@ def build_log_text(item):
             msg += f"Messages: {' | '.join(step['messages'])}\n"
     return msg
 
-# LABELING FUNCTION TEMPLATE
-'''
 def auto_label_fix_category(data):
     for item in data:
         if "fix_category" not in item or not item["fix_category"]:
-            error = item["error_message"].lower()
-            if "missing" in error and "argument" in error:
-                item["fix_category"] = "missing_argument"
-            elif "not found" in error or "selector" in error:
-                item["fix_category"] = "invalid_selector"
-            elif "assert" in error or "should be equal" in error:
-                item["fix_category"] = "assertion_failed"
-            elif "timeout" in error:
-                item["fix_category"] = "timeout"
-            elif "connection" in error:
-                item["fix_category"] = "connection_error"
-            else:
-                item["fix_category"] = "other"
-    return data
-'''
-
-def auto_label_fix_category(data):
-    for item in data:
-        if "fix_category" not in item or not item["fix_category"]:
-            #error = item["error_message"].lower()
             error = item["error_message"].replace("\n", " ").strip().lower()
-            print("processed error message : ", error)
-            if "setup failed" in error and "invalid credentials" in error:
+            test_name = item["test_name"].replace("\n", " ").strip().lower()
+            if ("setup failed" in error or "login failed" in error or "check" in test_name) and "invalid credentials" in error:
                 item["fix_category"] = "authentication_error"
-            elif "setup failed" in error and "net::err_connection_refused" in error:
+            elif ("setup failed" in error or "check" in test_name) and "net::err_connection_refused" in error:
                 item["fix_category"] = "server_not_running"
             elif "element" in error and ("did not appear" in error or "not visible" in error):
                 item["fix_category"] = "invalid_selector"
