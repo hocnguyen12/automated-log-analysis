@@ -306,6 +306,21 @@ def auto_label_fix_category_test(data):
                 item["fix_category"] = "other"
     return data
 
+fix_mapping = {
+    "server_not_running": "The application server is not running. Please ask the team in charge of the servers to check the status of the server.",
+    "invalid_selector": "The selector used in the test is invalid. Update the selector to match the current DOM structure.",
+    "timeout_error": "The test exceeded the timeout. Increase the timeout settings or investigate server performance.",
+    "authentication_error": "Login failed due to authentication issues. Check if the credentials are correct or if the session has expired."
+}
+
+###### EXAMPLE
+# Sample prediction result
+predicted_label = "server_not_running"
+
+# Use the label to get the corresponding fix message
+fix_message = fix_mapping.get(predicted_label, "Unknown error. Please check the logs for more details.")
+
+
 ##################################### LABEL TEST ####################################
 if __name__ == '__main__':
     original_data_path = Path("tests/structured_failures_test.json")

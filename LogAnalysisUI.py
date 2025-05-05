@@ -18,6 +18,7 @@ import matplotlib.pyplot as plt
 
 from Utils import parse_xml, build_log_text, auto_label_fix_category, merge_xml_training_data, save_converted_xml_to_json, BOLD, END, stringify_test_case, sentence_embedding
 from Utils import KMeansClustering, DBSCANclustering, HDBSCANclustering, AggloClustering, SpectrClustering, AffinityPropClustering
+from Utils import fix_mapping
 
 st.title('Robot Framework Automated Tests Fail Analysis')
 
@@ -223,6 +224,7 @@ def prediction_section(fail, idx, clf, vectorizer):
             log_text = build_log_text(fail)
             new_vec = vectorizer.transform([log_text]) if vectorizer else None
             pred = clf.predict(new_vec)
+            fix_message = fix_mapping(pred[0], "Unknown error. Please check the logs for more details.")
             st.write(f"**[Suggested Correction]: {pred[0]}**")
             st.session_state[f"predicted_fix_{idx+1}"]= pred[0]
             st.session_state[f"log_text_{idx+1}"] = log_text 
