@@ -54,6 +54,10 @@ st.write("`Sentence transformer loaded`")
 
 ########################################## HELPER FUNCTIONS ##################################################
 def merge_train_data(print=False):
+    '''
+    THIS FUNCTIONS ADDS LABEL
+    -> calls `auto_label_fix_category()`
+    '''
     if print: st.write("`Loading data from Robot Framework test report...`")
     with open(original_data_path, "r") as f:
         base_data = json.load(f)
@@ -66,6 +70,9 @@ def merge_train_data(print=False):
 
     if print: st.write("`Labeling data (fail -> correction)...`")
     base_data = auto_label_fix_category(base_data)
+
+    with open(original_data_path, "w") as f:
+        json.dump(base_data, f, indent=2, ensure_ascii=False)
 
     merged = []
 
@@ -224,7 +231,7 @@ def prediction_section(fail, idx, clf, vectorizer):
             log_text = build_log_text(fail)
             new_vec = vectorizer.transform([log_text]) if vectorizer else None
             pred = clf.predict(new_vec)
-            fix_message = fix_mapping(pred[0], "Unknown error. Please check the logs for more details.")
+            fix_message = fix_mapping.get(pred[0], "Unknown error. Please check the logs for more details.")
             st.write(f"**[Suggested Correction]: {pred[0]}**")
             st.session_state[f"predicted_fix_{idx+1}"]= pred[0]
             st.session_state[f"log_text_{idx+1}"] = log_text 
@@ -321,8 +328,8 @@ with tab_train:
             list_files.append(tmp_file_path)
 
         #st.write(f"FILE LIST : {list_files}")
-        merge_xml_training_data(list_files, original_data_path)
         if st.button(f"Train model", key=f"train_model"):
+            merge_xml_training_data(list_files, original_data_path)
             merged = merge_train_data(print=True)
             texts, labels = get_texts_and_labels(merged)
             train_model(texts, labels)

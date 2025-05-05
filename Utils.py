@@ -66,7 +66,8 @@ def extract_keywords(keyword_element, depth=0):
             "doc": doc_text,
             "messages": msgs
         }
-        steps.append(step)
+        if status not in ["NOT RUN", "PASS"]:
+            steps.append(step)
         # Recursively extract nested keywords
         steps.extend(extract_keywords(kw, depth + 1))
     return steps
@@ -269,6 +270,8 @@ def build_log_text(item):
             msg += f"Messages: {' | '.join(step['messages'])}\n"
     return msg
 
+# LABELING FUNCTION TEMPLATE
+'''
 def auto_label_fix_category(data):
     for item in data:
         if "fix_category" not in item or not item["fix_category"]:
@@ -286,24 +289,23 @@ def auto_label_fix_category(data):
             else:
                 item["fix_category"] = "other"
     return data
+'''
 
-def auto_label_fix_category_test(data):
+def auto_label_fix_category(data):
     for item in data:
-        print(item)
         if "fix_category" not in item or not item["fix_category"]:
-            error = item["error_message"].lower()
-            if "missing" in error and "argument" in error:
-                item["fix_category"] = "missing_argument"
-            elif "not found" in error or "selector" in error:
+            #error = item["error_message"].lower()
+            error = item["error_message"].replace("\n", " ").strip().lower()
+            print("processed error message : ", error)
+            if "setup failed" in error and "invalid credentials" in error:
+                item["fix_category"] = "authentication_error"
+            elif "setup failed" in error and "net::err_connection_refused" in error:
+                item["fix_category"] = "server_not_running"
+            elif "element" in error and ("did not appear" in error or "not visible" in error):
                 item["fix_category"] = "invalid_selector"
-            elif "assert" in error or "should be equal" in error:
-                item["fix_category"] = "assertion_failed"
-            elif "timeout" in error:
-                item["fix_category"] = "timeout"
-            elif "connection" in error:
-                item["fix_category"] = "connection_error"
+
             else:
-                item["fix_category"] = "other"
+                item["fix_category"] = "unknown"
     return data
 
 fix_mapping = {
