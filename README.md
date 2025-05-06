@@ -39,19 +39,26 @@ This option is viable if the informations in the fail logs (error message, docum
 The hybrid method consists in using automated labeling for easy cases combined with user input for more obscure cases.
 
 
-To do so, first modify the `auto_label_fix_category()` to cover all the basic cases -> basically label the tests that can be labeled using only information found in the fail logs.
+- To do so, first modify the `auto_label_fix_category()` to cover all the basic cases -> basically label the tests that can be labeled using only information found in the fail logs.
 
-Other fails will be labeled as `fix_category=unknown`.
+- Other fails will be labeled as `fix_category=unknown`.
 
-upload all your `output.xml` files in the `Train Model` tab.
+- upload all your `output.xml` files in the `Train Model` tab.
 
-Click on `Train Model` (This will overwrite the model in the .`/model` directory so save it first if needed).
+- Click on `Train Model` (This will overwrite the model in the .`/model` directory so save it first if needed).
 
-This will generate a `./dataset/train_fails.json` file containing all the fails and prompt a list of all fails with category labeled as `unknown`.
+- This will generate a `./dataset/train_fails.json` file containing all the fails and prompt a list of all fails with category labeled as `unknown`. A list of fails will be displayed and for all of those, the category needs to be chosen by hand. This way, all the fails will be labeled and the model can be retrained by uploading only te `train_fails.json`, that you should rename (for example `dataset_257.json`).
 
-A list of fails will be displayed and for all of those, the category needs to be chosen by hand. This way, all the fails will be labeled and the model can be retrained by uploading only te `train_fails.json`, that you should rename (for example `dataset_257.json`).
+### Analyze fails
+- The user can upload any Robot Framework by dragging or chosing an `output.xml` file.
 
-### Analyse fails
+- Once the file is uploaded, the user can then choose any fail from this output file and make a prediction.
+
+- The `Show Most Similar Fails` uses an FAISS similarity retrieval index to find the 3 most similar fails out of all the fails the model was trained on.
+
+- The `Give Feedback` button can be used to add this fail to the training dataset. More specifically, a `feedback_fails.json` file is created or updated in the `dataset` directory.
+
+- This feedback dataset is always merged with the given `output.xml` files, when training is done using xml files. This way, the model can improve over time.
 
 
 ## Using a small local LLM
