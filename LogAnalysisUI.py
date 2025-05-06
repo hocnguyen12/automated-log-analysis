@@ -326,6 +326,29 @@ with tab_train:
             train_model(texts, labels)
 
         edit_unknown_fix_categories(original_data_path)
+    
+    upload_json_dataset = st.file_uploader("**Upload a json dataset (already labeled)**")
+    if upload_json_dataset:
+        with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
+            tmp_file.write(upload_json_dataset.read())
+            tmp_file_path = tmp_file.name
+        with open(tmp_file_path, "r") as f:
+            base_data = json.load(f)
+        #print(base_data)
+        #print("base_data[0] : ", base_data[0])
+        if st.button(f"Train model", key=f"train_model_from_json"):
+            items = []
+            for item in base_data:
+                #print("test : ", item["test_name"])
+                #print("fix category : ", item["fix_category"])
+                #print(" ")
+                items.append({
+                    "log_text": build_log_text(item),
+                    "fix_category": item["fix_category"]
+                })
+
+            texts, labels = get_texts_and_labels(items)
+            train_model(texts, labels)
 
 ##### PREDICTION #####
 with tab_predict:
