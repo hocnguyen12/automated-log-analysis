@@ -178,7 +178,8 @@ def prediction_section(fail, idx, clf, vectorizer):
             new_vec = vectorizer.transform([log_text]) if vectorizer else None
             pred = clf.predict(new_vec)
             fix_message = fix_mapping.get(pred[0], "Unknown error. Please check the logs for more details.")
-            st.write(f"**[Suggested Correction]: {pred[0]}**")
+            st.write(f"**[Fail Category]: {pred[0]}**")
+            st.write(f"Suggested correction : {fix_message}")
             st.session_state[f"predicted_fix_{idx+1}"]= pred[0]
             st.session_state[f"log_text_{idx+1}"] = log_text 
     else :

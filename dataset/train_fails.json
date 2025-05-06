@@ -10954,7 +10954,7 @@
         "keyword": "Verify Note Persistence",
         "args": [
           "Unicode Note",
-          "This note contains Unicode characters: \u4f60\u597d\u4e16\u754c"
+          "This note contains Unicode characters: 你好世界"
         ],
         "status": "FAIL",
         "depth": 0,
