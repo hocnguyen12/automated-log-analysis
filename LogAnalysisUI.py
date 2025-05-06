@@ -377,13 +377,19 @@ with tab_predict:
 
 ##### CLUSTERING VISUALIZATION #####
 with tab_clustering:
-    uploaded_file_cluster = st.file_uploader("**Upload Robot Framework test execution (output.xml)**", type=["xml"])
+    uploaded_file_cluster = st.file_uploader("**Upload Robot Framework test execution (output.xml)**", type=["xml"], accept_multiple_files=True)
     if uploaded_file_cluster:     
-        with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
-            tmp_file.write(uploaded_file_cluster.read())
-            tmp_file_path = tmp_file.name
+        list_files = []
+        for uploaded_file in uploaded_file_cluster:
+            #st.write(f"PROCESSING FILE : {uploaded_file}")
+            with tempfile.NamedTemporaryFile(delete=False) as tmp_file:  # 'wb' for binary mode
+                tmp_file.write(uploaded_file.read()) 
+                tmp_file_path = tmp_file.name
+            list_files.append(tmp_file_path)
 
-        fail_logs = parse_xml(tmp_file_path)
+        fail_logs = []
+        for file in list_files:
+            fail_logs += parse_xml(file)
         documents = [stringify_test_case(t) for t in fail_logs]
         # Embedding
         X = sentence_embedding(documents)
@@ -422,7 +428,8 @@ with tab_clustering:
         unique_clusters = sorted(results_df["cluster_label"].unique())
         for cluster in unique_clusters:
             cluster_df = results_df[results_df["cluster_label"] == cluster]
-            with st.expander(f"Cluster {cluster}"):
+            num_fails = len(cluster_df)
+            with st.expander(f"Cluster {cluster} - {num_fails} failed tests"):
                 st.dataframe(cluster_df)
 
         # Optionally, you can also plot the results if the data is 2D or you want to reduce dimensions
