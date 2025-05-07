@@ -1,7 +1,7 @@
 [
   {
     "test_name": "Test If Predictions Work",
-    "error_message": "Element with locator 'css=[data-testid='add-note']' not found.",
+    "error_message": "Element with locator 'css=[data-testid='add-note]' not found.",
     "doc": "This is a test to see if predictions are correct with basic classification",
     "steps": [
       {
@@ -50,7 +50,7 @@
         "depth": 1,
         "doc": "Click the element identified by ``locator``.",
         "messages": [
-          "Clicking element 'css=[data-testid='add-note']'.",
+          "Clicking element 'css=[data-testid='add-note]'.",
           "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-3.png\"><img src=\"selenium-screenshot-3.png\" width=\"800px\"></a>"
         ]
       },
