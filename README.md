@@ -21,6 +21,17 @@ cd automated-log-analysis
 streamlit run LogAnalysisUI.py
 ```
 
+## Docker Image
+Create a docker image:
+```bash
+sudo docker build -t log-analyzer .
+```
+
+Running the docker image:
+```bash
+sudo docker run -p 8501:8501 log-analyzer 
+```
+
 ## Instructions
 ### Train Model
 This tab allows the user to train a new model based on their own dataset 
