@@ -4,6 +4,16 @@ from pathlib import Path
 import json
 import streamlit as st
 
+
+import scipy.sparse
+from sklearn.cluster import KMeans
+from sklearn.cluster import DBSCAN
+import hdbscan 
+from sklearn.cluster import AgglomerativeClustering
+from sklearn.cluster import SpectralClustering
+from sklearn.cluster import AffinityPropagation
+
+
 BOLD = '\033[1m'
 END = '\033[0m'
 ############################# PARSE OUTPUT.XML FILE ###################################
@@ -197,14 +207,6 @@ def sentence_embedding(data):
     return X
 
 ################################### CLUSTERING ALGORITHMS #########################################
-import scipy.sparse
-from sklearn.cluster import KMeans
-from sklearn.cluster import DBSCAN
-import hdbscan 
-from sklearn.cluster import AgglomerativeClustering
-from sklearn.cluster import SpectralClustering
-from sklearn.cluster import AffinityPropagation
-
 def KMeansClustering(X, n_clusters):
     kmeans = KMeans(n_clusters=n_clusters, random_state=42, n_init=10)
     labels = kmeans.fit_predict(X)

@@ -22,6 +22,11 @@ streamlit run LogAnalysisUI.py
 ```
 
 ## Docker Image
+Find the version of libraries:
+```bash
+pip freeze | grep -E 'streamlit|pandas|numpy|scikit-learn|sentence-transformers|faiss|joblib|matplotlib'
+```
+
 Create a docker image:
 ```bash
 sudo docker build -t log-analyzer .
@@ -30,6 +35,12 @@ sudo docker build -t log-analyzer .
 Running the docker image:
 ```bash
 sudo docker run -p 8501:8501 log-analyzer 
+```
+
+Stop running the docker image:
+```bash
+sudo docker ps
+sudo docker stop <CONTAINER_ID>
 ```
 
 ## Instructions
