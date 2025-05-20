@@ -56,7 +56,7 @@ st.write("`Sentence transformer loaded`")
 def merge_train_data(print=False):
     '''
     THIS FUNCTIONS ADDS LABEL
-    -> calls `auto_label_fix_category()`
+    -> it calls `auto_label_fix_category()`
     '''
     if print: st.write("`Loading data from Robot Framework test report...`")
     with open(original_data_path, "r") as f:
