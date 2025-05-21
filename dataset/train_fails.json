@@ -9420,7 +9420,7 @@
         "messages": []
       }
     ],
-    "fix_category": "timeout_error"
+    "fix_category": "unknown"
   },
   {
     "test_name": "Clear Function",
@@ -9651,7 +9651,7 @@
         "messages": []
       }
     ],
-    "fix_category": "unknown"
+    "fix_category": "timeout_error"
   },
   {
     "test_name": "Decimal Operations",
@@ -10742,7 +10742,7 @@
         ]
       }
     ],
-    "fix_category": "timeout_error"
+    "fix_category": "unknown"
   },
   {
     "test_name": "Create And Save Note",

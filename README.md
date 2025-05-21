@@ -110,3 +110,11 @@ python3 LLM/ollamaLM.py
 
 ## Future Use
 While simple failures can be classified using clear rules, many real-world test failures involve multiple interacting issues that aren't visible in a single error message. This project lays the foundation for a more intelligent, context-aware analyzer — one that can grow over time with human feedback and possibly fine-tuned models.
+
+- The problem is a `classification` problem where the goal is to make `predictions`
+- Analyse Fails is the tab where predictions are made for new fails, after we executed a set of tests
+- Before performing predictions, we need to build a predictor or a classifier -> There are different types of classifiers (random forest, ...)
+- A classifier (as well as any machine learning algorithm) is a function that takes an input (here test fail logs) and gives an output (the root cause of the fail). The goal of this function is to approximate the 'real' function (that is unreachable). The function has a number of parameters that we need to modify so that the function approximates the real function as closely as possible. This is what we call 'fitting' or 'training'.
+- There are unknown factors that can lead to a certain output, sometimes the data we have doesn't entirely explain the output/response
+
+- The training tab can be used to upload a dataset OR output.xml files so and calls a script that trains a model

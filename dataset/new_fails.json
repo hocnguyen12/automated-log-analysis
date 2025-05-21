@@ -1,57 +1,41 @@
 [
   {
-    "test_name": "Test If Predictions Work",
-    "error_message": "Element with locator 'css=[data-testid='add-note]' not found.",
-    "doc": "This is a test to see if predictions are correct with basic classification",
+    "test_name": "Test Add Todo Functionality",
+    "error_message": "Setup failed:\nElement 'css=input.todo-input-field' did not appear in 10 seconds.",
+    "doc": "Test adding todos",
     "steps": [
       {
-        "keyword": "Wait Until Element Is Visible",
-        "args": [
-          "${auth.error_message}",
-          "timeout=5s"
-        ],
-        "status": "FAIL",
-        "depth": 4,
-        "doc": "Waits until the element ``locator`` is visible.",
-        "messages": [
-          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-1.png\"><img src=\"selenium-screenshot-1.png\" width=\"800px\"></a>"
-        ]
-      },
-      {
-        "keyword": "Wait Until Element Is Visible",
-        "args": [
-          "${auth.console_error}",
-          "timeout=5s"
-        ],
-        "status": "FAIL",
-        "depth": 4,
-        "doc": "Waits until the element ``locator`` is visible.",
-        "messages": [
-          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-2.png\"><img src=\"selenium-screenshot-2.png\" width=\"800px\"></a>"
-        ]
-      },
-      {
-        "keyword": "Add Note",
-        "args": [
-          "Test Note",
-          "This is a test note"
-        ],
+        "keyword": "Open Todo Application",
+        "args": [],
         "status": "FAIL",
         "depth": 0,
         "doc": "",
         "messages": []
       },
       {
-        "keyword": "Click Element",
+        "keyword": "Wait Until Element Is Visible",
         "args": [
-          "${selectors.notes.add_note_button}"
+          "${auth.console_error}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-1.png\"><img src=\"selenium-screenshot-1.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Page Contains Element",
+        "args": [
+          "${selectors.todo.todo_input}",
+          "${timeouts.page_load}"
         ],
         "status": "FAIL",
         "depth": 1,
-        "doc": "Click the element identified by ``locator``.",
+        "doc": "Waits until the element ``locator`` appears on the current page.",
         "messages": [
-          "Clicking element 'css=[data-testid='add-note]'.",
-          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-3.png\"><img src=\"selenium-screenshot-3.png\" width=\"800px\"></a>"
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-2.png\"><img src=\"selenium-screenshot-2.png\" width=\"800px\"></a>"
         ]
       },
       {
@@ -64,9 +48,282 @@
         "depth": 3,
         "doc": "Waits until the element ``locator`` is visible.",
         "messages": [
-          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-4.png\"><img src=\"selenium-screenshot-4.png\" width=\"800px\"></a>"
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-3.png\"><img src=\"selenium-screenshot-3.png\" width=\"800px\"></a>"
         ]
       }
     ]
+  },
+  {
+    "test_name": "Test Todo Completion Toggle",
+    "error_message": "Setup failed:\nElement 'css=input.todo-input-field' did not appear in 10 seconds.",
+    "doc": "Test toggling todo completion",
+    "steps": [
+      {
+        "keyword": "Open Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.console_error}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-4.png\"><img src=\"selenium-screenshot-4.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Page Contains Element",
+        "args": [
+          "${selectors.todo.todo_input}",
+          "${timeouts.page_load}"
+        ],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Waits until the element ``locator`` appears on the current page.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-5.png\"><img src=\"selenium-screenshot-5.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-6.png\"><img src=\"selenium-screenshot-6.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Test Delete Todo Functionality",
+    "error_message": "Setup failed:\nExecution terminated by signal\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) MaxRetryError: HTTPConnectionPool(host='localhost', port=32869): Max retries exceeded with url: /session/4de7887f6b501efe1128336d7eb3953d/elements (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df12fa30>: Failed to establish a new connection: [Errno 111] Connection refused'))\n\n2) MaxRetryError: HTTPConnectionPool(host='localhost', port=32869): Max retries exceeded with url: /session/4de7887f6b501efe1128336d7eb3953d/elements (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df15c8e0>: Failed to establish a new connection: [Errno 111] Connection refused'))",
+    "doc": "Test deleting todos",
+    "steps": [
+      {
+        "keyword": "Open Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Run Keyword And Return Status",
+        "args": [
+          "Wait Until Element Is Visible",
+          "${auth.console_error}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Runs the given keyword with given arguments and returns the status as a Boolean value.",
+        "messages": []
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.console_error}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /session/4de7887f6b501efe1128336d7eb3953d/screenshot",
+          "Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df24df90>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/screenshot",
+          "Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df24fa60>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/screenshot",
+          "Keyword 'Capture Page Screenshot' could not be run on failure: HTTPConnectionPool(host='localhost', port=32869): Max retries exceeded with url: /session/4de7887f6b501efe1128336d7eb3953d/screenshot (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df24c2b0>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+        ]
+      },
+      {
+        "keyword": "Close Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df12f670>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/elements",
+          "Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df12f760>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/elements",
+          "Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df12f880>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/elements",
+          "Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df12fd60>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/screenshot",
+          "Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df12fe20>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/screenshot",
+          "Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df24fc70>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/screenshot",
+          "Keyword 'Capture Page Screenshot' could not be run on failure: HTTPConnectionPool(host='localhost', port=32869): Max retries exceeded with url: /session/4de7887f6b501efe1128336d7eb3953d/screenshot (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df24f070>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.email_input}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df15c5b0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/elements",
+          "Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df15c6a0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/elements",
+          "Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df15c760>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/elements",
+          "Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df15cb50>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/screenshot",
+          "Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df15cc10>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/screenshot",
+          "Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df15cd90>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/screenshot",
+          "Keyword 'Capture Page Screenshot' could not be run on failure: HTTPConnectionPool(host='localhost', port=32869): Max retries exceeded with url: /session/4de7887f6b501efe1128336d7eb3953d/screenshot (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df15cf10>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df12ead0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/elements",
+          "Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df12e860>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/elements",
+          "Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df12d900>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/elements",
+          "Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df12f1f0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/screenshot",
+          "Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df12dfc0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/screenshot",
+          "Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df12e290>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/screenshot",
+          "Keyword 'Capture Page Screenshot' could not be run on failure: HTTPConnectionPool(host='localhost', port=32869): Max retries exceeded with url: /session/4de7887f6b501efe1128336d7eb3953d/screenshot (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df12d210>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Test Multiple Operations",
+    "error_message": "Test execution stopped due to a fatal error.",
+    "doc": "Test multiple operations",
+    "steps": []
+  },
+  {
+    "test_name": "Test Complex Workflow",
+    "error_message": "Test execution stopped due to a fatal error.",
+    "doc": "Test complex workflow",
+    "steps": []
+  },
+  {
+    "test_name": "Test Todo With Special Characters",
+    "error_message": "Test execution stopped due to a fatal error.",
+    "doc": "Test todo with special characters",
+    "steps": []
+  },
+  {
+    "test_name": "Test Empty Todo List",
+    "error_message": "Test execution stopped due to a fatal error.",
+    "doc": "Test empty todo list",
+    "steps": []
+  },
+  {
+    "test_name": "Add Single Todo",
+    "error_message": "Test execution stopped due to a fatal error.",
+    "doc": "",
+    "steps": []
+  },
+  {
+    "test_name": "Add Multiple Todos",
+    "error_message": "Test execution stopped due to a fatal error.",
+    "doc": "",
+    "steps": []
+  },
+  {
+    "test_name": "Complete Todo",
+    "error_message": "Test execution stopped due to a fatal error.",
+    "doc": "",
+    "steps": []
+  },
+  {
+    "test_name": "Delete Todo",
+    "error_message": "Test execution stopped due to a fatal error.",
+    "doc": "",
+    "steps": []
+  },
+  {
+    "test_name": "Toggle Multiple Todos",
+    "error_message": "Test execution stopped due to a fatal error.",
+    "doc": "",
+    "steps": []
+  },
+  {
+    "test_name": "Complete And Uncomplete Todo",
+    "error_message": "Test execution stopped due to a fatal error.",
+    "doc": "",
+    "steps": []
+  },
+  {
+    "test_name": "Add And Delete Multiple Todos",
+    "error_message": "Test execution stopped due to a fatal error.",
+    "doc": "",
+    "steps": []
+  },
+  {
+    "test_name": "Add Todo Item",
+    "error_message": "Test execution stopped due to a fatal error.",
+    "doc": "",
+    "steps": []
+  },
+  {
+    "test_name": "Complete Todo Item",
+    "error_message": "Test execution stopped due to a fatal error.",
+    "doc": "",
+    "steps": []
+  },
+  {
+    "test_name": "Delete Todo Item",
+    "error_message": "Test execution stopped due to a fatal error.",
+    "doc": "",
+    "steps": []
+  },
+  {
+    "test_name": "Multiple Todo Operations",
+    "error_message": "Test execution stopped due to a fatal error.",
+    "doc": "",
+    "steps": []
+  },
+  {
+    "test_name": "Add Todo Item With Special Characters",
+    "error_message": "Test execution stopped due to a fatal error.",
+    "doc": "",
+    "steps": []
   }
 ]

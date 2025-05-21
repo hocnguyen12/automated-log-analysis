@@ -179,11 +179,19 @@ def dislay_fail_in_expander(fail):
 def prediction_section(fail, idx, clf, vectorizer):
     # Predict Button
     if f"predicted_fix_{idx+1}" not in st.session_state:
-        if st.button(f"Predict fail correction", key=f"predict_{idx+1}"):
+        if st.button(f"Predict Fail Root Cause", key=f"predict_{idx+1}"):
             #st.session_state[f"predict_button_{idx+1}"] = not st.session_state[f"predict_button_{idx+1}"]
             # Perform prediction
             log_text = build_log_text(fail)
-            new_vec = vectorizer.transform([log_text]) if vectorizer else None
+
+            if hasattr(vectorizer, "transform"):  # TF-IDF
+                new_vec = vectorizer.transform([log_text])
+            elif hasattr(vectorizer, "encode"):  # SentenceTransformer
+                new_vec = vectorizer.encode([log_text], normalize_embeddings=True)
+            else:
+                st.error("Unsupported vectorizer type.")
+                return
+
             pred = clf.predict(new_vec)
             fix_message = fix_mapping.get(pred[0], "Unknown error. Please check the logs for more details.")
             st.write(f"**[Fail Category]: {pred[0]}**")
@@ -191,7 +199,7 @@ def prediction_section(fail, idx, clf, vectorizer):
             st.session_state[f"predicted_fix_{idx+1}"]= pred[0]
             st.session_state[f"log_text_{idx+1}"] = log_text 
     else :
-        if st.button(f"Predict fail correction", key=f"predict_{idx+1}"):
+        if st.button(f"Predict Fail Root Cause", key=f"predict_{idx+1}"):
             pass
         state = f"predicted_fix_{idx+1}"
         st.write(f"**[Suggested Correction]: {st.session_state[state]}**")
@@ -213,7 +221,7 @@ def similarity_section(idx, recall=True):
             for fail in similar_fails:
                 with st.expander(f"- **Rank: {fail['rank']}** [Similarity Score = {fail['similarity_score']}]"):
                     st.write(f"Log Snippet: `{fail['log']}`")
-                    st.write(f"**Correction**: {fail['fix_category']}")
+                    st.write(f"**Root Cause**: {fail['fix_category']}")
 
 
 def feedback_section(fail, idx):
@@ -224,7 +232,7 @@ def feedback_section(fail, idx):
         if st.button("Give Feedback", key=f"feedback_button_{idx+1}"):
             st.session_state[f"feedback_{idx+1}"] = not st.session_state[f"feedback_{idx+1}"]
 
-            st.write("Is the suggested correction right ?")
+            st.write("Is the suggested root cause correct ?")
 
         if st.session_state[f"feedback_{idx+1}"]:
             if st.button("Yes", key=f"yes_button_{idx+1}"):
@@ -244,7 +252,7 @@ def feedback_section(fail, idx):
         if st.session_state[f"feedback_{idx+1}"]:
             if st.button("No", key=f"no_button_{idx+1}"):
                 # If the feedback is 'No', ask for the correct fix category
-                actual_category = st.text_input("What is the right fix category?", key=f"actual_category_input_{idx+1}")
+                actual_category = st.text_input("What is the correct root cause?", key=f"actual_category_input_{idx+1}")
                 
                 if actual_category:
                     st.session_state[f"actual_category_input_{idx+1}"] = actual_category
@@ -375,7 +383,7 @@ with tab_predict:
                 with st.expander(f"Fail {idx+1} - {fail['test_name']}"):
                     dislay_fail_in_expander(fail) # Display Fail
 
-                    prediction_section(fail, idx, clf, vectorizer) # Predict Button
+                    prediction_section(fail, idx, clf, model) # Predict Button
 
                     similarity_section(idx) # FAISS Similarity Button
 
