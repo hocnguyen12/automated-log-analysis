@@ -43,14 +43,14 @@ else:
 # Load FAISS index if available
 if os.path.exists(faiss_index_path):
     faiss_index = faiss.read_index(faiss_index_path)
-    st.write("`FAISS index loaded`")
+    #st.write("`FAISS index loaded`")
 else:
     faiss_index = None
-    st.write("`No FAISS index found`")
+    #st.write("`No FAISS index found`")
 
 # Load sentence transformer model
 model = SentenceTransformer("all-MiniLM-L6-v2")
-st.write("`Sentence transformer loaded`")
+#st.write("`Sentence transformer loaded`")
 
 ########################################## HELPER FUNCTIONS ##################################################
 def merge_train_data(print=False):
@@ -106,10 +106,18 @@ def get_texts_and_labels(merged_fails):
     labels = [r["fix_category"] for r in merged_fails]
     return texts, labels
 
-def train_model(texts, labels):
+def train_model(texts, labels, vectorizer_type="sentence-transformer"):
     st.write("`No existing model found, training model...`")
-    vectorizer = TfidfVectorizer(max_features=500, stop_words="english")
-    X = vectorizer.fit_transform(texts)
+
+    if vectorizer_type == "tfidf":
+        vectorizer = TfidfVectorizer(max_features=500, stop_words="english")
+        X = vectorizer.fit_transform(texts).toarray()
+    elif vectorizer_type == "sentence-transformer":
+        vectorizer = SentenceTransformer("all-MiniLM-L6-v2")
+        X = vectorizer.encode(texts, show_progress_bar=True, normalize_embeddings=True)
+    else:
+        raise ValueError("Invalid vectorizer_type. Choose 'tfidf' or 'sentence-transformer'.")
+
     X_train, X_test, y_train, y_test = train_test_split(X, labels, test_size=0.2, random_state=42)
     clf = RandomForestClassifier()
     clf.fit(X_train, y_train)
