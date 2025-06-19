@@ -4,7 +4,7 @@ FROM python:3.10-slim
 #    build-essential \
 #    && rm -rf /var/lib/apt/lists/*
 
-#WORKDIR /app
+WORKDIR /app
 #COPY . /app
 
 WORKDIR .
@@ -37,4 +37,4 @@ RUN pip install --no-cache-dir \
 
 EXPOSE 8501
 #CMD ["streamlit", "run", "LogAnalysisUI.py", "--server.port=8501", "--server.address=0.0.0.0"]
-CMD streamlit run LogAnalysisUI.py --server.port=8501 --server.address=0.0.0.0
+#CMD streamlit run LogAnalysisUI.py --server.port=8501 --server.address=0.0.0.0
