@@ -1,11 +1,11 @@
 [
   {
-    "test_name": "Test Add Todo Functionality",
-    "error_message": "Setup failed:\nElement 'css=input.todo-input-field' did not appear in 10 seconds.",
-    "doc": "Test adding todos",
+    "test_name": "Basic Arithmetic Operations",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials",
+    "doc": "",
     "steps": [
       {
-        "keyword": "Open Todo Application",
+        "keyword": "Open Calculator",
         "args": [],
         "status": "FAIL",
         "depth": 0,
@@ -13,29 +13,331 @@
         "messages": []
       },
       {
-        "keyword": "Wait Until Element Is Visible",
-        "args": [
-          "${auth.console_error}",
-          "timeout=1s"
-        ],
-        "status": "FAIL",
-        "depth": 3,
-        "doc": "Waits until the element ``locator`` is visible.",
-        "messages": [
-          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-1.png\"><img src=\"selenium-screenshot-1.png\" width=\"800px\"></a>"
-        ]
-      },
-      {
-        "keyword": "Wait Until Page Contains Element",
-        "args": [
-          "${selectors.todo.todo_input}",
-          "${timeouts.page_load}"
-        ],
+        "keyword": "Login To Application",
+        "args": [],
         "status": "FAIL",
         "depth": 1,
-        "doc": "Waits until the element ``locator`` appears on the current page.",
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      }
+    ]
+  },
+  {
+    "test_name": "Clear Function",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials",
+    "doc": "",
+    "steps": [
+      {
+        "keyword": "Open Calculator",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      }
+    ]
+  },
+  {
+    "test_name": "Complex Calculations",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials",
+    "doc": "",
+    "steps": [
+      {
+        "keyword": "Open Calculator",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      }
+    ]
+  },
+  {
+    "test_name": "Decimal Operations",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials",
+    "doc": "",
+    "steps": [
+      {
+        "keyword": "Open Calculator",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      }
+    ]
+  },
+  {
+    "test_name": "Error Handling",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials",
+    "doc": "",
+    "steps": [
+      {
+        "keyword": "Open Calculator",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      }
+    ]
+  },
+  {
+    "test_name": "Equation Display",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials",
+    "doc": "",
+    "steps": [
+      {
+        "keyword": "Open Calculator",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      }
+    ]
+  },
+  {
+    "test_name": "Multiple Operations",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials",
+    "doc": "",
+    "steps": [
+      {
+        "keyword": "Open Calculator",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      }
+    ]
+  },
+  {
+    "test_name": "Clear During Calculation",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials",
+    "doc": "",
+    "steps": [
+      {
+        "keyword": "Open Calculator",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      }
+    ]
+  },
+  {
+    "test_name": "Multiple Decimal Points Error",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials",
+    "doc": "",
+    "steps": [
+      {
+        "keyword": "Open Calculator",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      }
+    ]
+  },
+  {
+    "test_name": "Large Numbers",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials",
+    "doc": "",
+    "steps": [
+      {
+        "keyword": "Open Calculator",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      }
+    ]
+  },
+  {
+    "test_name": "Negative Numbers",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials",
+    "doc": "",
+    "steps": [
+      {
+        "keyword": "Open Calculator",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      }
+    ]
+  },
+  {
+    "test_name": "Precision Edge Cases",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials",
+    "doc": "",
+    "steps": [
+      {
+        "keyword": "Open Calculator",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      }
+    ]
+  },
+  {
+    "test_name": "Operator Precedence",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials",
+    "doc": "",
+    "steps": [
+      {
+        "keyword": "Open Calculator",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      }
+    ]
+  },
+  {
+    "test_name": "Check Application Is Running",
+    "error_message": "Login failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Verify that the application is running and accessible",
+    "steps": [
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
         "messages": [
-          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-2.png\"><img src=\"selenium-screenshot-2.png\" width=\"800px\"></a>"
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-1.png\"><img src=\"selenium-screenshot-1.png\" width=\"800px\"></a>"
         ]
       },
       {
@@ -48,18 +350,18 @@
         "depth": 3,
         "doc": "Waits until the element ``locator`` is visible.",
         "messages": [
-          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-3.png\"><img src=\"selenium-screenshot-3.png\" width=\"800px\"></a>"
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-2.png\"><img src=\"selenium-screenshot-2.png\" width=\"800px\"></a>"
         ]
       }
     ]
   },
   {
-    "test_name": "Test Todo Completion Toggle",
-    "error_message": "Setup failed:\nElement 'css=input.todo-input-field' did not appear in 10 seconds.",
-    "doc": "Test toggling todo completion",
+    "test_name": "Create And Save Note",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test creating and saving a new note",
     "steps": [
       {
-        "keyword": "Open Todo Application",
+        "keyword": "Open Notes App",
         "args": [],
         "status": "FAIL",
         "depth": 0,
@@ -67,9 +369,54 @@
         "messages": []
       },
       {
+        "keyword": "Open Notes",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-3.png\"><img src=\"selenium-screenshot-3.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
         "keyword": "Wait Until Element Is Visible",
         "args": [
-          "${auth.console_error}",
+          "${auth.user_email}",
           "timeout=1s"
         ],
         "status": "FAIL",
@@ -78,17 +425,64 @@
         "messages": [
           "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-4.png\"><img src=\"selenium-screenshot-4.png\" width=\"800px\"></a>"
         ]
+      }
+    ]
+  },
+  {
+    "test_name": "Edit Existing Note",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test editing an existing note",
+    "steps": [
+      {
+        "keyword": "Open Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
       },
       {
-        "keyword": "Wait Until Page Contains Element",
-        "args": [
-          "${selectors.todo.todo_input}",
-          "${timeouts.page_load}"
-        ],
+        "keyword": "Open Notes",
+        "args": [],
         "status": "FAIL",
         "depth": 1,
-        "doc": "Waits until the element ``locator`` appears on the current page.",
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
         "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
           "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-5.png\"><img src=\"selenium-screenshot-5.png\" width=\"800px\"></a>"
         ]
       },
@@ -108,9 +502,2769 @@
     ]
   },
   {
-    "test_name": "Test Delete Todo Functionality",
-    "error_message": "Setup failed:\nExecution terminated by signal\n\nAlso teardown failed:\nSeveral failures occurred:\n\n1) MaxRetryError: HTTPConnectionPool(host='localhost', port=32869): Max retries exceeded with url: /session/4de7887f6b501efe1128336d7eb3953d/elements (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df12fa30>: Failed to establish a new connection: [Errno 111] Connection refused'))\n\n2) MaxRetryError: HTTPConnectionPool(host='localhost', port=32869): Max retries exceeded with url: /session/4de7887f6b501efe1128336d7eb3953d/elements (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df15c8e0>: Failed to establish a new connection: [Errno 111] Connection refused'))",
-    "doc": "Test deleting todos",
+    "test_name": "Delete Note",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test deleting a note",
+    "steps": [
+      {
+        "keyword": "Open Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Open Notes",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-7.png\"><img src=\"selenium-screenshot-7.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-8.png\"><img src=\"selenium-screenshot-8.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Multiple Notes",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test creating and managing multiple notes",
+    "steps": [
+      {
+        "keyword": "Open Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Open Notes",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-9.png\"><img src=\"selenium-screenshot-9.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-10.png\"><img src=\"selenium-screenshot-10.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Note With Special Characters",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test creating a note with special characters",
+    "steps": [
+      {
+        "keyword": "Open Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Open Notes",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-11.png\"><img src=\"selenium-screenshot-11.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-12.png\"><img src=\"selenium-screenshot-12.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Long Note Content",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test creating a note with long content",
+    "steps": [
+      {
+        "keyword": "Open Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Open Notes",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-13.png\"><img src=\"selenium-screenshot-13.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-14.png\"><img src=\"selenium-screenshot-14.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Empty Note Title",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test that note with empty title is not created",
+    "steps": [
+      {
+        "keyword": "Open Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Open Notes",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-15.png\"><img src=\"selenium-screenshot-15.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-16.png\"><img src=\"selenium-screenshot-16.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Empty Note Content",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test that note with empty content is not created",
+    "steps": [
+      {
+        "keyword": "Open Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Open Notes",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-17.png\"><img src=\"selenium-screenshot-17.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-18.png\"><img src=\"selenium-screenshot-18.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Empty Title And Content",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test that note with both empty title and content is not created",
+    "steps": [
+      {
+        "keyword": "Open Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Open Notes",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-19.png\"><img src=\"selenium-screenshot-19.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-20.png\"><img src=\"selenium-screenshot-20.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Note With Line Breaks",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test creating a note with line breaks",
+    "steps": [
+      {
+        "keyword": "Open Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Open Notes",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-21.png\"><img src=\"selenium-screenshot-21.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-22.png\"><img src=\"selenium-screenshot-22.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Note With Unicode Characters",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test creating a note with Unicode characters",
+    "steps": [
+      {
+        "keyword": "Open Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Open Notes",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-23.png\"><img src=\"selenium-screenshot-23.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-24.png\"><img src=\"selenium-screenshot-24.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Edit With Empty Fields",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test that editing a note with empty fields is not allowed",
+    "steps": [
+      {
+        "keyword": "Open Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Open Notes",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-25.png\"><img src=\"selenium-screenshot-25.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-26.png\"><img src=\"selenium-screenshot-26.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Whitespace Only Inputs",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test that notes with only whitespace are not created",
+    "steps": [
+      {
+        "keyword": "Open Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Open Notes",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-27.png\"><img src=\"selenium-screenshot-27.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-28.png\"><img src=\"selenium-screenshot-28.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Note Ordering",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test that notes are displayed in chronological order (newest first)",
+    "steps": [
+      {
+        "keyword": "Open Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Open Notes",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-29.png\"><img src=\"selenium-screenshot-29.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-30.png\"><img src=\"selenium-screenshot-30.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Multiple Edits",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test multiple edits of the same note",
+    "steps": [
+      {
+        "keyword": "Open Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Open Notes",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-31.png\"><img src=\"selenium-screenshot-31.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-32.png\"><img src=\"selenium-screenshot-32.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Rapid Note Operations",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test rapid creation and deletion of notes",
+    "steps": [
+      {
+        "keyword": "Open Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Open Notes",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-33.png\"><img src=\"selenium-screenshot-33.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-34.png\"><img src=\"selenium-screenshot-34.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Browser Refresh Behavior",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test that notes persist after multiple browser refreshes",
+    "steps": [
+      {
+        "keyword": "Open Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Open Notes",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-35.png\"><img src=\"selenium-screenshot-35.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-36.png\"><img src=\"selenium-screenshot-36.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Basic Note Creation",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "",
+    "steps": [
+      {
+        "keyword": "Open Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Open Notes",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-37.png\"><img src=\"selenium-screenshot-37.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-38.png\"><img src=\"selenium-screenshot-38.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Basic Note Editing",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "",
+    "steps": [
+      {
+        "keyword": "Open Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Open Notes",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-39.png\"><img src=\"selenium-screenshot-39.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-40.png\"><img src=\"selenium-screenshot-40.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Basic Note Deletion",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "",
+    "steps": [
+      {
+        "keyword": "Open Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Open Notes",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-41.png\"><img src=\"selenium-screenshot-41.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-42.png\"><img src=\"selenium-screenshot-42.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Complete Note Lifecycle",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "",
+    "steps": [
+      {
+        "keyword": "Open Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Open Notes",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-43.png\"><img src=\"selenium-screenshot-43.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-44.png\"><img src=\"selenium-screenshot-44.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Multiple Notes Management",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "",
+    "steps": [
+      {
+        "keyword": "Open Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Open Notes",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Notes App",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-45.png\"><img src=\"selenium-screenshot-45.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-46.png\"><img src=\"selenium-screenshot-46.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Create And Save New Document",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test creating and saving a new document",
+    "steps": [
+      {
+        "keyword": "Open Text Editor",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Text Editor Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-47.png\"><img src=\"selenium-screenshot-47.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-48.png\"><img src=\"selenium-screenshot-48.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Edit Existing Document",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test editing an existing document",
+    "steps": [
+      {
+        "keyword": "Open Text Editor",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Text Editor Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-49.png\"><img src=\"selenium-screenshot-49.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-50.png\"><img src=\"selenium-screenshot-50.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Clear Editor Content",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test clearing the editor content",
+    "steps": [
+      {
+        "keyword": "Open Text Editor",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Text Editor Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-51.png\"><img src=\"selenium-screenshot-51.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-52.png\"><img src=\"selenium-screenshot-52.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Clear Empty Editor",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test clearing an empty editor",
+    "steps": [
+      {
+        "keyword": "Open Text Editor",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Text Editor Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-53.png\"><img src=\"selenium-screenshot-53.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-54.png\"><img src=\"selenium-screenshot-54.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Clear And Save Document",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test clearing and then saving a document",
+    "steps": [
+      {
+        "keyword": "Open Text Editor",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Text Editor Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-55.png\"><img src=\"selenium-screenshot-55.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-56.png\"><img src=\"selenium-screenshot-56.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Save Document With Special Characters",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test saving document with special characters",
+    "steps": [
+      {
+        "keyword": "Open Text Editor",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Text Editor Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-57.png\"><img src=\"selenium-screenshot-57.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-58.png\"><img src=\"selenium-screenshot-58.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Save Document With Long Content",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test saving document with long content",
+    "steps": [
+      {
+        "keyword": "Open Text Editor",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Text Editor Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-59.png\"><img src=\"selenium-screenshot-59.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-60.png\"><img src=\"selenium-screenshot-60.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Save Document With Empty Content",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test saving document with empty content",
+    "steps": [
+      {
+        "keyword": "Open Text Editor",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Text Editor Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-61.png\"><img src=\"selenium-screenshot-61.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-62.png\"><img src=\"selenium-screenshot-62.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Save Document With Whitespace",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test saving document with whitespace",
+    "steps": [
+      {
+        "keyword": "Open Text Editor",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Text Editor Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-63.png\"><img src=\"selenium-screenshot-63.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-64.png\"><img src=\"selenium-screenshot-64.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Save Document With Line Breaks",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test saving document with line breaks",
+    "steps": [
+      {
+        "keyword": "Open Text Editor",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Text Editor Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-65.png\"><img src=\"selenium-screenshot-65.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-66.png\"><img src=\"selenium-screenshot-66.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Save Document With Unicode Characters",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test saving document with unicode characters",
+    "steps": [
+      {
+        "keyword": "Open Text Editor",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Text Editor Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-67.png\"><img src=\"selenium-screenshot-67.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-68.png\"><img src=\"selenium-screenshot-68.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Save Document With HTML Content",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test saving document with HTML content",
+    "steps": [
+      {
+        "keyword": "Open Text Editor",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Text Editor Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-69.png\"><img src=\"selenium-screenshot-69.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-70.png\"><img src=\"selenium-screenshot-70.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Save Document With JavaScript Content",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test saving document with JavaScript content",
+    "steps": [
+      {
+        "keyword": "Open Text Editor",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Text Editor Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-71.png\"><img src=\"selenium-screenshot-71.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-72.png\"><img src=\"selenium-screenshot-72.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Save Document With SQL Content",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test saving document with SQL content",
+    "steps": [
+      {
+        "keyword": "Open Text Editor",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Text Editor Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-73.png\"><img src=\"selenium-screenshot-73.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-74.png\"><img src=\"selenium-screenshot-74.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Save Document With Markdown Content",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test saving document with Markdown content",
+    "steps": [
+      {
+        "keyword": "Open Text Editor",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Text Editor Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-75.png\"><img src=\"selenium-screenshot-75.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-76.png\"><img src=\"selenium-screenshot-76.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Save Document With JSON Content",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test saving document with JSON content",
+    "steps": [
+      {
+        "keyword": "Open Text Editor",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Text Editor Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-77.png\"><img src=\"selenium-screenshot-77.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-78.png\"><img src=\"selenium-screenshot-78.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Save Document With XML Content",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test saving document with XML content",
+    "steps": [
+      {
+        "keyword": "Open Text Editor",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Text Editor Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-79.png\"><img src=\"selenium-screenshot-79.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-80.png\"><img src=\"selenium-screenshot-80.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Save Document With YAML Content",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test saving document with YAML content",
+    "steps": [
+      {
+        "keyword": "Open Text Editor",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Text Editor Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-81.png\"><img src=\"selenium-screenshot-81.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-82.png\"><img src=\"selenium-screenshot-82.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Save Document With CSV Content",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test saving document with CSV content",
+    "steps": [
+      {
+        "keyword": "Open Text Editor",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Text Editor Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-83.png\"><img src=\"selenium-screenshot-83.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-84.png\"><img src=\"selenium-screenshot-84.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Save Document With Multiple Saves",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test saving document multiple times",
+    "steps": [
+      {
+        "keyword": "Open Text Editor",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Text Editor Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-85.png\"><img src=\"selenium-screenshot-85.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-86.png\"><img src=\"selenium-screenshot-86.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Test Add Todo Functionality",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test adding todos",
     "steps": [
       {
         "keyword": "Open Todo Application",
@@ -127,34 +3281,6 @@
         "depth": 1,
         "doc": "Logs in to the application using test credentials",
         "messages": []
-      },
-      {
-        "keyword": "Run Keyword And Return Status",
-        "args": [
-          "Wait Until Element Is Visible",
-          "${auth.console_error}",
-          "timeout=1s"
-        ],
-        "status": "FAIL",
-        "depth": 2,
-        "doc": "Runs the given keyword with given arguments and returns the status as a Boolean value.",
-        "messages": []
-      },
-      {
-        "keyword": "Wait Until Element Is Visible",
-        "args": [
-          "${auth.console_error}",
-          "timeout=1s"
-        ],
-        "status": "FAIL",
-        "depth": 3,
-        "doc": "Waits until the element ``locator`` is visible.",
-        "messages": [
-          "Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /session/4de7887f6b501efe1128336d7eb3953d/screenshot",
-          "Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df24df90>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/screenshot",
-          "Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df24fa60>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/screenshot",
-          "Keyword 'Capture Page Screenshot' could not be run on failure: HTTPConnectionPool(host='localhost', port=32869): Max retries exceeded with url: /session/4de7887f6b501efe1128336d7eb3953d/screenshot (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df24c2b0>: Failed to establish a new connection: [Errno 111] Connection refused'))"
-        ]
       },
       {
         "keyword": "Close Todo Application",
@@ -182,31 +3308,7 @@
         "doc": "Click the element identified by ``locator``.",
         "messages": [
           "Clicking element 'css=[data-testid='logout-button']'.",
-          "Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df12f670>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/elements",
-          "Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df12f760>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/elements",
-          "Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df12f880>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/elements",
-          "Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df12fd60>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/screenshot",
-          "Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df12fe20>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/screenshot",
-          "Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df24fc70>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/screenshot",
-          "Keyword 'Capture Page Screenshot' could not be run on failure: HTTPConnectionPool(host='localhost', port=32869): Max retries exceeded with url: /session/4de7887f6b501efe1128336d7eb3953d/screenshot (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df24f070>: Failed to establish a new connection: [Errno 111] Connection refused'))"
-        ]
-      },
-      {
-        "keyword": "Wait Until Element Is Visible",
-        "args": [
-          "${auth.email_input}"
-        ],
-        "status": "FAIL",
-        "depth": 2,
-        "doc": "Waits until the element ``locator`` is visible.",
-        "messages": [
-          "Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df15c5b0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/elements",
-          "Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df15c6a0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/elements",
-          "Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df15c760>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/elements",
-          "Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df15cb50>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/screenshot",
-          "Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df15cc10>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/screenshot",
-          "Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df15cd90>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/screenshot",
-          "Keyword 'Capture Page Screenshot' could not be run on failure: HTTPConnectionPool(host='localhost', port=32869): Max retries exceeded with url: /session/4de7887f6b501efe1128336d7eb3953d/screenshot (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df15cf10>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-87.png\"><img src=\"selenium-screenshot-87.png\" width=\"800px\"></a>"
         ]
       },
       {
@@ -219,111 +3321,1179 @@
         "depth": 3,
         "doc": "Waits until the element ``locator`` is visible.",
         "messages": [
-          "Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df12ead0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/elements",
-          "Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df12e860>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/elements",
-          "Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df12d900>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/elements",
-          "Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df12f1f0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/screenshot",
-          "Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df12dfc0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/screenshot",
-          "Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df12e290>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4de7887f6b501efe1128336d7eb3953d/screenshot",
-          "Keyword 'Capture Page Screenshot' could not be run on failure: HTTPConnectionPool(host='localhost', port=32869): Max retries exceeded with url: /session/4de7887f6b501efe1128336d7eb3953d/screenshot (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c28df12d210>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-88.png\"><img src=\"selenium-screenshot-88.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Test Todo Completion Toggle",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test toggling todo completion",
+    "steps": [
+      {
+        "keyword": "Open Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-89.png\"><img src=\"selenium-screenshot-89.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-90.png\"><img src=\"selenium-screenshot-90.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
+  },
+  {
+    "test_name": "Test Delete Todo Functionality",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
+    "doc": "Test deleting todos",
+    "steps": [
+      {
+        "keyword": "Open Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-91.png\"><img src=\"selenium-screenshot-91.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-92.png\"><img src=\"selenium-screenshot-92.png\" width=\"800px\"></a>"
         ]
       }
     ]
   },
   {
     "test_name": "Test Multiple Operations",
-    "error_message": "Test execution stopped due to a fatal error.",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
     "doc": "Test multiple operations",
-    "steps": []
+    "steps": [
+      {
+        "keyword": "Open Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-93.png\"><img src=\"selenium-screenshot-93.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-94.png\"><img src=\"selenium-screenshot-94.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
   },
   {
     "test_name": "Test Complex Workflow",
-    "error_message": "Test execution stopped due to a fatal error.",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
     "doc": "Test complex workflow",
-    "steps": []
+    "steps": [
+      {
+        "keyword": "Open Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-95.png\"><img src=\"selenium-screenshot-95.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-96.png\"><img src=\"selenium-screenshot-96.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
   },
   {
     "test_name": "Test Todo With Special Characters",
-    "error_message": "Test execution stopped due to a fatal error.",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
     "doc": "Test todo with special characters",
-    "steps": []
+    "steps": [
+      {
+        "keyword": "Open Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-97.png\"><img src=\"selenium-screenshot-97.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-98.png\"><img src=\"selenium-screenshot-98.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
   },
   {
     "test_name": "Test Empty Todo List",
-    "error_message": "Test execution stopped due to a fatal error.",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
     "doc": "Test empty todo list",
-    "steps": []
+    "steps": [
+      {
+        "keyword": "Open Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-99.png\"><img src=\"selenium-screenshot-99.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-100.png\"><img src=\"selenium-screenshot-100.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
   },
   {
     "test_name": "Add Single Todo",
-    "error_message": "Test execution stopped due to a fatal error.",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
     "doc": "",
-    "steps": []
+    "steps": [
+      {
+        "keyword": "Open Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-101.png\"><img src=\"selenium-screenshot-101.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-102.png\"><img src=\"selenium-screenshot-102.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
   },
   {
     "test_name": "Add Multiple Todos",
-    "error_message": "Test execution stopped due to a fatal error.",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
     "doc": "",
-    "steps": []
+    "steps": [
+      {
+        "keyword": "Open Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-103.png\"><img src=\"selenium-screenshot-103.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-104.png\"><img src=\"selenium-screenshot-104.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
   },
   {
     "test_name": "Complete Todo",
-    "error_message": "Test execution stopped due to a fatal error.",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
     "doc": "",
-    "steps": []
+    "steps": [
+      {
+        "keyword": "Open Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-105.png\"><img src=\"selenium-screenshot-105.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-106.png\"><img src=\"selenium-screenshot-106.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
   },
   {
     "test_name": "Delete Todo",
-    "error_message": "Test execution stopped due to a fatal error.",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
     "doc": "",
-    "steps": []
+    "steps": [
+      {
+        "keyword": "Open Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-107.png\"><img src=\"selenium-screenshot-107.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-108.png\"><img src=\"selenium-screenshot-108.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
   },
   {
     "test_name": "Toggle Multiple Todos",
-    "error_message": "Test execution stopped due to a fatal error.",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
     "doc": "",
-    "steps": []
+    "steps": [
+      {
+        "keyword": "Open Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-109.png\"><img src=\"selenium-screenshot-109.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-110.png\"><img src=\"selenium-screenshot-110.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
   },
   {
     "test_name": "Complete And Uncomplete Todo",
-    "error_message": "Test execution stopped due to a fatal error.",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
     "doc": "",
-    "steps": []
+    "steps": [
+      {
+        "keyword": "Open Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-111.png\"><img src=\"selenium-screenshot-111.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-112.png\"><img src=\"selenium-screenshot-112.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
   },
   {
     "test_name": "Add And Delete Multiple Todos",
-    "error_message": "Test execution stopped due to a fatal error.",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
     "doc": "",
-    "steps": []
+    "steps": [
+      {
+        "keyword": "Open Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-113.png\"><img src=\"selenium-screenshot-113.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-114.png\"><img src=\"selenium-screenshot-114.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
   },
   {
     "test_name": "Add Todo Item",
-    "error_message": "Test execution stopped due to a fatal error.",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
     "doc": "",
-    "steps": []
+    "steps": [
+      {
+        "keyword": "Open Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-115.png\"><img src=\"selenium-screenshot-115.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-116.png\"><img src=\"selenium-screenshot-116.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
   },
   {
     "test_name": "Complete Todo Item",
-    "error_message": "Test execution stopped due to a fatal error.",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
     "doc": "",
-    "steps": []
+    "steps": [
+      {
+        "keyword": "Open Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-117.png\"><img src=\"selenium-screenshot-117.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-118.png\"><img src=\"selenium-screenshot-118.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
   },
   {
     "test_name": "Delete Todo Item",
-    "error_message": "Test execution stopped due to a fatal error.",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
     "doc": "",
-    "steps": []
+    "steps": [
+      {
+        "keyword": "Open Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-119.png\"><img src=\"selenium-screenshot-119.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-120.png\"><img src=\"selenium-screenshot-120.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
   },
   {
     "test_name": "Multiple Todo Operations",
-    "error_message": "Test execution stopped due to a fatal error.",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
     "doc": "",
-    "steps": []
+    "steps": [
+      {
+        "keyword": "Open Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-121.png\"><img src=\"selenium-screenshot-121.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-122.png\"><img src=\"selenium-screenshot-122.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
   },
   {
     "test_name": "Add Todo Item With Special Characters",
-    "error_message": "Test execution stopped due to a fatal error.",
+    "error_message": "Setup failed:\nLogin failed: Invalid credentials\n\nAlso teardown failed:\nElement with locator 'css=[data-testid='logout-button']' not found.",
     "doc": "",
-    "steps": []
+    "steps": [
+      {
+        "keyword": "Open Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Login To Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs in to the application using test credentials",
+        "messages": []
+      },
+      {
+        "keyword": "Close Todo Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 0,
+        "doc": "",
+        "messages": []
+      },
+      {
+        "keyword": "Logout From Application",
+        "args": [],
+        "status": "FAIL",
+        "depth": 1,
+        "doc": "Logs out from the application",
+        "messages": []
+      },
+      {
+        "keyword": "Click Element",
+        "args": [
+          "${auth.logout_button}"
+        ],
+        "status": "FAIL",
+        "depth": 2,
+        "doc": "Click the element identified by ``locator``.",
+        "messages": [
+          "Clicking element 'css=[data-testid='logout-button']'.",
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-123.png\"><img src=\"selenium-screenshot-123.png\" width=\"800px\"></a>"
+        ]
+      },
+      {
+        "keyword": "Wait Until Element Is Visible",
+        "args": [
+          "${auth.user_email}",
+          "timeout=1s"
+        ],
+        "status": "FAIL",
+        "depth": 3,
+        "doc": "Waits until the element ``locator`` is visible.",
+        "messages": [
+          "</td></tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-124.png\"><img src=\"selenium-screenshot-124.png\" width=\"800px\"></a>"
+        ]
+      }
+    ]
   }
 ]

@@ -1,6 +1,29 @@
 # automated-log-analysis
 This project aims to streamline the analysis of automated test failures from Robot Framework by combining rule-based classification, log parsing, and AI-assisted suggestions.
 
+├── config.py
+├── config.toml
+├── dataset
+│   ├── feedback_fails.json
+│   ├── new_fails.json
+│   └── train_fails.json
+├── dataset_257.json
+├── Dockerfile
+├── enrich_dataset.py
+├── LogAnalysisUI.py
+├── model
+│   ├── latest_classifier.pkl
+│   ├── latest_faiss.index
+│   └── latest_vectorizer.pkl
+├── README.md
+├── utils
+│   ├── ClusteringAlgorithms.py
+│   ├── FeatureEmbedding.py
+│   ├── JSONconverter.py
+│   └── XMLlogsParser.py
+└── Utils.py
+
+
 ## Overview
 Robot Framework generates detailed test execution reports, but identifying the root cause of failures and applying fixes can be time-consuming — especially in large test suites. This tool automates the first steps of failure triage by:
 
@@ -37,7 +60,7 @@ Running the docker image:
 sudo docker run -p 8501:8501 log-analyzer 
 ```
 ```bash
-docker run --rm -p 8501:8501   -v "$PWD/LogAnalysisUI.py":/app/LogAnalysisUI.py   log-analyzer   streamlit run /app/LogAnalysisUI.py --server.port=8501 --server.address=0.0.0.0
+docker run --rm -p 8501:8501   -v "$PWD":/app   log-analyzer   streamlit run /app/LogAnalysisUI.py --server.port=8501 --server.address=0.0.0.0
 ```
 Stop running the docker image:
 ```bash
