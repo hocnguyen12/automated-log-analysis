@@ -43,7 +43,7 @@ Robot Framework generates detailed test execution reports, but identifying the r
 ```bash
 git clone https://github.com/hocnguyen12/automated-log-analysis
 cd automated-log-analysis
-streamlit run LogAnalysisUI.py --theme.base light
+streamlit run LogAnalysisUI.py
 ```
 
 ## Docker Image
