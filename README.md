@@ -47,7 +47,7 @@ streamlit run LogAnalysisUI.py --theme.base light
 ```
 
 ## Docker Image
-Find the version of libraries:
+Find the version of libraries (to write a new Dockerfile):
 ```bash
 pip freeze | grep -E 'streamlit|pandas|numpy|scikit-learn|sentence-transformers|faiss|joblib|matplotlib'
 ```
@@ -58,21 +58,24 @@ sudo docker build -t log-analyzer .
 ```
 
 Running the docker image:
-```bash
-sudo docker run -p 8501:8501 log-analyzer 
-```
+
+While in the project main directory:
 ```bash
 docker run --rm -p 8501:8501   -v "$PWD":/app   log-analyzer   streamlit run /app/LogAnalysisUI.py --server.port=8501 --server.address=0.0.0.0
 ```
 Stop running the docker image:
 ```bash
-sudo docker ps
-sudo docker stop <CONTAINER_ID>
+docker ps
+docker stop <CONTAINER_ID>
 ```
 
+Get docker Image ID:
+```bash
+docker images
+```
 Delete a docker image:
 ```bash
-sudo docker rmi -f <IMAGE_ID>
+docker rmi -f <IMAGE_ID>
 ```
 
 ## Instructions
