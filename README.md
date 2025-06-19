@@ -1,6 +1,7 @@
 # automated-log-analysis
 This project aims to streamline the analysis of automated test failures from Robot Framework by combining rule-based classification, log parsing, and AI-assisted suggestions.
 
+```
 ├── config.py
 ├── config.toml
 ├── dataset
@@ -22,6 +23,7 @@ This project aims to streamline the analysis of automated test failures from Rob
 │   ├── JSONconverter.py
 │   └── XMLlogsParser.py
 └── Utils.py
+```
 
 
 ## Overview
