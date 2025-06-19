@@ -37,10 +37,7 @@ Running the docker image:
 sudo docker run -p 8501:8501 log-analyzer 
 ```
 ```bash
-docker run --rm -p 8501:8501 \
-  -v "$PWD/LogAnalysisUI.py":/app/LogAnalysisUI.py \
-  my-streamlit-app \
-  streamlit run /app/LogAnalysisUI.py --server.port=8501 --server.address=0.0.0.0
+docker run --rm -p 8501:8501   -v "$PWD/LogAnalysisUI.py":/app/LogAnalysisUI.py   log-analyzer   streamlit run /app/LogAnalysisUI.py --server.port=8501 --server.address=0.0.0.0
 ```
 Stop running the docker image:
 ```bash
